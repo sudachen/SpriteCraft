@@ -23,11 +23,10 @@ BEGIN
         BLOCK "000004b0"
         BEGIN
             VALUE "Comments", "ScraftE for C++/Python.\\0"
-            VALUE "CompanyName", "Teggo.FF\\0"
             VALUE "FileDescription", "http://www.spritecraft.com/\\0"
             VALUE "FileVersion", "3, 3, 0, %%BUILD%%\\0"
             VALUE "InternalName", "SpriteCraft Engine\\0"
-            VALUE "LegalCopyright", "(C)2002-2007, Alexey Suda-Chen & Olga Marchevska, Teggo FF\\0"
+            VALUE "LegalCopyright", "(C)2002-2013, Alexey Sudachen & Olga Marchevska\\0"
             VALUE "LegalTrademarks", "\\0"
             VALUE "OriginalFilename", "scraft.dll\\0"
             VALUE "PrivateBuild", "\\0"
