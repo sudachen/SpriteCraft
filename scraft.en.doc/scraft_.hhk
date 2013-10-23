@@ -41,8 +41,8 @@
 		<param name="Name" value="Reset">
 		<param name="Local" value="scraft.Particles.htm#Reset">
 	</OBJECT>	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Resume">
-		<param name="Local" value="scraft.Particles.htm#Resume">
+		<param name="Name" value="SetDefaultProgram">
+		<param name="Local" value="scraft.Particles.htm#SetDefaultProgram">
 	</OBJECT>	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="SetEmissionPeriod">
 		<param name="Local" value="scraft.Particles.htm#SetEmissionPeriod">
@@ -59,17 +59,11 @@
 		<param name="Name" value="SetProgram">
 		<param name="Local" value="scraft.Particles.htm#SetProgram">
 	</OBJECT>	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Simulate">
-		<param name="Local" value="scraft.Particles.htm#Simulate">
-	</OBJECT>	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="StartEmission">
 		<param name="Local" value="scraft.Particles.htm#StartEmission">
 	</OBJECT>	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="StopEmission">
 		<param name="Local" value="scraft.Particles.htm#StopEmission">
-	</OBJECT>	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Suspend">
-		<param name="Local" value="scraft.Particles.htm#Suspend">
 	</OBJECT>	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Next">
 		<param name="Local" value="scraft.Randomizer.htm#Next">

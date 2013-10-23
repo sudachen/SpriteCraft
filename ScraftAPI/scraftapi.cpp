@@ -26,8 +26,8 @@ THE SOFTWARE.
 #include "scraftapi.h"
 #include <stdio.h>
 #include <exception>
-#include "../../Classes/Classes.SRC/string.h"
-#include "../../Classes/Classes.SRC/guid.h"
+#include "../Classes/Classes.SRC/string.h"
+#include "../Classes/Classes.SRC/guid.h"
 
 using teggo::WideException;
 using teggo::Refe;
@@ -559,7 +559,6 @@ bool          Scraft::IsMouseIn()                             { SCRAFT_PROP_GET_
 __ScString    Scraft::GetRscPath()                            { SCRAFT_PROP_GET_S(engine,rscpath) }
 void          Scraft::SetRscPath(pwide_t val)                 { SCRAFT_PROP_SET(engine,rscpath,(BSTR)val) }
 void          Scraft::SetSST(pwide_t val)                     { SCRAFT_PROP_SET(engine,SST,(BSTR)val) }
-__ScString    Scraft::GetSST()                                { SCRAFT_PROP_GET_S(engine,SST) }
 long          Scraft::GetScrWidth()                           { SCRAFT_PROP_GET(engine,scrWidth,long) }
 long          Scraft::GetScrHeight()                          { SCRAFT_PROP_GET(engine,scrHeight,long) }
 tagVideoMode  Scraft::GetVMode()                              { SCRAFT_PROP_GET(engine,vMode,tagVideoMode) }
@@ -671,13 +670,13 @@ HWND Scraft::GetHWND()
     return (HWND)p;
   }
 
-// НЕ бросает исключений НИКОГДА
+// ?? ??????? ?????????? ???????
 void Scraft::Log(pwide_t text)
   {
     engine->Log((BSTR)text);
   }
 
-// НЕ бросает исключений НИКОГДА
+// ?? ??????? ?????????? ???????
 void Scraft::Log(const FormatT<wchar_t>& fmt)
   {
     engine->Log((BSTR)fmt.Str());
@@ -707,11 +706,10 @@ ISpritePtr Scraft::NewSprite(pwide_t name,pwide_t klass,long layer, long x, long
 bool Scraft::FindSpriteAtMouseEx(long nearLayer,long farLayer,ISpritePtr& isp)
   {
     ISprite* p;
-    VARIANT_BOOL r;
-    if ( FAILED(engine->FindSpriteAtMouseEx(nearLayer,farLayer,&p,&r)) )
+    if ( FAILED(engine->FindSpriteAtMouse(nearLayer,farLayer,&p)) )
       Throw_ScraftComException();
     isp.reset_((ScraftISprite*)p);
-    return r!=0;
+    return p!=0;
   }
 
 ITileMapPtr Scraft::NewTileMap(pwide_t name,long columns,long rows,long tileSize,long layer)
@@ -878,8 +876,8 @@ void Scraft::InitEx(tagScDevice dev,u32_t vmode,bool logging)
 // ----------------------------------------------------------------------------------------------
 
 IXdataPtr     ScraftIXdata::GetTag(pwide_t name)      { SCRAFT_COMCALL1_META(QueryIfs(),GetTag,(BSTR)name,IXdata,ScraftIXdata) }
-IXdataIterPtr ScraftIXdata::Iterate()                 { SCRAFT_COMCALL_META(QueryIfs(),Iterate,IXdataIterator,ScraftIXdataIter) }
-IXdataIterPtr ScraftIXdata::IterateTag(pwide_t name)  { SCRAFT_COMCALL1_META(QueryIfs(),IterateTag,(BSTR)name,IXdataIterator,ScraftIXdataIter) }
+IXdataIterPtr ScraftIXdata::Iterate()                 { SCRAFT_COMCALL_META(QueryIfs(),Iterate,IXdataEnumerator,ScraftIXdataIter) }
+IXdataIterPtr ScraftIXdata::IterateTag(pwide_t name)  { SCRAFT_COMCALL1_META(QueryIfs(),IterateTag,(BSTR)name,IXdataEnumerator,ScraftIXdataIter) }
 __ScString    ScraftIXdata::GetName()                 { SCRAFT_COMCALL_S(QueryIfs(),GetName) }
 pwide_t       ScraftIXdata::GetNameAsPWIDE()          { SCRAFT_COMCALL_T(QueryIfs(),GetNameAsPWIDE,wchar_t*) }
 __ScString    ScraftIXdata::GetContent()              { SCRAFT_COMCALL_S(QueryIfs(),GetContent) }
@@ -911,7 +909,7 @@ IXdataPtr     ScraftIXdata::GetRoot()                 { SCRAFT_COMCALL_META(Quer
 IXdataPtr     ScraftIXdata::Insert(pwide_t tag)       { SCRAFT_COMCALL1_META(QueryIfs(),Insert,(BSTR)tag,IXdata,ScraftIXdata) }
 void          ScraftIXdata::Erase()                   { SCRAFT_COMCALL(QueryIfs(),Erase) }
 
-IXdataPtr     ScraftIXdata::InsertCopyOf(IXdataPtr const &c) { SCRAFT_COMCALL1_META(QueryIfs(),InsertCopyOf,c->QueryIfs(),IXdata,ScraftIXdata) }
+IXdataPtr     ScraftIXdata::InsertCopyOf(IXdataPtr const &c) { SCRAFT_COMCALL2_META(QueryIfs(),InsertCopyOf,c->QueryIfs(),1,IXdata,ScraftIXdata) }
 
 
 IXdataPtr ScraftIXdata::GetTagSafe(pwide_t name)
@@ -1308,8 +1306,6 @@ void         ScraftIParticles::SetEmissionQuantity(long minval,long maxval,long 
 void         ScraftIParticles::SetEmissionPeriod(long minval,long maxval,long emitter)     { SCRAFT_COMCALL3(QueryIfs(),SetEmissionPeriod,minval,maxval,emitter) }
 void         ScraftIParticles::SetEmissionTime(long minval,long maxval,long emitter)       { SCRAFT_COMCALL3(QueryIfs(),SetEmissionTime,minval,maxval,emitter) }
 void         ScraftIParticles::SetProgram(pwide_t program, long emitter)                   { SCRAFT_COMCALL2(QueryIfs(),SetProgram,(BSTR)program,emitter) }
-void         ScraftIParticles::SetDefaultProgram(long emitter)                             { SCRAFT_COMCALL1(QueryIfs(),SetDefaultProgram,emitter) }
-void         ScraftIParticles::DumpProgramMicrops(long emitter)                            { SCRAFT_COMCALL1(QueryIfs(),DumpProgramMicrops,emitter) }
 
 void         ScraftIParticles::SetParent(const ISpritePtr& p)     { SCRAFT_PROP_SET(QueryIfs(),parent,p->QueryIfs()) }
 void         ScraftIParticles::SetParentNothing()                 { SCRAFT_PROP_SET(QueryIfs(),parent,0) }

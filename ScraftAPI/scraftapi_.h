@@ -27,7 +27,7 @@ THE SOFTWARE.
 #error "should be included in scraftapi.h only"
 #endif
 
-#include "../../Classes/Classes.SRC/_specific.h"
+#include "../Classes/Classes.SRC/_specific.h"
 
 #if CXX_COMPILER_IS_MCW || CXX_COMPILER_IS_GXX
 #define Engine __Com_Scraft_Engine
@@ -40,25 +40,25 @@ THE SOFTWARE.
 #include "spritecraft.h"
 #undef Engine
 
-#include "../../Classes/Classes.SRC/string.h"
-#include "../../Classes/Classes.SRC/array.h"
-#include "../../Classes/Classes.SRC/guid.h"
-#include "../../Classes/Classes.SRC/format.h"
+#include "../Classes/Classes.SRC/string.h"
+#include "../Classes/Classes.SRC/array.h"
+#include "../Classes/Classes.SRC/guid.h"
+#include "../Classes/Classes.SRC/format.h"
 
 enum Sclog_ { Sclog };
 template < class tTc > Sclog_ operator << (Sclog_, teggo::FormatT<tTc> const &fmt);
 
-#include "../../Classes/Classes.SRC/_cxxproperties.h"
+#include "../Classes/Classes.SRC/_cxxproperties.h"
 typedef ::teggo::Property_String<wchar_t> __ScString;
 
-#include "../../Classes/Classes.SRC/COM_generic.h"
+#include "../Classes/Classes.SRC/COM_generic.h"
 //#define TeggoIfs0 TeggoIfs0
 //#define TeggoObject TeggoObject
 #define ScraftIfsUnknown TeggoIfsUnknown
 
 using teggo::IUnknownPtr;
 
-#include "../../Classes/Classes.SRC/Wexcept.h"
+#include "../Classes/Classes.SRC/Wexcept.h"
 
 #include "guids_.h"
 

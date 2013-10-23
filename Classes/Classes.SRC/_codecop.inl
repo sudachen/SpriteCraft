@@ -35,7 +35,7 @@ THE SOFTWARE.
 # define _TEGGO_CODECOP_FAKE_INLINE CXX_FAKE_INLINE
 #endif
 
-extern "C" int __stdcall IsDebuggerPresent(void);
+//extern "C" int __stdcall IsDebuggerPresent(void);
 //extern "C" void __stdcall DebugBreak(void);
 
 #if defined _DEBUG

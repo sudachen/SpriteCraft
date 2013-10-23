@@ -91,7 +91,7 @@ PyObject *_PoC_Init(pchar_t name, PyMethodDef *m0, pchar_t m1)
 
         _PoC_modulename = strdup(name);
         HMODULE hpm;
-        hpm = GetModuleHandle("python24"
+        hpm = GetModuleHandle("python27"
 #       ifdef Py_REF_DEBUG
           "_d"
 #       endif //Py_REF_DEBUG
