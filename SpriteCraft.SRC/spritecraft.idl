@@ -1,12 +1,5 @@
    
 
-/*
-
-  $Id$
-  Copyright (c) 2005-2006, Alexey Suda-Chen aka hedgehog (alexey@suda-chen.biz)
-
-*/
-
 import "oaidl.idl";
 import "ocidl.idl";
 
@@ -22,7 +15,7 @@ midl_pragma warning ( disable:2039 ) // interface does not conform to [oleautoma
 [
   version(SpriteCraftVerValue),
   uuid(35E4F96E-1B5D-4490-B28B-F0A3B2470020),
-  helpstring("SpriteCraft 2D Engine [www.spritecraft.com]"),
+  helpstring("SpriteCraft 2D Engine"),
 ]
 library SpriteCraft
 {
