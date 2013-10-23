@@ -84,8 +84,8 @@ struct CXX_NO_VTABLE ScraftIParticles
     void           SetEmissionPeriod(long minval,long maxval,long emitter=-1);
     void           SetEmissionTime(long minval,long maxval,long emitter=-1);
     void           SetProgram(pwide_t program, long emitter = -1);
-    void           SetDefaultProgram(long emitter = -1);
-    void           DumpProgramMicrops(long emitter = -1);
+    //void           SetDefaultProgram(long emitter = -1);
+    //void           DumpProgramMicrops(long emitter = -1);
     void           SetCycled(bool val);
     bool           IsCycled();
     void           SetAutodispose(bool val);

@@ -36,7 +36,7 @@ int APIENTRY WinMain(
     try
       {
         Engine->Init();
-        Engine->rscPath = L"..";
+        //Engine->rscPath = L".";
 
         Engine->SST   = L"shooter.sst";
         Engine->title = L"Space Shooter 2";

@@ -1,5 +1,12 @@
    
 
+/*
+
+  $Id$
+  Copyright (c) 2005-2006, Alexey Suda-Chen aka hedgehog (alexey@suda-chen.biz)
+
+*/
+
 import "oaidl.idl";
 import "ocidl.idl";
 
@@ -15,7 +22,7 @@ midl_pragma warning ( disable:2039 ) // interface does not conform to [oleautoma
 [
   version(SpriteCraftVerValue),
   uuid(35E4F96E-1B5D-4490-B28B-F0A3B2470020),
-  helpstring("SpriteCraft 2D Engine"),
+  helpstring("SpriteCraft 2D Engine [www.spritecraft.com]"),
 ]
 library SpriteCraft
 {
@@ -750,8 +757,6 @@ library SpriteCraft
     [id(54),propget] HRESULT surface([out, retval] ISurface **pVal);
     [id(54),propput] HRESULT surface([in] ISurface* newVal);
 
-    //[hidden,restricted] HRESULT __comfunc_SprBorder([out,retval] void **);
-    //[hidden,restricted] HRESULT __comfunc_ScrBorder([out,retval] void **);
   };
 
   [
@@ -1058,8 +1063,8 @@ library SpriteCraft
     HRESULT StartEmission([in,defaultvalue(0)] IUnknown* litener,[in,defaultvalue(0)] long cookie);
     HRESULT StopEmission([in,defaultvalue(0)] long timeout);
     HRESULT SetProgram([in] BSTR program,[in,defaultvalue(-1)] long emitter);
-    //HRESULT SetDefaultProgram([in,defaultvalue(-1)] long emitter);
-    //[hidden] HRESULT DumpProgramMicrops([in,defaultvalue(-1)] long emitter);
+    HRESULT SetDefaultProgram([in,defaultvalue(-1)] long emitter);
+    [hidden] HRESULT DumpProgramMicrops([in,defaultvalue(-1)] long emitter);
     [hidden,restricted] HRESULT GetNameAsPWIDE([out,retval] wchar_t** p);
     [hidden,restricted] HRESULT GetKlassAsPWIDE([out,retval] wchar_t** p);
     HRESULT DispatchSubImpl([in] IDispatch* subimpl);
@@ -1067,9 +1072,6 @@ library SpriteCraft
     [propput, id(34)] HRESULT autodispose([in] VARIANT_BOOL newVal);
     [id(35),propget] HRESULT dispatcher([out, retval] IUnknown* *pVal);
     [id(35),propput] HRESULT dispatcher([in] IUnknown* newVal);
-    HRESULT Suspend();
-    HRESULT Resume();
-    HRESULT Simulate([in] long millis,[in,defaultvalue(30)] long fps);
   };
 
   [

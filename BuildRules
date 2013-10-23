@@ -50,5 +50,8 @@ LIBRARIES: advapi32.lib oleaut32.lib ole32.lib user32.lib kernel32.lib \
 
 LINK: SCRAFTEDLL, DLL
 m4_ifelse("_BUILD_RELEASE_","release",
+    `:scraft.dll;copy /y SCRAFTEDLL scraft.pyd >nul',
+    `:scraft_d.dll;copy /y SCRAFTEDLL scraft_d.pyd >nul')
+m4_ifelse("_BUILD_RELEASE_","release",
     `:scraft.dll;copy /y SCRAFTEDLL scraft.dll >nul',
     `:scraft_d.dll;copy /y SCRAFTEDLL scraft_d.dll >nul')

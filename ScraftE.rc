@@ -1,7 +1,7 @@
 
 1 VERSIONINFO
- FILEVERSION 3,3,0,9440
- PRODUCTVERSION 3,3,0,9440
+ FILEVERSION 3,3,0,9454
+ PRODUCTVERSION 3,3,0,9454
  FILEFLAGSMASK 0x20fcL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -17,15 +17,16 @@ BEGIN
         BLOCK "000004b0"
         BEGIN
             VALUE "Comments", "ScraftE for C++/Python.\0"
-            VALUE "FileDescription", "http://bitbucket.org/alexeysudachen/spritecraft-legacy\0"
-            VALUE "FileVersion", "3, 3, 0, 9440\0"
+            VALUE "CompanyName", "Teggo.FF\0"
+            VALUE "FileDescription", "http://www.spritecraft.com/\0"
+            VALUE "FileVersion", "3, 3, 0, 9454\0"
             VALUE "InternalName", "SpriteCraft Engine\0"
-            VALUE "LegalCopyright", "(C)2003-2013, Alexey Sudachen & Olga Marchevska\0"
+            VALUE "LegalCopyright", "(C)2002-2007, Alexey Suda-Chen & Olga Marchevska, Teggo FF\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "scraft.dll\0"
             VALUE "PrivateBuild", "\0"
             VALUE "ProductName", "SpriteCraft Engine\0"
-            VALUE "ProductVersion", "3, 3, 0, 9440\0"
+            VALUE "ProductVersion", "3, 3, 0, 9454\0"
             VALUE "SpecialBuild", "\0"
         END
     END

@@ -76,7 +76,7 @@ struct ScraftIXdataIter
   {
 //    typedef teggo::GuidT<0x7A914D61,0x5AEF,0x4fda,0xB7,0x97,0x11,0xCA,0xA4,0x02,0x4E,0x22> Guid;
 
-    IXdataIterator* QueryIfs() { return (IXdataIterator*)this; }
+    IXdataEnumerator* QueryIfs() { return (IXdataEnumerator*)this; }
     u32_t        AddRef()   { return ((IUnknown*)this)->AddRef(); }
     u32_t        Release()  { return ((IUnknown*)this)->Release(); }
     bool           Reset();
@@ -86,7 +86,7 @@ struct ScraftIXdataIter
 
 typedef ScraftIXdataIter IXdataIter;
 
-inline IXdataIterator* scraft_query_ifs(ScraftIXdataIter* u)
+inline IXdataEnumerator* scraft_query_ifs(ScraftIXdataIter* u)
   {
     return u->QueryIfs();
   }

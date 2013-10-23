@@ -1384,8 +1384,9 @@
 {{!--  Particles.Reset --}}
 {{method,type(#void)}}Reset
 
-{{!--  Particles.Resume --}}
-{{method,type(#void)}}Resume
+{{!--  Particles.SetDefaultProgram --}}
+{{method,type(#void),opt(0)}}SetDefaultProgram
+{{param,in,type(#integer)}}emitter
 
 {{!--  Particles.SetEmissionPeriod --}}
 {{method,type(#void),opt(1)}}SetEmissionPeriod
@@ -1417,11 +1418,6 @@
 {{param,in,type(#wstring)}}program
 {{param,in,type(#integer)}}emitter
 
-{{!--  Particles.Simulate --}}
-{{method,type(#void),opt(1)}}Simulate
-{{param,in,type(#integer)}}millis
-{{param,in,type(#integer)}}fps
-
 {{!--  Particles.StartEmission --}}
 {{method,type(#void),opt(0)}}StartEmission
 {{param,in,type(#object)}}litener
@@ -1430,9 +1426,6 @@
 {{!--  Particles.StopEmission --}}
 {{method,type(#void),opt(0)}}StopEmission
 {{param,in,type(#integer)}}timeout
-
-{{!--  Particles.Suspend --}}
-{{method,type(#void)}}Suspend
 
 {{!-- Particles attributes --}}
 {{attribute,readonly,type(#bool)}}alive
