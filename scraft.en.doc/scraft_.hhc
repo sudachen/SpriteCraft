@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+    <param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ISpriteGrid">
+		<param name="Local" value="scraft.ISpriteGrid.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ISurface">
+		<param name="Local" value="scraft.ISurface.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Particles">
+		<param name="Local" value="scraft.Particles.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Randomizer">
+		<param name="Local" value="scraft.Randomizer.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Sprite">
+		<param name="Local" value="scraft.Sprite.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SpritesList">
+		<param name="Local" value="scraft.SpritesList.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="TileMap">
+		<param name="Local" value="scraft.TileMap.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Xdata">
+		<param name="Local" value="scraft.Xdata.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_Console">
+		<param name="Local" value="scraft._Console.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_Engine">
+		<param name="Local" value="scraft._Engine.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_Executor">
+		<param name="Local" value="scraft._Executor.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_Hierarchy">
+		<param name="Local" value="scraft._Hierarchy.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_LwsArray">
+		<param name="Local" value="scraft._LwsArray.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_ParticlesEnumerator">
+		<param name="Local" value="scraft._ParticlesEnumerator.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_Primitive">
+		<param name="Local" value="scraft._Primitive.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_Que">
+		<param name="Local" value="scraft._Que.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_RGBFilter">
+		<param name="Local" value="scraft._RGBFilter.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_SpritesEnumerator">
+		<param name="Local" value="scraft._SpritesEnumerator.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_TextView">
+		<param name="Local" value="scraft._TextView.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_XdataAttributes">
+		<param name="Local" value="scraft._XdataAttributes.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="_XdataEnumerator">
+		<param name="Local" value="scraft._XdataEnumerator.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>

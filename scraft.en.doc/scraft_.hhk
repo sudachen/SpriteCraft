@@ -1,0 +1,746 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DifPoint">
+		<param name="Local" value="scraft.ISpriteGrid.htm#DifPoint">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetColor">
+		<param name="Local" value="scraft.ISpriteGrid.htm#GetColor">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetX">
+		<param name="Local" value="scraft.ISpriteGrid.htm#GetX">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetY">
+		<param name="Local" value="scraft.ISpriteGrid.htm#GetY">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetColor">
+		<param name="Local" value="scraft.ISpriteGrid.htm#SetColor">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetPoint">
+		<param name="Local" value="scraft.ISpriteGrid.htm#SetPoint">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetXY">
+		<param name="Local" value="scraft.ISpriteGrid.htm#SetXY">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetHDC">
+		<param name="Local" value="scraft.ISurface.htm#GetHDC">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Update">
+		<param name="Local" value="scraft.ISurface.htm#Update">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DispatchSubImpl">
+		<param name="Local" value="scraft.Particles.htm#DispatchSubImpl">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Dispose">
+		<param name="Local" value="scraft.Particles.htm#Dispose">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Reset">
+		<param name="Local" value="scraft.Particles.htm#Reset">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Resume">
+		<param name="Local" value="scraft.Particles.htm#Resume">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetEmissionPeriod">
+		<param name="Local" value="scraft.Particles.htm#SetEmissionPeriod">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetEmissionQuantity">
+		<param name="Local" value="scraft.Particles.htm#SetEmissionQuantity">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetEmissionTime">
+		<param name="Local" value="scraft.Particles.htm#SetEmissionTime">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetEmitterCf">
+		<param name="Local" value="scraft.Particles.htm#SetEmitterCf">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetProgram">
+		<param name="Local" value="scraft.Particles.htm#SetProgram">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Simulate">
+		<param name="Local" value="scraft.Particles.htm#Simulate">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="StartEmission">
+		<param name="Local" value="scraft.Particles.htm#StartEmission">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="StopEmission">
+		<param name="Local" value="scraft.Particles.htm#StopEmission">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Suspend">
+		<param name="Local" value="scraft.Particles.htm#Suspend">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Next">
+		<param name="Local" value="scraft.Randomizer.htm#Next">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Reset">
+		<param name="Local" value="scraft.Randomizer.htm#Reset">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="AngleWith">
+		<param name="Local" value="scraft.Sprite.htm#AngleWith">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="AnimateLoop">
+		<param name="Local" value="scraft.Sprite.htm#AnimateLoop">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="AnimateOnce">
+		<param name="Local" value="scraft.Sprite.htm#AnimateOnce">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="AttachChild">
+		<param name="Local" value="scraft.Sprite.htm#AttachChild">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="AttachChildEx">
+		<param name="Local" value="scraft.Sprite.htm#AttachChildEx">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ChangeKlassTo">
+		<param name="Local" value="scraft.Sprite.htm#ChangeKlassTo">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Contains">
+		<param name="Local" value="scraft.Sprite.htm#Contains">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DispatchSubImpl">
+		<param name="Local" value="scraft.Sprite.htm#DispatchSubImpl">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Dispose">
+		<param name="Local" value="scraft.Sprite.htm#Dispose">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Distance">
+		<param name="Local" value="scraft.Sprite.htm#Distance">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Equal">
+		<param name="Local" value="scraft.Sprite.htm#Equal">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetChild">
+		<param name="Local" value="scraft.Sprite.htm#GetChild">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetChildEx">
+		<param name="Local" value="scraft.Sprite.htm#GetChildEx">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Hit">
+		<param name="Local" value="scraft.Sprite.htm#Hit">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IncAngle">
+		<param name="Local" value="scraft.Sprite.htm#IncAngle">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IncX">
+		<param name="Local" value="scraft.Sprite.htm#IncX">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IncY">
+		<param name="Local" value="scraft.Sprite.htm#IncY">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Randomize">
+		<param name="Local" value="scraft.Sprite.htm#Randomize">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ScreenToSprite">
+		<param name="Local" value="scraft.Sprite.htm#ScreenToSprite">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetFrameOfKlass">
+		<param name="Local" value="scraft.Sprite.htm#SetFrameOfKlass">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SpriteToScreen">
+		<param name="Local" value="scraft.Sprite.htm#SpriteToScreen">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="StopAnimation">
+		<param name="Local" value="scraft.Sprite.htm#StopAnimation">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Add">
+		<param name="Local" value="scraft.SpritesList.htm#Add">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="At">
+		<param name="Local" value="scraft.SpritesList.htm#At">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="AtBegin">
+		<param name="Local" value="scraft.SpritesList.htm#AtBegin">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="AtEnd">
+		<param name="Local" value="scraft.SpritesList.htm#AtEnd">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Find">
+		<param name="Local" value="scraft.SpritesList.htm#Find">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Get">
+		<param name="Local" value="scraft.SpritesList.htm#Get">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IsBegin">
+		<param name="Local" value="scraft.SpritesList.htm#IsBegin">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IsEnd">
+		<param name="Local" value="scraft.SpritesList.htm#IsEnd">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Next">
+		<param name="Local" value="scraft.SpritesList.htm#Next">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Purge">
+		<param name="Local" value="scraft.SpritesList.htm#Purge">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Remove">
+		<param name="Local" value="scraft.SpritesList.htm#Remove">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Reset">
+		<param name="Local" value="scraft.SpritesList.htm#Reset">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="AddTilesFrom">
+		<param name="Local" value="scraft.TileMap.htm#AddTilesFrom">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Clear">
+		<param name="Local" value="scraft.TileMap.htm#Clear">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Dispose">
+		<param name="Local" value="scraft.TileMap.htm#Dispose">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetTile">
+		<param name="Local" value="scraft.TileMap.htm#GetTile">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetTileByIdx">
+		<param name="Local" value="scraft.TileMap.htm#GetTileByIdx">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Purge">
+		<param name="Local" value="scraft.TileMap.htm#Purge">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetTile">
+		<param name="Local" value="scraft.TileMap.htm#SetTile">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetTileByIdx">
+		<param name="Local" value="scraft.TileMap.htm#SetTileByIdx">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Attributes">
+		<param name="Local" value="scraft.Xdata.htm#Attributes">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Clone">
+		<param name="Local" value="scraft.Xdata.htm#Clone">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Empty">
+		<param name="Local" value="scraft.Xdata.htm#Empty">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Erase">
+		<param name="Local" value="scraft.Xdata.htm#Erase">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Freeze">
+		<param name="Local" value="scraft.Xdata.htm#Freeze">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetBoolAttr">
+		<param name="Local" value="scraft.Xdata.htm#GetBoolAttr">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetContent">
+		<param name="Local" value="scraft.Xdata.htm#GetContent">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetCount">
+		<param name="Local" value="scraft.Xdata.htm#GetCount">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetCountTag">
+		<param name="Local" value="scraft.Xdata.htm#GetCountTag">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetFltAttr">
+		<param name="Local" value="scraft.Xdata.htm#GetFltAttr">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetIntAttr">
+		<param name="Local" value="scraft.Xdata.htm#GetIntAttr">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetName">
+		<param name="Local" value="scraft.Xdata.htm#GetName">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetParent">
+		<param name="Local" value="scraft.Xdata.htm#GetParent">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetRoot">
+		<param name="Local" value="scraft.Xdata.htm#GetRoot">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetSrcName">
+		<param name="Local" value="scraft.Xdata.htm#GetSrcName">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetStrAttr">
+		<param name="Local" value="scraft.Xdata.htm#GetStrAttr">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetSubtag">
+		<param name="Local" value="scraft.Xdata.htm#GetSubtag">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetSubtagNocase">
+		<param name="Local" value="scraft.Xdata.htm#GetSubtagNocase">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetTag">
+		<param name="Local" value="scraft.Xdata.htm#GetTag">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="HasAttr">
+		<param name="Local" value="scraft.Xdata.htm#HasAttr">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Insert">
+		<param name="Local" value="scraft.Xdata.htm#Insert">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="InsertCopyOf">
+		<param name="Local" value="scraft.Xdata.htm#InsertCopyOf">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Iterate">
+		<param name="Local" value="scraft.Xdata.htm#Iterate">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IterateTag">
+		<param name="Local" value="scraft.Xdata.htm#IterateTag">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Next">
+		<param name="Local" value="scraft.Xdata.htm#Next">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetBoolAttr">
+		<param name="Local" value="scraft.Xdata.htm#SetBoolAttr">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetContent">
+		<param name="Local" value="scraft.Xdata.htm#SetContent">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetFltAttr">
+		<param name="Local" value="scraft.Xdata.htm#SetFltAttr">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetIntAttr">
+		<param name="Local" value="scraft.Xdata.htm#SetIntAttr">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetStrAttr">
+		<param name="Local" value="scraft.Xdata.htm#SetStrAttr">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="StoreTo">
+		<param name="Local" value="scraft.Xdata.htm#StoreTo">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Subtags">
+		<param name="Local" value="scraft.Xdata.htm#Subtags">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tags">
+		<param name="Local" value="scraft.Xdata.htm#Tags">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Clear">
+		<param name="Local" value="scraft._Console.htm#Clear">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Print">
+		<param name="Local" value="scraft._Console.htm#Print">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Println">
+		<param name="Local" value="scraft._Console.htm#Println">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ProcessInput">
+		<param name="Local" value="scraft._Console.htm#ProcessInput">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="AllowCollide">
+		<param name="Local" value="scraft._Engine.htm#AllowCollide">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="AttachTo">
+		<param name="Local" value="scraft._Engine.htm#AttachTo">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DisallowCollide">
+		<param name="Local" value="scraft._Engine.htm#DisallowCollide">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Display">
+		<param name="Local" value="scraft._Engine.htm#Display">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DisplayEx">
+		<param name="Local" value="scraft._Engine.htm#DisplayEx">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DisplayExNoWait">
+		<param name="Local" value="scraft._Engine.htm#DisplayExNoWait">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DumpObjectsList">
+		<param name="Local" value="scraft._Engine.htm#DumpObjectsList">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EnumerateParticles">
+		<param name="Local" value="scraft._Engine.htm#EnumerateParticles">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EnumerateSprites">
+		<param name="Local" value="scraft._Engine.htm#EnumerateSprites">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EnumerateSpritesEx">
+		<param name="Local" value="scraft._Engine.htm#EnumerateSpritesEx">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtEvent">
+		<param name="Local" value="scraft._Engine.htm#EvtEvent">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtIsESC">
+		<param name="Local" value="scraft._Engine.htm#EvtIsESC">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtIsKeyChar">
+		<param name="Local" value="scraft._Engine.htm#EvtIsKeyChar">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtIsKeyDown">
+		<param name="Local" value="scraft._Engine.htm#EvtIsKeyDown">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtIsKeyUp">
+		<param name="Local" value="scraft._Engine.htm#EvtIsKeyUp">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtIsLClick">
+		<param name="Local" value="scraft._Engine.htm#EvtIsLClick">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtIsMouse">
+		<param name="Local" value="scraft._Engine.htm#EvtIsMouse">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtIsMouseDown">
+		<param name="Local" value="scraft._Engine.htm#EvtIsMouseDown">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtIsMouseLeave">
+		<param name="Local" value="scraft._Engine.htm#EvtIsMouseLeave">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtIsMouseMove">
+		<param name="Local" value="scraft._Engine.htm#EvtIsMouseMove">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtIsMouseUp">
+		<param name="Local" value="scraft._Engine.htm#EvtIsMouseUp">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtIsQuit">
+		<param name="Local" value="scraft._Engine.htm#EvtIsQuit">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtIsRClick">
+		<param name="Local" value="scraft._Engine.htm#EvtIsRClick">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtKey">
+		<param name="Local" value="scraft._Engine.htm#EvtKey">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtKeyChar">
+		<param name="Local" value="scraft._Engine.htm#EvtKeyChar">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtKeyEx">
+		<param name="Local" value="scraft._Engine.htm#EvtKeyEx">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtWindowBecomeActive">
+		<param name="Local" value="scraft._Engine.htm#EvtWindowBecomeActive">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="EvtWindowBecomeInactive">
+		<param name="Local" value="scraft._Engine.htm#EvtWindowBecomeInactive">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="FindParticles">
+		<param name="Local" value="scraft._Engine.htm#FindParticles">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="FindSprite">
+		<param name="Local" value="scraft._Engine.htm#FindSprite">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="FindSpriteAtMouse">
+		<param name="Local" value="scraft._Engine.htm#FindSpriteAtMouse">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="FindTileMap">
+		<param name="Local" value="scraft._Engine.htm#FindTileMap">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GrabMouse">
+		<param name="Local" value="scraft._Engine.htm#GrabMouse">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IncLayerX">
+		<param name="Local" value="scraft._Engine.htm#IncLayerX">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IncLayerY">
+		<param name="Local" value="scraft._Engine.htm#IncLayerY">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Init">
+		<param name="Local" value="scraft._Engine.htm#Init">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="InitEx">
+		<param name="Local" value="scraft._Engine.htm#InitEx">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IsKeyPressed">
+		<param name="Local" value="scraft._Engine.htm#IsKeyPressed">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IsKeyPressedNow">
+		<param name="Local" value="scraft._Engine.htm#IsKeyPressedNow">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IsKeyReleasedNow">
+		<param name="Local" value="scraft._Engine.htm#IsKeyReleasedNow">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IsSprite">
+		<param name="Local" value="scraft._Engine.htm#IsSprite">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Log">
+		<param name="Local" value="scraft._Engine.htm#Log">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="MapKey">
+		<param name="Local" value="scraft._Engine.htm#MapKey">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="MoveWindowTo">
+		<param name="Local" value="scraft._Engine.htm#MoveWindowTo">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NewDummy">
+		<param name="Local" value="scraft._Engine.htm#NewDummy">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NewParticles">
+		<param name="Local" value="scraft._Engine.htm#NewParticles">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NewParticles_">
+		<param name="Local" value="scraft._Engine.htm#NewParticles_">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NewPredefinedTileMap">
+		<param name="Local" value="scraft._Engine.htm#NewPredefinedTileMap">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NewRandomizer">
+		<param name="Local" value="scraft._Engine.htm#NewRandomizer">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NewSprite">
+		<param name="Local" value="scraft._Engine.htm#NewSprite">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NewSprite_">
+		<param name="Local" value="scraft._Engine.htm#NewSprite_">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NewSpritesList">
+		<param name="Local" value="scraft._Engine.htm#NewSpritesList">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NewTileMap">
+		<param name="Local" value="scraft._Engine.htm#NewTileMap">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NewTileMap_">
+		<param name="Local" value="scraft._Engine.htm#NewTileMap_">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NewXdata">
+		<param name="Local" value="scraft._Engine.htm#NewXdata">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NextEvent">
+		<param name="Local" value="scraft._Engine.htm#NextEvent">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NextEventEx">
+		<param name="Local" value="scraft._Engine.htm#NextEventEx">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="NextSound">
+		<param name="Local" value="scraft._Engine.htm#NextSound">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="OpenLog">
+		<param name="Local" value="scraft._Engine.htm#OpenLog">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ParseDEF">
+		<param name="Local" value="scraft._Engine.htm#ParseDEF">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ParseXML">
+		<param name="Local" value="scraft._Engine.htm#ParseXML">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PlaceWindowAt">
+		<param name="Local" value="scraft._Engine.htm#PlaceWindowAt">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PlaySound">
+		<param name="Local" value="scraft._Engine.htm#PlaySound">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="PlaySoundLoop">
+		<param name="Local" value="scraft._Engine.htm#PlaySoundLoop">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Preload">
+		<param name="Local" value="scraft._Engine.htm#Preload">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Purge">
+		<param name="Local" value="scraft._Engine.htm#Purge">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="RefreshInput">
+		<param name="Local" value="scraft._Engine.htm#RefreshInput">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ResetMouseNotifierRange">
+		<param name="Local" value="scraft._Engine.htm#ResetMouseNotifierRange">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ResumeGameClock">
+		<param name="Local" value="scraft._Engine.htm#ResumeGameClock">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetCollideMgr">
+		<param name="Local" value="scraft._Engine.htm#SetCollideMgr">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetMouseNotifierRange">
+		<param name="Local" value="scraft._Engine.htm#SetMouseNotifierRange">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SleepMillis">
+		<param name="Local" value="scraft._Engine.htm#SleepMillis">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SstDefKlass">
+		<param name="Local" value="scraft._Engine.htm#SstDefKlass">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SstFindKlass">
+		<param name="Local" value="scraft._Engine.htm#SstFindKlass">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SstLoad">
+		<param name="Local" value="scraft._Engine.htm#SstLoad">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SstUndefKlass">
+		<param name="Local" value="scraft._Engine.htm#SstUndefKlass">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="StopSound">
+		<param name="Local" value="scraft._Engine.htm#StopSound">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SuspendGameClock">
+		<param name="Local" value="scraft._Engine.htm#SuspendGameClock">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Unload">
+		<param name="Local" value="scraft._Engine.htm#Unload">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="UnloadAll">
+		<param name="Local" value="scraft._Engine.htm#UnloadAll">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="UnloadEx">
+		<param name="Local" value="scraft._Engine.htm#UnloadEx">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="CreateQueue">
+		<param name="Local" value="scraft._Executor.htm#CreateQueue">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DismissQueue">
+		<param name="Local" value="scraft._Executor.htm#DismissQueue">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetQueue">
+		<param name="Local" value="scraft._Executor.htm#GetQueue">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Schedule">
+		<param name="Local" value="scraft._Executor.htm#Schedule">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ScheduleEx">
+		<param name="Local" value="scraft._Executor.htm#ScheduleEx">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="CopyRange">
+		<param name="Local" value="scraft._LwsArray.htm#CopyRange">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DiffRangeAngle">
+		<param name="Local" value="scraft._LwsArray.htm#DiffRangeAngle">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DiffRangeFrno">
+		<param name="Local" value="scraft._LwsArray.htm#DiffRangeFrno">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DiffRangeScale">
+		<param name="Local" value="scraft._LwsArray.htm#DiffRangeScale">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DiffRangeTransparency">
+		<param name="Local" value="scraft._LwsArray.htm#DiffRangeTransparency">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DiffRangeXY">
+		<param name="Local" value="scraft._LwsArray.htm#DiffRangeXY">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetOneAngle">
+		<param name="Local" value="scraft._LwsArray.htm#GetOneAngle">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetOneFrno">
+		<param name="Local" value="scraft._LwsArray.htm#GetOneFrno">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetOneScale">
+		<param name="Local" value="scraft._LwsArray.htm#GetOneScale">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetOneTransparency">
+		<param name="Local" value="scraft._LwsArray.htm#GetOneTransparency">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetOneX">
+		<param name="Local" value="scraft._LwsArray.htm#GetOneX">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetOneY">
+		<param name="Local" value="scraft._LwsArray.htm#GetOneY">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Order">
+		<param name="Local" value="scraft._LwsArray.htm#Order">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetOne">
+		<param name="Local" value="scraft._LwsArray.htm#SetOne">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetRangeAngle">
+		<param name="Local" value="scraft._LwsArray.htm#SetRangeAngle">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetRangeFrno">
+		<param name="Local" value="scraft._LwsArray.htm#SetRangeFrno">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetRangeScale">
+		<param name="Local" value="scraft._LwsArray.htm#SetRangeScale">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetRangeTransparency">
+		<param name="Local" value="scraft._LwsArray.htm#SetRangeTransparency">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetRangeXY">
+		<param name="Local" value="scraft._LwsArray.htm#SetRangeXY">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ShowRange">
+		<param name="Local" value="scraft._LwsArray.htm#ShowRange">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Get">
+		<param name="Local" value="scraft._ParticlesEnumerator.htm#Get">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Next">
+		<param name="Local" value="scraft._ParticlesEnumerator.htm#Next">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Reset">
+		<param name="Local" value="scraft._ParticlesEnumerator.htm#Reset">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DiffVertex">
+		<param name="Local" value="scraft._Primitive.htm#DiffVertex">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetColor">
+		<param name="Local" value="scraft._Primitive.htm#GetColor">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetU">
+		<param name="Local" value="scraft._Primitive.htm#GetU">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetV">
+		<param name="Local" value="scraft._Primitive.htm#GetV">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetX">
+		<param name="Local" value="scraft._Primitive.htm#GetX">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GetY">
+		<param name="Local" value="scraft._Primitive.htm#GetY">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetColor">
+		<param name="Local" value="scraft._Primitive.htm#SetColor">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetUV">
+		<param name="Local" value="scraft._Primitive.htm#SetUV">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetVertex">
+		<param name="Local" value="scraft._Primitive.htm#SetVertex">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetXY">
+		<param name="Local" value="scraft._Primitive.htm#SetXY">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Alert">
+		<param name="Local" value="scraft._Que.htm#Alert">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="CheckCond">
+		<param name="Local" value="scraft._Que.htm#CheckCond">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Clear">
+		<param name="Local" value="scraft._Que.htm#Clear">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Dismiss">
+		<param name="Local" value="scraft._Que.htm#Dismiss">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ExecuteNext">
+		<param name="Local" value="scraft._Que.htm#ExecuteNext">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IsEmpty">
+		<param name="Local" value="scraft._Que.htm#IsEmpty">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IsSuspended">
+		<param name="Local" value="scraft._Que.htm#IsSuspended">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Resume">
+		<param name="Local" value="scraft._Que.htm#Resume">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Schedule">
+		<param name="Local" value="scraft._Que.htm#Schedule">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ScheduleDismiss">
+		<param name="Local" value="scraft._Que.htm#ScheduleDismiss">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ScheduleHolder">
+		<param name="Local" value="scraft._Que.htm#ScheduleHolder">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ScheduleSleep">
+		<param name="Local" value="scraft._Que.htm#ScheduleSleep">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetCondVal">
+		<param name="Local" value="scraft._Que.htm#SetCondVal">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Suspend">
+		<param name="Local" value="scraft._Que.htm#Suspend">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Get">
+		<param name="Local" value="scraft._SpritesEnumerator.htm#Get">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Next">
+		<param name="Local" value="scraft._SpritesEnumerator.htm#Next">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Reset">
+		<param name="Local" value="scraft._SpritesEnumerator.htm#Reset">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Name">
+		<param name="Local" value="scraft._XdataAttributes.htm#Name">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Next">
+		<param name="Local" value="scraft._XdataAttributes.htm#Next">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Reset">
+		<param name="Local" value="scraft._XdataAttributes.htm#Reset">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Value">
+		<param name="Local" value="scraft._XdataAttributes.htm#Value">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Get">
+		<param name="Local" value="scraft._XdataEnumerator.htm#Get">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Next">
+		<param name="Local" value="scraft._XdataEnumerator.htm#Next">
+	</OBJECT>	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Reset">
+		<param name="Local" value="scraft._XdataEnumerator.htm#Reset">
+	</OBJECT></UL>
+</BODY></HTML>

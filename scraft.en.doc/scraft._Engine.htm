@@ -1,0 +1,236 @@
+<head>
+<style>
+table.attr-tbl td { valign: top; border-bottom: dashed #ddd 1px; border-left: dashed #ddd 1px; padding: 5 5 5 5; margin: 0 0 0 0; }
+table.enum-tbl td { valign: top; border-bottom: dashed #ddd 1px; border-left: dashed #ddd 1px; padding: 5 5 5 5; margin: 0 0 0 0; }
+table.idx-tbl td { valign: center; border-bottom: dashed #ddd 1px; border-left: solid #ddd 1px; }
+td.enum-tbl-h { border-bottom: dashed #000 1px; border-left: dashed #000 1px; padding: 5 5 5 5; margin: 0 0 0 0;  color: #008080; font-size: 110%; background-color: #eeffee }
+td.attr-tbl-h { font-size: 1px; padding: 0 0 0 0; border-bottom: dashed #000 1px; }
+.accs-green  { color: #00aa00; }
+.accs-red    { color: #aa0000; }
+.accs-yellow { color: #aaaa00; }
+a.idx-tbl { text-decoration: none; color: #000 }
+a.idx-tbl:hover { text-decoration: underline; color: #300 }
+.type { text-decoration: none; color: #555 }
+a.type { text-decoration: none; color: #55a }
+a.type:hover { text-decoration: underline; color: #300 }
+.doc-txt { color: #553355; font-style: italic; margin-left: 30px; }
+</style>
+</head>
+<h2>scraft._Engine</h2>
+<table cellspacing=0 cellpadding=3 border=0 class='attr-tbl'>
+<tr><td colspan=3 class='attr-tbl-h'>&nbsp;</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='HWND'>HWND</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='SCVersion'>SCVersion</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Unicode</i></td><td><a name='SST'>SST</a></td><td><i class='accs-yellow'>writeonly</td></tr>
+<tr><td><a class='type' href='scraft._RGBFilter.fr.htm' target='right'><i>_RGBFilter</i></a></td><td><a name='background'>background</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='channelMute'>channelMute</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='channelPan'>channelPan</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='channelVolume'>channelVolume</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='clearColorBits'>clearColorBits</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><a class='type' href='scraft._Console.fr.htm' target='right'><i>_Console</i></a></td><td><a name='console'>console</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='enableSound'>enableSound</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><a class='type' href='scraft._Executor.fr.htm' target='right'><i>_Executor</i></a></td><td><a name='executor'>executor</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='frameTick'>frameTick</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='frameTickDelta'>frameTickDelta</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='fullscreen'>fullscreen</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='invertStereo'>invertStereo</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='layerVisibility'>layerVisibility</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='layerX'>layerX</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='layerY'>layerY</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='logging'>logging</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='millis'>millis</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='mouseDifX'>mouseDifX</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='mouseDifY'>mouseDifY</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='mouseIn'>mouseIn</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='mouseLDown'>mouseLDown</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><a class='type' href='scraft.constants.htm#tagMouseMode' target='right'><i>tagMouseMode</i></a></td><td><a name='mouseMode'>mouseMode</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='mouseRDown'>mouseRDown</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='mouseX'>mouseX</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='mouseY'>mouseY</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='nativeCursor'>nativeCursor</a></td><td><i class='accs-yellow'>writeonly</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='needRefresh'>needRefresh</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='offscreenCollide'>offscreenCollide</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='pulseRefresh'>pulseRefresh</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Unicode</i></td><td><a name='rscpath'>rscpath</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='safeDraw'>safeDraw</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='scrHeight'>scrHeight</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='scrOffsX'>scrOffsX</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='scrOffsY'>scrOffsY</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='scrWidth'>scrWidth</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='showFps'>showFps</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='softRefresh'>softRefresh</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='supportSound'>supportSound</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='suspended'>suspended</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Unicode</i></td><td><a name='title'>title</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><a class='type' href='scraft.constants.htm#tagVideoMode' target='right'><i>tagVideoMode</i></a></td><td><a name='vMode'>vMode</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='vSync'>vSync</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='volume'>volume</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='windowIsActive'>windowIsActive</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='windowX'>windowX</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='windowY'>windowY</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='wndHeight'>wndHeight</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='wndWidth'>wndWidth</a></td><td><i class='accs-red'>readonly</td></tr>
+</table>
+<p></p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='AllowCollide'>AllowCollide</a>( <i class='type' >Integer</i> group1, <i class='type' >Integer</i> group2 )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='AttachTo'>AttachTo</a>( <i class='type' >Integer</i> HWND )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='DisallowCollide'>DisallowCollide</a>( <i class='type' >Integer</i> group1, <i class='type' >Integer</i> group2 )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='Display'>Display</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Integer</i> <a name='DisplayEx'>DisplayEx</a>( <i class='type' >Integer</i> millis )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Integer</i> <a name='DisplayExNoWait'>DisplayExNoWait</a>( <i class='type' >Integer</i> millis )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='DumpObjectsList'>DumpObjectsList</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft._ParticlesEnumerator.fr.htm' target='right'><i>_ParticlesEnumerator</i></a> <a name='EnumerateParticles'>EnumerateParticles</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft._SpritesEnumerator.fr.htm' target='right'><i>_SpritesEnumerator</i></a> <a name='EnumerateSprites'>EnumerateSprites</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft._SpritesEnumerator.fr.htm' target='right'><i>_SpritesEnumerator</i></a> <a name='EnumerateSpritesEx'>EnumerateSpritesEx</a>( <i class='type' >Integer</i> nearLayer, <i class='type' >Integer</i> farLayer )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.constants.htm#tagEventType' target='right'><i>tagEventType</i></a> <a name='EvtEvent'>EvtEvent</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='EvtIsESC'>EvtIsESC</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='EvtIsKeyChar'>EvtIsKeyChar</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='EvtIsKeyDown'>EvtIsKeyDown</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='EvtIsKeyUp'>EvtIsKeyUp</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='EvtIsLClick'>EvtIsLClick</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='EvtIsMouse'>EvtIsMouse</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='EvtIsMouseDown'>EvtIsMouseDown</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='EvtIsMouseLeave'>EvtIsMouseLeave</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='EvtIsMouseMove'>EvtIsMouseMove</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='EvtIsMouseUp'>EvtIsMouseUp</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='EvtIsQuit'>EvtIsQuit</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='EvtIsRClick'>EvtIsRClick</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.constants.htm#tagKeyVal' target='right'><i>tagKeyVal</i></a> <a name='EvtKey'>EvtKey</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Unicode</i> <a name='EvtKeyChar'>EvtKeyChar</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Integer</i> <a name='EvtKeyEx'>EvtKeyEx</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='EvtWindowBecomeActive'>EvtWindowBecomeActive</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='EvtWindowBecomeInactive'>EvtWindowBecomeInactive</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.Particles.fr.htm' target='right'><i>Particles</i></a> <a name='FindParticles'>FindParticles</a>( <i class='type' >Unicode</i> name )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.Sprite.fr.htm' target='right'><i>Sprite</i></a> <a name='FindSprite'>FindSprite</a>( <i class='type' >Unicode</i> name )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.Sprite.fr.htm' target='right'><i>Sprite</i></a> <a name='FindSpriteAtMouse'>FindSpriteAtMouse</a>( <i class='type' >Integer</i> nearLayer, <i class='type' >Integer</i> farLayer )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.TileMap.fr.htm' target='right'><i>TileMap</i></a> <a name='FindTileMap'>FindTileMap</a>( <i class='type' >Unicode</i> name )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='GrabMouse'>GrabMouse</a>( <a class='type' href='scraft.Sprite.fr.htm' target='right'><i>Sprite</i></a> sprite )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='IncLayerX'>IncLayerX</a>( <i class='type' >Integer</i> no, <i class='type' >Float</i> val )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='IncLayerY'>IncLayerY</a>( <i class='type' >Integer</i> no, <i class='type' >Float</i> val )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='Init'>Init</a>( [<a class='type' href='scraft.constants.htm#tagScDevice' target='right'><i>tagScDevice</i></a> flags] )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='InitEx'>InitEx</a>( <a class='type' href='scraft.constants.htm#tagScDevice' target='right'><i>tagScDevice</i></a> flags, <a class='type' href='scraft.constants.htm#tagVideoMode' target='right'><i>tagVideoMode</i></a> vMode )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='IsKeyPressed'>IsKeyPressed</a>( <a class='type' href='scraft.constants.htm#tagKeyVal' target='right'><i>tagKeyVal</i></a> key )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='IsKeyPressedNow'>IsKeyPressedNow</a>( <a class='type' href='scraft.constants.htm#tagKeyVal' target='right'><i>tagKeyVal</i></a> key )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='IsKeyReleasedNow'>IsKeyReleasedNow</a>( <a class='type' href='scraft.constants.htm#tagKeyVal' target='right'><i>tagKeyVal</i></a> key )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='IsSprite'>IsSprite</a>( <i class='type' >Any</i> pI )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='Log'>Log</a>( <i class='type' >Unicode</i> text )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='MapKey'>MapKey</a>( <a class='type' href='scraft.constants.htm#tagKeyVal' target='right'><i>tagKeyVal</i></a> key, <a class='type' href='scraft.constants.htm#tagKeyVal' target='right'><i>tagKeyVal</i></a> stkey )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='MoveWindowTo'>MoveWindowTo</a>( <i class='type' >Integer</i> x, <i class='type' >Integer</i> y )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.Sprite.fr.htm' target='right'><i>Sprite</i></a> <a name='NewDummy'>NewDummy</a>( <i class='type' >Unicode</i> name )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.Particles.fr.htm' target='right'><i>Particles</i></a> <a name='NewParticles'>NewParticles</a>( <i class='type' >Unicode</i> name, <i class='type' >Unicode</i> klass, <i class='type' >Integer</i> layer )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.Particles.fr.htm' target='right'><i>Particles</i></a> <a name='NewParticles_'>NewParticles_</a>( <i class='type' >Unicode</i> klass, <i class='type' >Integer</i> layer )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.TileMap.fr.htm' target='right'><i>TileMap</i></a> <a name='NewPredefinedTileMap'>NewPredefinedTileMap</a>( <i class='type' >Unicode</i> name, <i class='type' >Unicode</i> pattern, <i class='type' >Integer</i> layer )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.Randomizer.fr.htm' target='right'><i>Randomizer</i></a> <a name='NewRandomizer'>NewRandomizer</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.Sprite.fr.htm' target='right'><i>Sprite</i></a> <a name='NewSprite'>NewSprite</a>( <i class='type' >Unicode</i> name, <i class='type' >Unicode</i> klass[, <i class='type' >Integer</i> layer, <i class='type' >Integer</i> x, <i class='type' >Integer</i> y] )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.Sprite.fr.htm' target='right'><i>Sprite</i></a> <a name='NewSprite_'>NewSprite_</a>( <i class='type' >Unicode</i> klass[, <i class='type' >Integer</i> layer] )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.SpritesList.fr.htm' target='right'><i>SpritesList</i></a> <a name='NewSpritesList'>NewSpritesList</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.TileMap.fr.htm' target='right'><i>TileMap</i></a> <a name='NewTileMap'>NewTileMap</a>( <i class='type' >Unicode</i> name, <i class='type' >Integer</i> columns, <i class='type' >Integer</i> rows, <i class='type' >Integer</i> tileSize, <i class='type' >Integer</i> layer )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.TileMap.fr.htm' target='right'><i>TileMap</i></a> <a name='NewTileMap_'>NewTileMap_</a>( <i class='type' >Integer</i> columns, <i class='type' >Integer</i> rows, <i class='type' >Integer</i> tileSize, <i class='type' >Integer</i> layer )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.Xdata.fr.htm' target='right'><i>Xdata</i></a> <a name='NewXdata'>NewXdata</a>( <i class='type' >Unicode</i> tag )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='NextEvent'>NextEvent</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='NextEventEx'>NextEventEx</a>( <i class='type' >Boolean</i> processMsgQue )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='NextSound'>NextSound</a>( <i class='type' >Unicode</i> sound, <i class='type' >Integer</i> channel[, <i class='type' >Integer</i> cookie] )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='OpenLog'>OpenLog</a>( [<i class='type' >Unicode</i> logname] )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.Xdata.fr.htm' target='right'><i>Xdata</i></a> <a name='ParseDEF'>ParseDEF</a>( <i class='type' >Unicode</i> source[, <a class='type' href='scraft.constants.htm#tagParsFlags' target='right'><i>tagParsFlags</i></a> flags] )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.Xdata.fr.htm' target='right'><i>Xdata</i></a> <a name='ParseXML'>ParseXML</a>( <i class='type' >Unicode</i> source[, <a class='type' href='scraft.constants.htm#tagParsFlags' target='right'><i>tagParsFlags</i></a> flags] )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='PlaceWindowAt'>PlaceWindowAt</a>( <a class='type' href='scraft.constants.htm#tagPosition' target='right'><i>tagPosition</i></a> pos )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='PlaySound'>PlaySound</a>( <i class='type' >Unicode</i> sound[, <i class='type' >Integer</i> channel, <i class='type' >Any</i> listener, <i class='type' >Integer</i> cookie] )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='PlaySoundLoop'>PlaySoundLoop</a>( <i class='type' >Unicode</i> sound[, <i class='type' >Integer</i> channel, <i class='type' >Any</i> listener, <i class='type' >Integer</i> cookie] )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='Preload'>Preload</a>( <i class='type' >Unicode</i> rscname )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='Purge'>Purge</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Integer</i> <a name='RefreshInput'>RefreshInput</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='ResetMouseNotifierRange'>ResetMouseNotifierRange</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='ResumeGameClock'>ResumeGameClock</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='SetCollideMgr'>SetCollideMgr</a>( <i class='type' >Any</i> mgr )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='SetMouseNotifierRange'>SetMouseNotifierRange</a>( <i class='type' >Integer</i> nearLayer, <i class='type' >Integer</i> farLayer )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='SleepMillis'>SleepMillis</a>( <i class='type' >Integer</i> millis )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='SstDefKlass'>SstDefKlass</a>( <i class='type' >Unicode</i> klass, <a class='type' href='scraft.Xdata.fr.htm' target='right'><i>Xdata</i></a> info )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.Xdata.fr.htm' target='right'><i>Xdata</i></a> <a name='SstFindKlass'>SstFindKlass</a>( <i class='type' >Unicode</i> klass )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='SstLoad'>SstLoad</a>( <i class='type' >Unicode</i> source[, <i class='type' >Integer</i> flags] )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='SstUndefKlass'>SstUndefKlass</a>( <i class='type' >Unicode</i> klass )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='StopSound'>StopSound</a>( <i class='type' >Integer</i> channel )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='SuspendGameClock'>SuspendGameClock</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='Unload'>Unload</a>( <i class='type' >Unicode</i> rscname )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='UnloadAll'>UnloadAll</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='UnloadEx'>UnloadEx</a>( <i class='type' >Unicode</i> name, <i class='type' >Boolean</i> removeit )</td></tr></table>
+<p class='doc-txt'>undocumented</p>

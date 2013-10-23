@@ -1,0 +1,60 @@
+<head>
+<style>
+table.attr-tbl td { valign: top; border-bottom: dashed #ddd 1px; border-left: dashed #ddd 1px; padding: 5 5 5 5; margin: 0 0 0 0; }
+table.enum-tbl td { valign: top; border-bottom: dashed #ddd 1px; border-left: dashed #ddd 1px; padding: 5 5 5 5; margin: 0 0 0 0; }
+table.idx-tbl td { valign: center; border-bottom: dashed #ddd 1px; border-left: solid #ddd 1px; }
+td.enum-tbl-h { border-bottom: dashed #000 1px; border-left: dashed #000 1px; padding: 5 5 5 5; margin: 0 0 0 0;  color: #008080; font-size: 110%; background-color: #eeffee }
+td.attr-tbl-h { font-size: 1px; padding: 0 0 0 0; border-bottom: dashed #000 1px; }
+.accs-green  { color: #00aa00; }
+.accs-red    { color: #aa0000; }
+.accs-yellow { color: #aaaa00; }
+a.idx-tbl { text-decoration: none; color: #000 }
+a.idx-tbl:hover { text-decoration: underline; color: #300 }
+.type { text-decoration: none; color: #555 }
+a.type { text-decoration: none; color: #55a }
+a.type:hover { text-decoration: underline; color: #300 }
+.doc-txt { color: #553355; font-style: italic; margin-left: 30px; }
+</style>
+</head>
+<h2>scraft.TileMap</h2>
+<table cellspacing=0 cellpadding=3 border=0 class='attr-tbl'>
+<tr><td colspan=3 class='attr-tbl-h'>&nbsp;</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='alive'>alive</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><a class='type' href='scraft._RGBFilter.fr.htm' target='right'><i>_RGBFilter</i></a></td><td><a name='cfilt'>cfilt</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='cols'>cols</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='layer'>layer</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='luminance'>luminance</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Unicode</i></td><td><a name='name'>name</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='rows'>rows</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><a class='type' href='scraft.constants.htm#tagStyle' target='right'><i>tagStyle</i></a></td><td><a name='style'>style</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='sublayer'>sublayer</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='tileHeight'>tileHeight</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='tileSize'>tileSize</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='tileWidth'>tileWidth</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='transparency'>transparency</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='visible'>visible</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='x'>x</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='xCycled'>xCycled</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='xScale'>xScale</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='xyScale'>xyScale</a></td><td><i class='accs-yellow'>writeonly</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='y'>y</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='yCycled'>yCycled</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='yScale'>yScale</a></td><td><i class='accs-green'>readwrite</td></tr>
+</table>
+<p></p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Integer</i> <a name='AddTilesFrom'>AddTilesFrom</a>( <i class='type' >Unicode</i> klass[, <i class='type' >Integer</i> frno, <i class='type' >Integer</i> count] )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='Clear'>Clear</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='Dispose'>Dispose</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Integer</i> <a name='GetTile'>GetTile</a>( <i class='type' >Integer</i> col, <i class='type' >Integer</i> row )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Integer</i> <a name='GetTileByIdx'>GetTileByIdx</a>( <i class='type' >Integer</i> idx )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='Purge'>Purge</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='SetTile'>SetTile</a>( <i class='type' >Integer</i> col, <i class='type' >Integer</i> row, <i class='type' >Integer</i> tileno )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='SetTileByIdx'>SetTileByIdx</a>( <i class='type' >Integer</i> idx, <i class='type' >Integer</i> tileno )</td></tr></table>
+<p class='doc-txt'>undocumented</p>

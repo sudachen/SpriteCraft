@@ -1,0 +1,1617 @@
+{{!-- Xdata --}}
+{{type}}Xdata
+
+{{!--  Xdata.Attributes --}}
+{{method,type(_XdataAttributes)}}Attributes
+
+{{!--  Xdata.Clone --}}
+{{method,type(Xdata)}}Clone
+
+{{!--  Xdata.Empty --}}
+{{method,type(#bool)}}Empty
+
+{{!--  Xdata.Erase --}}
+{{method,type(#void)}}Erase
+
+{{!--  Xdata.Freeze --}}
+{{method,type(#void)}}Freeze
+
+{{!--  Xdata.GetBoolAttr --}}
+{{method,type(#bool)}}GetBoolAttr
+{{param,in,type(#wstring)}}name
+
+{{!--  Xdata.GetContent --}}
+{{method,type(#wstring)}}GetContent
+
+{{!--  Xdata.GetCount --}}
+{{method,type(#integer)}}GetCount
+
+{{!--  Xdata.GetCountTag --}}
+{{method,type(#integer)}}GetCountTag
+{{param,in,type(#wstring)}}tag
+
+{{!--  Xdata.GetFltAttr --}}
+{{method,type(#single)}}GetFltAttr
+{{param,in,type(#wstring)}}name
+
+{{!--  Xdata.GetIntAttr --}}
+{{method,type(#integer)}}GetIntAttr
+{{param,in,type(#wstring)}}name
+
+{{!--  Xdata.GetName --}}
+{{method,type(#wstring)}}GetName
+
+{{!--  Xdata.GetParent --}}
+{{method,type(Xdata)}}GetParent
+
+{{!--  Xdata.GetRoot --}}
+{{method,type(Xdata)}}GetRoot
+
+{{!--  Xdata.GetSrcName --}}
+{{method,type(#wstring)}}GetSrcName
+
+{{!--  Xdata.GetStrAttr --}}
+{{method,type(#wstring)}}GetStrAttr
+{{param,in,type(#wstring)}}name
+
+{{!--  Xdata.GetSubtag --}}
+{{method,type(Xdata),opt(1)}}GetSubtag
+{{param,in,type(#wstring)}}content
+{{param,in,type(#wstring)}}tag
+
+{{!--  Xdata.GetSubtagNocase --}}
+{{method,type(Xdata),opt(1)}}GetSubtagNocase
+{{param,in,type(#wstring)}}content
+{{param,in,type(#wstring)}}tag
+
+{{!--  Xdata.GetTag --}}
+{{method,type(Xdata),opt(0)}}GetTag
+{{param,in,type(#wstring)}}name
+
+{{!--  Xdata.HasAttr --}}
+{{method,type(#bool)}}HasAttr
+{{param,in,type(#wstring)}}name
+
+{{!--  Xdata.Insert --}}
+{{method,type(Xdata)}}Insert
+{{param,in,type(#wstring)}}name
+
+{{!--  Xdata.InsertCopyOf --}}
+{{method,type(Xdata),opt(1)}}InsertCopyOf
+{{param,in,type(Xdata)}}node
+{{param,in,type(#bool)}}indepth
+
+{{!--  Xdata.Iterate --}}
+{{method,type(_XdataEnumerator)}}Iterate
+
+{{!--  Xdata.IterateTag --}}
+{{method,type(_XdataEnumerator)}}IterateTag
+{{param,in,type(#wstring)}}path
+
+{{!--  Xdata.Next --}}
+{{method,type(Xdata),opt(0)}}Next
+{{param,in,type(#wstring)}}tag
+
+{{!--  Xdata.SetBoolAttr --}}
+{{method,type(#void)}}SetBoolAttr
+{{param,in,type(#wstring)}}name
+{{param,in,type(#bool)}}val
+
+{{!--  Xdata.SetContent --}}
+{{method,type(#void)}}SetContent
+{{param,in,type(#wstring)}}pVal
+
+{{!--  Xdata.SetFltAttr --}}
+{{method,type(#void)}}SetFltAttr
+{{param,in,type(#wstring)}}name
+{{param,in,type(#single)}}val
+
+{{!--  Xdata.SetIntAttr --}}
+{{method,type(#void)}}SetIntAttr
+{{param,in,type(#wstring)}}name
+{{param,in,type(#integer)}}val
+
+{{!--  Xdata.SetStrAttr --}}
+{{method,type(#void)}}SetStrAttr
+{{param,in,type(#wstring)}}name
+{{param,in,type(#wstring)}}val
+
+{{!--  Xdata.StoreTo --}}
+{{method,type(#void),opt(1)}}StoreTo
+{{param,in,type(#wstring)}}filename
+{{param,in,type(#integer)}}format
+
+{{!--  Xdata.Subtags --}}
+{{method,type(_XdataEnumerator),opt(1)}}Subtags
+{{param,in,type(#wstring)}}content
+{{param,in,type(#wstring)}}tag
+
+{{!--  Xdata.Tags --}}
+{{method,type(_XdataEnumerator),opt(0)}}Tags
+{{param,in,type(#wstring)}}tag
+
+{{!-- Xdata attributes --}}
+
+{{!-- _XdataEnumerator --}}
+{{type}}_XdataEnumerator
+
+{{!--  _XdataEnumerator.Get --}}
+{{method,type(Xdata)}}Get
+
+{{!--  _XdataEnumerator.Next --}}
+{{method,type(#bool)}}Next
+
+{{!--  _XdataEnumerator.Reset --}}
+{{method,type(#bool)}}Reset
+
+{{!-- _XdataEnumerator attributes --}}
+{{attribute,readonly,type(#integer)}}count
+
+{{!-- _XdataAttributes --}}
+{{type}}_XdataAttributes
+
+{{!--  _XdataAttributes.Name --}}
+{{method,type(#wstring)}}Name
+
+{{!--  _XdataAttributes.Next --}}
+{{method,type(#bool)}}Next
+
+{{!--  _XdataAttributes.Reset --}}
+{{method,type(#bool)}}Reset
+
+{{!--  _XdataAttributes.Value --}}
+{{method,type(#wstring)}}Value
+
+{{!-- _XdataAttributes attributes --}}
+{{attribute,readonly,type(#integer)}}count
+{{attribute,readonly,type(#wstring)}}name
+{{attribute,readonly,type(#wstring)}}value
+
+{{!-- SpriteCraftVer --}}
+{{enum}}SpriteCraftVer
+{{constant,value(300)}}SCVersion
+{{constant,value(3)}}SCVerMajor
+{{constant,value(0)}}SCVerMinor
+{{constant,value(200)}}SCVersionMinSupported
+
+{{!-- tagHotspot --}}
+{{enum}}tagHotspot
+{{constant,value(0)}}HotspotLeftTop
+{{constant,value(1)}}HotspotCenterTop
+{{constant,value(2)}}HotspotRightTop
+{{constant,value(3)}}HotspotRightCenter
+{{constant,value(4)}}HotspotRightBottom
+{{constant,value(5)}}HotspotCenterBottom
+{{constant,value(6)}}HotspotLeftBottom
+{{constant,value(7)}}HotspotLeftCenter
+{{constant,value(8)}}HotspotCenter
+
+{{!-- tagPosition --}}
+{{enum}}tagPosition
+{{constant,value(0)}}PositionLeftTop
+{{constant,value(1)}}PositionCenterTop
+{{constant,value(2)}}PositionRightTop
+{{constant,value(3)}}PositionRightCenter
+{{constant,value(4)}}PositionRightBottom
+{{constant,value(5)}}PositionCenterBottom
+{{constant,value(6)}}PositionLeftBottom
+{{constant,value(7)}}PositionLeftCenter
+{{constant,value(8)}}PositionCenter
+
+{{!-- tagVideoMode --}}
+{{enum}}tagVideoMode
+{{constant,value(0)}}VMODE_320x240
+{{constant,value(1)}}VMODE_640x480
+{{constant,value(2)}}VMODE_800x600
+{{constant,value(3)}}VMODE_1024x768
+{{constant,value(4)}}VMODE_1280x1024
+{{constant,value(5)}}VMODE_1600x1200
+{{constant,value(4095)}}VMODE_BITS
+{{constant,value(32768)}}VMODE_32BIT
+{{constant,value(16384)}}VMODE_NOSYSMENU
+{{constant,value(8192)}}VMODE_NOWINFRAME
+{{constant,value(32768)}}VMODE_320x240x32
+{{constant,value(32769)}}VMODE_640x480x32
+{{constant,value(32770)}}VMODE_800x600x32
+{{constant,value(32771)}}VMODE_1024x768x32
+{{constant,value(32772)}}VMODE_1280x1024x32
+{{constant,value(32773)}}VMODE_1600x1200x32
+{{constant,value(4096)}}VMODE_WINDOWED
+{{constant,value(8192)}}VMODE_FULLSCREEN
+{{constant,value(12288)}}VMODE_WINDOW_BITS
+{{constant,value(65536)}}VMODE_LOWQALITY
+{{constant,value(196608)}}VMODE_HIGHQALITY
+
+{{!-- tagEventType --}}
+{{enum}}tagEventType
+{{constant,value(0)}}EventNone
+{{constant,value(1)}}EventKeyDown
+{{constant,value(2)}}EventKeyUp
+{{constant,value(3)}}EventMButtonDown
+{{constant,value(4)}}EventMButtonUp
+{{constant,value(5)}}EventMouseMove
+{{constant,value(6)}}EventQuit
+{{constant,value(7)}}EventReset
+{{constant,value(8)}}EventMouseLeave
+
+{{!-- tagKeyVal --}}
+{{enum}}tagKeyVal
+{{constant,value(0)}}Key_NONE
+{{constant,value(65536)}}Key_CTRLF
+{{constant,value(131072)}}Key_SHIFTF
+{{constant,value(262144)}}Key_LBUTTONF
+{{constant,value(524288)}}Key_RBUTTONF
+{{constant,value(1048576)}}Key_MBUTTONF
+{{constant,value(16711680)}}Key_FLAGMASK
+{{constant,value(65535)}}Key_KEYMASK
+{{constant,value(255)}}Key_ESC
+{{constant,value(200)}}Key_UP
+{{constant,value(201)}}Key_RIGHT
+{{constant,value(202)}}Key_DOWN
+{{constant,value(203)}}Key_LEFT
+{{constant,value(210)}}Key_LBUTTON
+{{constant,value(211)}}Key_RBUTTON
+{{constant,value(212)}}Key_MBUTTON
+{{constant,value(213)}}Key_CTRL
+{{constant,value(214)}}Key_SHIFT
+{{constant,value(215)}}Key_ALT
+{{constant,value(216)}}Key_RCTRL
+{{constant,value(217)}}Key_RSHIFT
+{{constant,value(218)}}Key_RALT
+{{constant,value(219)}}Key_LCTRL
+{{constant,value(220)}}Key_LSHIFT
+{{constant,value(221)}}Key_LALT
+{{constant,value(151)}}Key_F1
+{{constant,value(152)}}Key_F2
+{{constant,value(153)}}Key_F3
+{{constant,value(154)}}Key_F4
+{{constant,value(155)}}Key_F5
+{{constant,value(156)}}Key_F6
+{{constant,value(157)}}Key_F7
+{{constant,value(158)}}Key_F8
+{{constant,value(159)}}Key_F9
+{{constant,value(160)}}Key_F10
+{{constant,value(161)}}Key_F11
+{{constant,value(162)}}Key_F12
+{{constant,value(10)}}Key_ENTER
+{{constant,value(8)}}Key_BACKSPACE
+{{constant,value(9)}}Key_TAB
+{{constant,value(32)}}Key_SPACE
+{{constant,value(65)}}Key_A
+{{constant,value(66)}}Key_B
+{{constant,value(67)}}Key_C
+{{constant,value(68)}}Key_D
+{{constant,value(69)}}Key_E
+{{constant,value(68)}}Key_F
+{{constant,value(71)}}Key_G
+{{constant,value(72)}}Key_H
+{{constant,value(73)}}Key_I
+{{constant,value(74)}}Key_J
+{{constant,value(75)}}Key_K
+{{constant,value(76)}}Key_L
+{{constant,value(77)}}Key_M
+{{constant,value(78)}}Key_N
+{{constant,value(79)}}Key_O
+{{constant,value(80)}}Key_P
+{{constant,value(81)}}Key_Q
+{{constant,value(82)}}Key_R
+{{constant,value(83)}}Key_S
+{{constant,value(84)}}Key_T
+{{constant,value(85)}}Key_U
+{{constant,value(86)}}Key_V
+{{constant,value(87)}}Key_W
+{{constant,value(88)}}Key_X
+{{constant,value(89)}}Key_Y
+{{constant,value(90)}}Key_Z
+{{constant,value(44)}}Key_COMMA
+{{constant,value(46)}}Key_PERIOD
+{{constant,value(48)}}Key_0
+{{constant,value(49)}}Key_1
+{{constant,value(50)}}Key_2
+{{constant,value(51)}}Key_3
+{{constant,value(52)}}Key_4
+{{constant,value(53)}}Key_5
+{{constant,value(54)}}Key_6
+{{constant,value(55)}}Key_7
+{{constant,value(56)}}Key_8
+{{constant,value(57)}}Key_9
+{{constant,value(43)}}Key_PLUS
+{{constant,value(45)}}Key_MINUS
+{{constant,value(301)}}Key_StUp
+{{constant,value(302)}}Key_StDown
+{{constant,value(303)}}Key_StLeft
+{{constant,value(304)}}Key_StRight
+{{constant,value(305)}}Key_StFire
+{{constant,value(306)}}Key_StAlter
+{{constant,value(307)}}Key_StMode
+{{constant,value(308)}}Key_StESC
+
+{{!-- tagKeyState --}}
+{{enum}}tagKeyState
+{{constant,value(1)}}KeyStateUp
+{{constant,value(2)}}KeyStateRight
+{{constant,value(4)}}KeyStateDown
+{{constant,value(8)}}KeyStateLeft
+{{constant,value(16)}}KeyStateFire
+{{constant,value(32)}}KeyStateAlter
+{{constant,value(64)}}KeyStateMode
+{{constant,value(128)}}KeyStateESC
+
+{{!-- tagXdataFormat --}}
+{{enum}}tagXdataFormat
+{{constant,value(0)}}XdataDEFformat
+{{constant,value(1)}}XdataXMLformat
+
+{{!-- tagQueAny --}}
+{{enum}}tagQueAny
+{{constant,value(1000)}}QueUndefined
+{{constant,value(0)}}CommandStateRepeat
+{{constant,value(-1)}}CommandStateEnd
+
+{{!-- tagQueState --}}
+{{enum}}tagQueState
+{{constant,value(0)}}QueStateEmpty
+{{constant,value(1)}}QueStateScheduled
+{{constant,value(2)}}QueStateSuspended
+{{constant,value(3)}}QueStateContinue
+
+{{!-- tagScDevice --}}
+{{enum}}tagScDevice
+{{constant,value(0)}}DevAuto
+{{constant,value(1)}}DevOGL
+{{constant,value(2)}}DevD3D
+{{constant,value(256)}}DevAnDXI
+{{constant,value(257)}}DevOGLnDXI
+{{constant,value(258)}}DevD3DnDXI
+{{constant,value(512)}}DevDisableDrvInfo
+
+{{!-- tagCollideGroup --}}
+{{enum}}tagCollideGroup
+{{constant,value(0)}}CollideNone
+{{constant,value(4096)}}CollidePassive
+{{constant,value(8192)}}CollideActive
+{{constant,value(16384)}}CollideTrack
+
+{{!-- tagStyle --}}
+{{enum}}tagStyle
+{{constant,value(0)}}StyleUnknown
+{{constant,value(1)}}StylePicture
+{{constant,value(2)}}StyleText
+{{constant,value(3)}}StyleTextView
+{{constant,value(4)}}StyleTrilist
+{{constant,value(5)}}StyleShape
+{{constant,value(6)}}StyleLWSA
+{{constant,value(7)}}StyleGrid
+
+{{!-- tagBlendMode --}}
+{{enum}}tagBlendMode
+{{constant,value(0)}}BlendModeDefault
+{{constant,value(1)}}BlendMoldeSolid
+{{constant,value(2)}}BlendMoldeBitmask
+{{constant,value(3)}}BlendMoldeAlpha
+{{constant,value(4)}}BlendMoldeAdditive
+
+{{!-- tagLwsaOrder --}}
+{{enum}}tagLwsaOrder
+{{constant,value(0)}}LwsaOrderLeftRight
+{{constant,value(1)}}LwsaOrderTopBottom
+
+{{!-- tagEmitterCf --}}
+{{enum}}tagEmitterCf
+{{constant,value(0)}}EmCfSourceXY
+{{constant,value(1)}}EmCfInitAngle
+{{constant,value(2)}}EmCfInitTrans
+{{constant,value(3)}}EmCfInitFrno
+{{constant,value(4)}}EmCfInitSpeed
+{{constant,value(5)}}EmCfInitDirect
+{{constant,value(6)}}EmCfInitArea
+{{constant,value(7)}}EmCfInitScale
+{{constant,value(8)}}EmCfIncAngle
+{{constant,value(9)}}EmCfIncTrans
+{{constant,value(10)}}EmCfIncScale
+
+{{!-- tagParsFlags --}}
+{{enum}}tagParsFlags
+{{constant,value(0)}}ParsDefault
+{{constant,value(1)}}ParsComments
+{{constant,value(2)}}ParsLineNo
+
+{{!-- tagMouseMode --}}
+{{enum}}tagMouseMode
+{{constant,value(0)}}MouseDirectMode
+{{constant,value(1)}}MouseIntervalMode
+
+{{!-- tagSstLoadOpts --}}
+{{enum}}tagSstLoadOpts
+{{constant,value(1)}}SstLoadRewrite
+{{constant,value(0)}}SstLoadAppand
+{{constant,value(2)}}SstLoadBack
+{{constant,value(0)}}SstLoadFront
+
+{{!-- _LwsArray --}}
+{{type}}_LwsArray
+
+{{!--  _LwsArray.CopyRange --}}
+{{method,type(#void)}}CopyRange
+{{param,in,type(#integer)}}dst
+{{param,in,type(#integer)}}src
+{{param,in,type(#integer)}}count
+
+{{!--  _LwsArray.DiffRangeAngle --}}
+{{method,type(#void)}}DiffRangeAngle
+{{param,in,type(#integer)}}no
+{{param,in,type(#integer)}}count
+{{param,in,type(#single)}}diff
+
+{{!--  _LwsArray.DiffRangeFrno --}}
+{{method,type(#void)}}DiffRangeFrno
+{{param,in,type(#integer)}}no
+{{param,in,type(#integer)}}count
+{{param,in,type(#integer)}}diff
+
+{{!--  _LwsArray.DiffRangeScale --}}
+{{method,type(#void)}}DiffRangeScale
+{{param,in,type(#integer)}}no
+{{param,in,type(#integer)}}count
+{{param,in,type(#single)}}diff
+
+{{!--  _LwsArray.DiffRangeTransparency --}}
+{{method,type(#void)}}DiffRangeTransparency
+{{param,in,type(#integer)}}no
+{{param,in,type(#integer)}}count
+{{param,in,type(#single)}}diff
+
+{{!--  _LwsArray.DiffRangeXY --}}
+{{method,type(#void)}}DiffRangeXY
+{{param,in,type(#integer)}}no
+{{param,in,type(#integer)}}count
+{{param,in,type(#single)}}xdiff
+{{param,in,type(#single)}}ydiff
+
+{{!--  _LwsArray.GetOneAngle --}}
+{{method,type(#single)}}GetOneAngle
+{{param,in,type(#integer)}}no
+
+{{!--  _LwsArray.GetOneFrno --}}
+{{method,type(#integer)}}GetOneFrno
+{{param,in,type(#integer)}}no
+
+{{!--  _LwsArray.GetOneScale --}}
+{{method,type(#single)}}GetOneScale
+{{param,in,type(#integer)}}no
+
+{{!--  _LwsArray.GetOneTransparency --}}
+{{method,type(#single)}}GetOneTransparency
+{{param,in,type(#integer)}}no
+
+{{!--  _LwsArray.GetOneX --}}
+{{method,type(#single)}}GetOneX
+{{param,in,type(#integer)}}no
+
+{{!--  _LwsArray.GetOneY --}}
+{{method,type(#single)}}GetOneY
+{{param,in,type(#integer)}}no
+
+{{!--  _LwsArray.Order --}}
+{{method,type(#void)}}Order
+{{param,in,type(tagLwsaOrder)}}Order
+{{param,in,type(tagHotspot)}}hotspot
+
+{{!--  _LwsArray.SetOne --}}
+{{method,type(#void)}}SetOne
+{{param,in,type(#integer)}}no
+{{param,in,type(#single)}}x
+{{param,in,type(#single)}}y
+{{param,in,type(#single)}}scale
+{{param,in,type(#single)}}angle
+{{param,in,type(#single)}}transparency
+{{param,in,type(#integer)}}frno
+
+{{!--  _LwsArray.SetRangeAngle --}}
+{{method,type(#void)}}SetRangeAngle
+{{param,in,type(#integer)}}no
+{{param,in,type(#integer)}}count
+{{param,in,type(#single)}}angle
+
+{{!--  _LwsArray.SetRangeFrno --}}
+{{method,type(#void)}}SetRangeFrno
+{{param,in,type(#integer)}}no
+{{param,in,type(#integer)}}count
+{{param,in,type(#integer)}}frno
+
+{{!--  _LwsArray.SetRangeScale --}}
+{{method,type(#void)}}SetRangeScale
+{{param,in,type(#integer)}}no
+{{param,in,type(#integer)}}count
+{{param,in,type(#single)}}scale
+
+{{!--  _LwsArray.SetRangeTransparency --}}
+{{method,type(#void)}}SetRangeTransparency
+{{param,in,type(#integer)}}no
+{{param,in,type(#integer)}}count
+{{param,in,type(#single)}}transparency
+
+{{!--  _LwsArray.SetRangeXY --}}
+{{method,type(#void)}}SetRangeXY
+{{param,in,type(#integer)}}no
+{{param,in,type(#integer)}}count
+{{param,in,type(#single)}}x
+{{param,in,type(#single)}}y
+
+{{!--  _LwsArray.ShowRange --}}
+{{method,type(#void)}}ShowRange
+{{param,in,type(#integer)}}no
+{{param,in,type(#integer)}}count
+{{param,in,type(#bool)}}on
+
+{{!-- _LwsArray attributes --}}
+{{attribute,readwrite,type(#integer)}}count
+{{attribute,readwrite,type(#bool)}}isCentered
+
+{{!-- Sprite --}}
+{{type}}Sprite
+
+{{!--  Sprite.AngleWith --}}
+{{method,type(#single)}}AngleWith
+{{param,in,type(Sprite)}}sprite
+
+{{!--  Sprite.AnimateLoop --}}
+{{method,type(#void),opt(1)}}AnimateLoop
+{{param,in,type(#single)}}fps
+{{param,in,type(#integer)}}startFrno
+{{param,in,type(#integer)}}stopFrno
+{{param,in,type(#object)}}listener
+{{param,in,type(#integer)}}cookie
+
+{{!--  Sprite.AnimateOnce --}}
+{{method,type(#void),opt(1)}}AnimateOnce
+{{param,in,type(#single)}}fps
+{{param,in,type(#integer)}}startFrno
+{{param,in,type(#integer)}}stopFrno
+{{param,in,type(#object)}}listener
+{{param,in,type(#integer)}}cookie
+
+{{!--  Sprite.AttachChild --}}
+{{method,type(#void)}}AttachChild
+{{param,in,type(#wstring)}}key
+{{param,in,type(Sprite)}}child
+
+{{!--  Sprite.AttachChildEx --}}
+{{method,type(#void)}}AttachChildEx
+{{param,in,type(#wstring)}}key
+{{param,in,type(#object)}}child
+
+{{!--  Sprite.ChangeKlassTo --}}
+{{method,type(#void)}}ChangeKlassTo
+{{param,in,type(#wstring)}}klass
+
+{{!--  Sprite.Contains --}}
+{{method,type(#bool)}}Contains
+{{param,in,type(#single)}}x
+{{param,in,type(#single)}}y
+
+{{!--  Sprite.DispatchSubImpl --}}
+{{method,type(#void)}}DispatchSubImpl
+{{param,in,type(#object)}}subimpl
+
+{{!--  Sprite.Dispose --}}
+{{method,type(#void)}}Dispose
+
+{{!--  Sprite.Distance --}}
+{{method,type(#single)}}Distance
+{{param,in,type(Sprite)}}sprite
+
+{{!--  Sprite.Equal --}}
+{{method,type(#bool)}}Equal
+{{param,in,type(#object)}}sprite
+
+{{!--  Sprite.GetChild --}}
+{{method,type(Sprite)}}GetChild
+{{param,in,type(#wstring)}}key
+
+{{!--  Sprite.GetChildEx --}}
+{{method,type(#object)}}GetChildEx
+{{param,in,type(#wstring)}}key
+
+{{!--  Sprite.Hit --}}
+{{method,type(#bool)}}Hit
+{{param,in,type(Sprite)}}sprite
+
+{{!--  Sprite.IncAngle --}}
+{{method,type(#void)}}IncAngle
+{{param,in,type(#single)}}val
+
+{{!--  Sprite.IncX --}}
+{{method,type(#void)}}IncX
+{{param,in,type(#single)}}val
+
+{{!--  Sprite.IncY --}}
+{{method,type(#void)}}IncY
+{{param,in,type(#single)}}val
+
+{{!--  Sprite.Randomize --}}
+{{method,type(#void)}}Randomize
+
+{{!--  Sprite.ScreenToSprite --}}
+{{method,type(#void)}}ScreenToSprite
+{{param,inout,type(#single)}}x
+{{param,inout,type(#single)}}y
+
+{{!--  Sprite.SetFrameOfKlass --}}
+{{method,type(#void)}}SetFrameOfKlass
+{{param,in,type(#integer)}}frno
+{{param,in,type(#wstring)}}klass
+
+{{!--  Sprite.SpriteToScreen --}}
+{{method,type(#void)}}SpriteToScreen
+{{param,inout,type(#single)}}x
+{{param,inout,type(#single)}}y
+
+{{!--  Sprite.StopAnimation --}}
+{{method,type(#void)}}StopAnimation
+
+{{!-- Sprite attributes --}}
+{{attribute,readonly,type(#bool)}}alive
+{{attribute,readwrite,type(#single)}}angle
+{{attribute,readwrite,type(#bool)}}autodispose
+{{attribute,readonly,type(_RGBFilter)}}cfilt
+{{attribute,readwrite,type(#integer)}}collide
+{{attribute,readwrite,type(#integer)}}cookie
+{{attribute,readwrite,type(#single)}}degree
+{{attribute,readwrite,type(#object)}}dispatcher
+{{attribute,readonly,type(#integer)}}frcount
+{{attribute,readwrite,type(#integer)}}frno
+{{attribute,readonly,type(#single)}}height
+{{attribute,readonly,type(_Hierarchy)}}hierarchy
+{{attribute,writeonly,type(tagHotspot)}}hotspot
+{{attribute,readwrite,type(#integer)}}item
+{{attribute,readonly,type(#wstring)}}klass
+{{attribute,readwrite,type(#integer)}}layer
+{{attribute,readwrite,type(#single)}}luminance
+{{attribute,readonly,type(_LwsArray)}}lwsArray
+{{attribute,readonly,type(#bool)}}mouseOver
+{{attribute,readonly,type(#wstring)}}name
+{{attribute,readonly,type(#bool)}}outOfScreen
+{{attribute,readwrite,type(#integer)}}paralax
+{{attribute,readwrite,type(Sprite)}}parent
+{{attribute,readonly,type(_Primitive)}}primitive
+{{attribute,readonly,type(#single)}}random
+{{attribute,readonly,type(#single)}}scrAngle
+{{attribute,readonly,type(#single)}}scrX
+{{attribute,readonly,type(#single)}}scrY
+{{attribute,readonly,type(#single)}}sprBottom
+{{attribute,readonly,type(#single)}}sprLeft
+{{attribute,readonly,type(#single)}}sprRight
+{{attribute,readonly,type(#single)}}sprTop
+{{attribute,readwrite,type(tagStyle)}}style
+{{attribute,readwrite,type(#integer)}}sublayer
+{{attribute,readwrite,type(ISurface)}}surface
+{{attribute,readonly,type(#integer)}}symheight
+{{attribute,readwrite,type(#wstring)}}text
+{{attribute,readonly,type(_TextView)}}textview
+{{attribute,readwrite,type(#single)}}transparency
+{{attribute,readwrite,type(#bool)}}visible
+{{attribute,readonly,type(#single)}}width
+{{attribute,readwrite,type(#single)}}x
+{{attribute,readwrite,type(#bool)}}xFlip
+{{attribute,readwrite,type(#single)}}xHotspot
+{{attribute,readwrite,type(#single)}}xScale
+{{attribute,readwrite,type(#single)}}xSize
+{{attribute,writeonly,type(#single)}}xyScale
+{{attribute,readwrite,type(#single)}}y
+{{attribute,readwrite,type(#bool)}}yFlip
+{{attribute,readwrite,type(#single)}}yHotspot
+{{attribute,readwrite,type(#single)}}yScale
+{{attribute,readwrite,type(#single)}}ySize
+
+{{!-- _RGBFilter --}}
+{{type}}_RGBFilter
+
+{{!-- _RGBFilter attributes --}}
+{{attribute,readwrite,type(#integer)}}b
+{{attribute,readwrite,type(#integer)}}color
+{{attribute,readwrite,type(#integer)}}g
+{{attribute,readwrite,type(#integer)}}r
+
+{{!-- _Hierarchy --}}
+{{type}}_Hierarchy
+
+{{!-- _Hierarchy attributes --}}
+{{attribute,readwrite,type(#bool)}}angle
+{{attribute,readwrite,type(#bool)}}cfilt
+{{attribute,readwrite,type(#bool)}}luminance
+{{attribute,readwrite,type(#bool)}}parentDispose
+{{attribute,readwrite,type(#bool)}}transparency
+{{attribute,readwrite,type(#bool)}}visibility
+{{attribute,readwrite,type(#bool)}}x
+{{attribute,readwrite,type(#bool)}}xScale
+{{attribute,readwrite,type(#bool)}}y
+{{attribute,readwrite,type(#bool)}}yScale
+
+{{!-- _Primitive --}}
+{{type}}_Primitive
+
+{{!--  _Primitive.DiffVertex --}}
+{{method,type(#void),opt(4)}}DiffVertex
+{{param,in,type(#integer)}}no
+{{param,in,type(#integer)}}count
+{{param,in,type(#single)}}x
+{{param,in,type(#single)}}y
+{{param,in,type(#single)}}u
+{{param,in,type(#single)}}v
+
+{{!--  _Primitive.GetColor --}}
+{{method,type(#integer)}}GetColor
+{{param,in,type(#integer)}}no
+
+{{!--  _Primitive.GetU --}}
+{{method,type(#single)}}GetU
+{{param,in,type(#integer)}}no
+
+{{!--  _Primitive.GetV --}}
+{{method,type(#single)}}GetV
+{{param,in,type(#integer)}}no
+
+{{!--  _Primitive.GetX --}}
+{{method,type(#single)}}GetX
+{{param,in,type(#integer)}}no
+
+{{!--  _Primitive.GetY --}}
+{{method,type(#single)}}GetY
+{{param,in,type(#integer)}}no
+
+{{!--  _Primitive.SetColor --}}
+{{method,type(#void)}}SetColor
+{{param,in,type(#integer)}}no
+{{param,in,type(#integer)}}count
+{{param,in,type(#integer)}}color
+
+{{!--  _Primitive.SetUV --}}
+{{method,type(#void)}}SetUV
+{{param,in,type(#integer)}}no
+{{param,in,type(#single)}}u
+{{param,in,type(#single)}}v
+
+{{!--  _Primitive.SetVertex --}}
+{{method,type(#void)}}SetVertex
+{{param,in,type(#integer)}}no
+{{param,in,type(#integer)}}color
+{{param,in,type(#single)}}x
+{{param,in,type(#single)}}y
+{{param,in,type(#single)}}u
+{{param,in,type(#single)}}v
+
+{{!--  _Primitive.SetXY --}}
+{{method,type(#void)}}SetXY
+{{param,in,type(#integer)}}no
+{{param,in,type(#single)}}x
+{{param,in,type(#single)}}y
+
+{{!-- _Primitive attributes --}}
+{{attribute,readwrite,type(tagBlendMode)}}blendMode
+{{attribute,readwrite,type(#bool)}}clip
+{{attribute,readwrite,type(#bool)}}colorized
+{{attribute,readwrite,type(#integer)}}count
+{{attribute,readwrite,type(#bool)}}cw
+{{attribute,readwrite,type(#bool)}}uvNorm
+{{attribute,readwrite,type(#single)}}xOffset
+{{attribute,readwrite,type(#single)}}yOffset
+
+{{!-- _TextView --}}
+{{type}}_TextView
+
+{{!-- _TextView attributes --}}
+{{attribute,readwrite,type(#single)}}height
+{{attribute,readwrite,type(#single)}}width
+{{attribute,readwrite,type(#single)}}xScroll
+{{attribute,readonly,type(#single)}}xScrollMax
+{{attribute,readwrite,type(#single)}}yScroll
+{{attribute,readonly,type(#single)}}yScrollMax
+
+{{!-- ISurface --}}
+{{type}}ISurface
+
+{{!--  ISurface.GetHDC --}}
+{{method,type(#integer)}}GetHDC
+
+{{!--  ISurface.Update --}}
+{{method,type(#void)}}Update
+
+{{!-- ISurface attributes --}}
+{{attribute,readonly,type(#integer)}}height
+{{attribute,readonly,type(#integer)}}pf
+{{attribute,readonly,type(#integer)}}width
+
+{{!-- _Engine --}}
+{{type}}_Engine
+
+{{!--  _Engine.AllowCollide --}}
+{{method,type(#void)}}AllowCollide
+{{param,in,type(#integer)}}group1
+{{param,in,type(#integer)}}group2
+
+{{!--  _Engine.AttachTo --}}
+{{method,type(#void)}}AttachTo
+{{param,in,type(#integer)}}HWND
+
+{{!--  _Engine.DisallowCollide --}}
+{{method,type(#void)}}DisallowCollide
+{{param,in,type(#integer)}}group1
+{{param,in,type(#integer)}}group2
+
+{{!--  _Engine.Display --}}
+{{method,type(#void)}}Display
+
+{{!--  _Engine.DisplayEx --}}
+{{method,type(#integer)}}DisplayEx
+{{param,in,type(#integer)}}millis
+
+{{!--  _Engine.DisplayExNoWait --}}
+{{method,type(#integer)}}DisplayExNoWait
+{{param,in,type(#integer)}}millis
+
+{{!--  _Engine.DumpObjectsList --}}
+{{method,type(#void)}}DumpObjectsList
+
+{{!--  _Engine.EnumerateParticles --}}
+{{method,type(_ParticlesEnumerator)}}EnumerateParticles
+
+{{!--  _Engine.EnumerateSprites --}}
+{{method,type(_SpritesEnumerator)}}EnumerateSprites
+
+{{!--  _Engine.EnumerateSpritesEx --}}
+{{method,type(_SpritesEnumerator)}}EnumerateSpritesEx
+{{param,in,type(#integer)}}nearLayer
+{{param,in,type(#integer)}}farLayer
+
+{{!--  _Engine.EvtEvent --}}
+{{method,type(tagEventType)}}EvtEvent
+
+{{!--  _Engine.EvtIsESC --}}
+{{method,type(#bool)}}EvtIsESC
+
+{{!--  _Engine.EvtIsKeyChar --}}
+{{method,type(#bool)}}EvtIsKeyChar
+
+{{!--  _Engine.EvtIsKeyDown --}}
+{{method,type(#bool)}}EvtIsKeyDown
+
+{{!--  _Engine.EvtIsKeyUp --}}
+{{method,type(#bool)}}EvtIsKeyUp
+
+{{!--  _Engine.EvtIsLClick --}}
+{{method,type(#bool)}}EvtIsLClick
+
+{{!--  _Engine.EvtIsMouse --}}
+{{method,type(#bool)}}EvtIsMouse
+
+{{!--  _Engine.EvtIsMouseDown --}}
+{{method,type(#bool)}}EvtIsMouseDown
+
+{{!--  _Engine.EvtIsMouseLeave --}}
+{{method,type(#bool)}}EvtIsMouseLeave
+
+{{!--  _Engine.EvtIsMouseMove --}}
+{{method,type(#bool)}}EvtIsMouseMove
+
+{{!--  _Engine.EvtIsMouseUp --}}
+{{method,type(#bool)}}EvtIsMouseUp
+
+{{!--  _Engine.EvtIsQuit --}}
+{{method,type(#bool)}}EvtIsQuit
+
+{{!--  _Engine.EvtIsRClick --}}
+{{method,type(#bool)}}EvtIsRClick
+
+{{!--  _Engine.EvtKey --}}
+{{method,type(tagKeyVal)}}EvtKey
+
+{{!--  _Engine.EvtKeyChar --}}
+{{method,type(#wstring)}}EvtKeyChar
+
+{{!--  _Engine.EvtKeyEx --}}
+{{method,type(#integer)}}EvtKeyEx
+
+{{!--  _Engine.EvtWindowBecomeActive --}}
+{{method,type(#bool)}}EvtWindowBecomeActive
+
+{{!--  _Engine.EvtWindowBecomeInactive --}}
+{{method,type(#bool)}}EvtWindowBecomeInactive
+
+{{!--  _Engine.FindParticles --}}
+{{method,type(Particles)}}FindParticles
+{{param,in,type(#wstring)}}name
+
+{{!--  _Engine.FindSprite --}}
+{{method,type(Sprite)}}FindSprite
+{{param,in,type(#wstring)}}name
+
+{{!--  _Engine.FindSpriteAtMouse --}}
+{{method,type(Sprite)}}FindSpriteAtMouse
+{{param,in,type(#integer)}}nearLayer
+{{param,in,type(#integer)}}farLayer
+
+{{!--  _Engine.FindTileMap --}}
+{{method,type(TileMap)}}FindTileMap
+{{param,in,type(#wstring)}}name
+
+{{!--  _Engine.GrabMouse --}}
+{{method,type(#void)}}GrabMouse
+{{param,in,type(Sprite)}}sprite
+
+{{!--  _Engine.IncLayerX --}}
+{{method,type(#void)}}IncLayerX
+{{param,in,type(#integer)}}no
+{{param,in,type(#single)}}val
+
+{{!--  _Engine.IncLayerY --}}
+{{method,type(#void)}}IncLayerY
+{{param,in,type(#integer)}}no
+{{param,in,type(#single)}}val
+
+{{!--  _Engine.Init --}}
+{{method,type(#void),opt(0)}}Init
+{{param,in,type(tagScDevice)}}flags
+
+{{!--  _Engine.InitEx --}}
+{{method,type(#void)}}InitEx
+{{param,in,type(tagScDevice)}}flags
+{{param,in,type(tagVideoMode)}}vMode
+
+{{!--  _Engine.IsKeyPressed --}}
+{{method,type(#bool)}}IsKeyPressed
+{{param,in,type(tagKeyVal)}}key
+
+{{!--  _Engine.IsKeyPressedNow --}}
+{{method,type(#bool)}}IsKeyPressedNow
+{{param,in,type(tagKeyVal)}}key
+
+{{!--  _Engine.IsKeyReleasedNow --}}
+{{method,type(#bool)}}IsKeyReleasedNow
+{{param,in,type(tagKeyVal)}}key
+
+{{!--  _Engine.IsSprite --}}
+{{method,type(#bool)}}IsSprite
+{{param,in,type(#object)}}pI
+
+{{!--  _Engine.Log --}}
+{{method,type(#void)}}Log
+{{param,in,type(#wstring)}}text
+
+{{!--  _Engine.MapKey --}}
+{{method,type(#void)}}MapKey
+{{param,in,type(tagKeyVal)}}key
+{{param,in,type(tagKeyVal)}}stkey
+
+{{!--  _Engine.MoveWindowTo --}}
+{{method,type(#void)}}MoveWindowTo
+{{param,in,type(#integer)}}x
+{{param,in,type(#integer)}}y
+
+{{!--  _Engine.NewDummy --}}
+{{method,type(Sprite)}}NewDummy
+{{param,in,type(#wstring)}}name
+
+{{!--  _Engine.NewParticles --}}
+{{method,type(Particles)}}NewParticles
+{{param,in,type(#wstring)}}name
+{{param,in,type(#wstring)}}klass
+{{param,in,type(#integer)}}layer
+
+{{!--  _Engine.NewParticles_ --}}
+{{method,type(Particles)}}NewParticles_
+{{param,in,type(#wstring)}}klass
+{{param,in,type(#integer)}}layer
+
+{{!--  _Engine.NewPredefinedTileMap --}}
+{{method,type(TileMap)}}NewPredefinedTileMap
+{{param,in,type(#wstring)}}name
+{{param,in,type(#wstring)}}pattern
+{{param,in,type(#integer)}}layer
+
+{{!--  _Engine.NewRandomizer --}}
+{{method,type(Randomizer)}}NewRandomizer
+
+{{!--  _Engine.NewSprite --}}
+{{method,type(Sprite),opt(2)}}NewSprite
+{{param,in,type(#wstring)}}name
+{{param,in,type(#wstring)}}klass
+{{param,in,type(#integer)}}layer
+{{param,in,type(#integer)}}x
+{{param,in,type(#integer)}}y
+
+{{!--  _Engine.NewSprite_ --}}
+{{method,type(Sprite),opt(1)}}NewSprite_
+{{param,in,type(#wstring)}}klass
+{{param,in,type(#integer)}}layer
+
+{{!--  _Engine.NewSpritesList --}}
+{{method,type(SpritesList)}}NewSpritesList
+
+{{!--  _Engine.NewTileMap --}}
+{{method,type(TileMap)}}NewTileMap
+{{param,in,type(#wstring)}}name
+{{param,in,type(#integer)}}columns
+{{param,in,type(#integer)}}rows
+{{param,in,type(#integer)}}tileSize
+{{param,in,type(#integer)}}layer
+
+{{!--  _Engine.NewTileMap_ --}}
+{{method,type(TileMap)}}NewTileMap_
+{{param,in,type(#integer)}}columns
+{{param,in,type(#integer)}}rows
+{{param,in,type(#integer)}}tileSize
+{{param,in,type(#integer)}}layer
+
+{{!--  _Engine.NewXdata --}}
+{{method,type(Xdata)}}NewXdata
+{{param,in,type(#wstring)}}tag
+
+{{!--  _Engine.NextEvent --}}
+{{method,type(#bool)}}NextEvent
+
+{{!--  _Engine.NextEventEx --}}
+{{method,type(#bool)}}NextEventEx
+{{param,in,type(#bool)}}processMsgQue
+
+{{!--  _Engine.NextSound --}}
+{{method,type(#void),opt(2)}}NextSound
+{{param,in,type(#wstring)}}sound
+{{param,in,type(#integer)}}channel
+{{param,in,type(#integer)}}cookie
+
+{{!--  _Engine.OpenLog --}}
+{{method,type(#void),opt(0)}}OpenLog
+{{param,in,type(#wstring)}}logname
+
+{{!--  _Engine.ParseDEF --}}
+{{method,type(Xdata),opt(1)}}ParseDEF
+{{param,in,type(#wstring)}}source
+{{param,in,type(tagParsFlags)}}flags
+
+{{!--  _Engine.ParseXML --}}
+{{method,type(Xdata),opt(1)}}ParseXML
+{{param,in,type(#wstring)}}source
+{{param,in,type(tagParsFlags)}}flags
+
+{{!--  _Engine.PlaceWindowAt --}}
+{{method,type(#void)}}PlaceWindowAt
+{{param,in,type(tagPosition)}}pos
+
+{{!--  _Engine.PlaySound --}}
+{{method,type(#void),opt(1)}}PlaySound
+{{param,in,type(#wstring)}}sound
+{{param,in,type(#integer)}}channel
+{{param,in,type(#object)}}listener
+{{param,in,type(#integer)}}cookie
+
+{{!--  _Engine.PlaySoundLoop --}}
+{{method,type(#void),opt(1)}}PlaySoundLoop
+{{param,in,type(#wstring)}}sound
+{{param,in,type(#integer)}}channel
+{{param,in,type(#object)}}listener
+{{param,in,type(#integer)}}cookie
+
+{{!--  _Engine.Preload --}}
+{{method,type(#void)}}Preload
+{{param,in,type(#wstring)}}rscname
+
+{{!--  _Engine.Purge --}}
+{{method,type(#void)}}Purge
+
+{{!--  _Engine.RefreshInput --}}
+{{method,type(#integer)}}RefreshInput
+
+{{!--  _Engine.ResetMouseNotifierRange --}}
+{{method,type(#void)}}ResetMouseNotifierRange
+
+{{!--  _Engine.ResumeGameClock --}}
+{{method,type(#void)}}ResumeGameClock
+
+{{!--  _Engine.SetCollideMgr --}}
+{{method,type(#void)}}SetCollideMgr
+{{param,in,type(#object)}}mgr
+
+{{!--  _Engine.SetMouseNotifierRange --}}
+{{method,type(#void)}}SetMouseNotifierRange
+{{param,in,type(#integer)}}nearLayer
+{{param,in,type(#integer)}}farLayer
+
+{{!--  _Engine.SleepMillis --}}
+{{method,type(#void)}}SleepMillis
+{{param,in,type(#integer)}}millis
+
+{{!--  _Engine.SstDefKlass --}}
+{{method,type(#void)}}SstDefKlass
+{{param,in,type(#wstring)}}klass
+{{param,in,type(Xdata)}}info
+
+{{!--  _Engine.SstFindKlass --}}
+{{method,type(Xdata)}}SstFindKlass
+{{param,in,type(#wstring)}}klass
+
+{{!--  _Engine.SstLoad --}}
+{{method,type(#void),opt(1)}}SstLoad
+{{param,in,type(#wstring)}}source
+{{param,in,type(#integer)}}flags
+
+{{!--  _Engine.SstUndefKlass --}}
+{{method,type(#void)}}SstUndefKlass
+{{param,in,type(#wstring)}}klass
+
+{{!--  _Engine.StopSound --}}
+{{method,type(#void)}}StopSound
+{{param,in,type(#integer)}}channel
+
+{{!--  _Engine.SuspendGameClock --}}
+{{method,type(#void)}}SuspendGameClock
+
+{{!--  _Engine.Unload --}}
+{{method,type(#void)}}Unload
+{{param,in,type(#wstring)}}rscname
+
+{{!--  _Engine.UnloadAll --}}
+{{method,type(#void)}}UnloadAll
+
+{{!--  _Engine.UnloadEx --}}
+{{method,type(#void)}}UnloadEx
+{{param,in,type(#wstring)}}name
+{{param,in,type(#bool)}}removeit
+
+{{!-- _Engine attributes --}}
+{{attribute,readonly,type(#integer)}}HWND
+{{attribute,readonly,type(#integer)}}SCVersion
+{{attribute,writeonly,type(#wstring)}}SST
+{{attribute,readonly,type(_RGBFilter)}}background
+{{attribute,readwrite,type(#bool)}}channelMute
+{{attribute,readwrite,type(#integer)}}channelPan
+{{attribute,readwrite,type(#integer)}}channelVolume
+{{attribute,readwrite,type(#bool)}}clearColorBits
+{{attribute,readonly,type(_Console)}}console
+{{attribute,readwrite,type(#bool)}}enableSound
+{{attribute,readonly,type(_Executor)}}executor
+{{attribute,readonly,type(#integer)}}frameTick
+{{attribute,readonly,type(#integer)}}frameTickDelta
+{{attribute,readwrite,type(#bool)}}fullscreen
+{{attribute,readwrite,type(#bool)}}invertStereo
+{{attribute,readwrite,type(#bool)}}layerVisibility
+{{attribute,readwrite,type(#single)}}layerX
+{{attribute,readwrite,type(#single)}}layerY
+{{attribute,readwrite,type(#bool)}}logging
+{{attribute,readonly,type(#integer)}}millis
+{{attribute,readonly,type(#integer)}}mouseDifX
+{{attribute,readonly,type(#integer)}}mouseDifY
+{{attribute,readonly,type(#bool)}}mouseIn
+{{attribute,readonly,type(#bool)}}mouseLDown
+{{attribute,readwrite,type(tagMouseMode)}}mouseMode
+{{attribute,readonly,type(#bool)}}mouseRDown
+{{attribute,readwrite,type(#integer)}}mouseX
+{{attribute,readwrite,type(#integer)}}mouseY
+{{attribute,writeonly,type(#bool)}}nativeCursor
+{{attribute,readonly,type(#bool)}}needRefresh
+{{attribute,readwrite,type(#bool)}}offscreenCollide
+{{attribute,readwrite,type(#bool)}}pulseRefresh
+{{attribute,readwrite,type(#wstring)}}rscpath
+{{attribute,readwrite,type(#bool)}}safeDraw
+{{attribute,readonly,type(#integer)}}scrHeight
+{{attribute,readwrite,type(#single)}}scrOffsX
+{{attribute,readwrite,type(#single)}}scrOffsY
+{{attribute,readonly,type(#integer)}}scrWidth
+{{attribute,readwrite,type(#bool)}}showFps
+{{attribute,readwrite,type(#bool)}}softRefresh
+{{attribute,readonly,type(#bool)}}supportSound
+{{attribute,readonly,type(#bool)}}suspended
+{{attribute,readwrite,type(#wstring)}}title
+{{attribute,readwrite,type(tagVideoMode)}}vMode
+{{attribute,readwrite,type(#bool)}}vSync
+{{attribute,readwrite,type(#integer)}}volume
+{{attribute,readonly,type(#bool)}}windowIsActive
+{{attribute,readwrite,type(#integer)}}windowX
+{{attribute,readwrite,type(#integer)}}windowY
+{{attribute,readonly,type(#integer)}}wndHeight
+{{attribute,readonly,type(#integer)}}wndWidth
+
+{{!-- _Executor --}}
+{{type}}_Executor
+
+{{!--  _Executor.CreateQueue --}}
+{{method,type(_Que),opt(0)}}CreateQueue
+{{param,in,type(#integer)}}queno
+
+{{!--  _Executor.DismissQueue --}}
+{{method,type(#void)}}DismissQueue
+{{param,in,type(#integer)}}queno
+
+{{!--  _Executor.GetQueue --}}
+{{method,type(_Que)}}GetQueue
+{{param,in,type(#integer)}}queno
+
+{{!--  _Executor.Schedule --}}
+{{method,type(#integer)}}Schedule
+{{param,in,type(#object)}}command
+
+{{!--  _Executor.ScheduleEx --}}
+{{method,type(#void)}}ScheduleEx
+{{param,in,type(#integer)}}queno
+{{param,in,type(#object)}}command
+
+{{!-- _Executor attributes --}}
+
+{{!-- _Que --}}
+{{type}}_Que
+
+{{!--  _Que.Alert --}}
+{{method,type(#void)}}Alert
+
+{{!--  _Que.CheckCond --}}
+{{method,type(#bool)}}CheckCond
+{{param,in,type(#integer)}}condno
+
+{{!--  _Que.Clear --}}
+{{method,type(#void)}}Clear
+
+{{!--  _Que.Dismiss --}}
+{{method,type(#void)}}Dismiss
+
+{{!--  _Que.ExecuteNext --}}
+{{method,type(tagQueState)}}ExecuteNext
+
+{{!--  _Que.IsEmpty --}}
+{{method,type(#bool)}}IsEmpty
+
+{{!--  _Que.IsSuspended --}}
+{{method,type(#bool)}}IsSuspended
+
+{{!--  _Que.Resume --}}
+{{method,type(#void)}}Resume
+
+{{!--  _Que.Schedule --}}
+{{method,type(#void)}}Schedule
+{{param,in,type(#object)}}command
+
+{{!--  _Que.ScheduleDismiss --}}
+{{method,type(#void)}}ScheduleDismiss
+
+{{!--  _Que.ScheduleHolder --}}
+{{method,type(#void)}}ScheduleHolder
+{{param,in,type(#object)}}holder
+
+{{!--  _Que.ScheduleSleep --}}
+{{method,type(#void)}}ScheduleSleep
+{{param,in,type(#integer)}}millis
+
+{{!--  _Que.SetCondVal --}}
+{{method,type(#void)}}SetCondVal
+{{param,in,type(#integer)}}condno
+{{param,in,type(#bool)}}val
+
+{{!--  _Que.Suspend --}}
+{{method,type(#void)}}Suspend
+
+{{!-- _Que attributes --}}
+{{attribute,readonly,type(#integer)}}cmdtime
+{{attribute,readonly,type(#integer)}}delta
+{{attribute,readonly,type(#integer)}}millis
+{{attribute,readonly,type(#integer)}}queno
+
+{{!-- _SpritesEnumerator --}}
+{{type}}_SpritesEnumerator
+
+{{!--  _SpritesEnumerator.Get --}}
+{{method,type(Sprite)}}Get
+
+{{!--  _SpritesEnumerator.Next --}}
+{{method,type(#bool)}}Next
+
+{{!--  _SpritesEnumerator.Reset --}}
+{{method,type(#bool)}}Reset
+
+{{!-- _SpritesEnumerator attributes --}}
+{{attribute,readonly,type(#integer)}}count
+{{attribute,readonly,type(Sprite)}}value
+
+{{!-- TileMap --}}
+{{type}}TileMap
+
+{{!--  TileMap.AddTilesFrom --}}
+{{method,type(#integer),opt(1)}}AddTilesFrom
+{{param,in,type(#wstring)}}klass
+{{param,in,type(#integer)}}frno
+{{param,in,type(#integer)}}count
+
+{{!--  TileMap.Clear --}}
+{{method,type(#void)}}Clear
+
+{{!--  TileMap.Dispose --}}
+{{method,type(#void)}}Dispose
+
+{{!--  TileMap.GetTile --}}
+{{method,type(#integer)}}GetTile
+{{param,in,type(#integer)}}col
+{{param,in,type(#integer)}}row
+
+{{!--  TileMap.GetTileByIdx --}}
+{{method,type(#integer)}}GetTileByIdx
+{{param,in,type(#integer)}}idx
+
+{{!--  TileMap.Purge --}}
+{{method,type(#void)}}Purge
+
+{{!--  TileMap.SetTile --}}
+{{method,type(#void)}}SetTile
+{{param,in,type(#integer)}}col
+{{param,in,type(#integer)}}row
+{{param,in,type(#integer)}}tileno
+
+{{!--  TileMap.SetTileByIdx --}}
+{{method,type(#void)}}SetTileByIdx
+{{param,in,type(#integer)}}idx
+{{param,in,type(#integer)}}tileno
+
+{{!-- TileMap attributes --}}
+{{attribute,readonly,type(#bool)}}alive
+{{attribute,readonly,type(_RGBFilter)}}cfilt
+{{attribute,readonly,type(#integer)}}cols
+{{attribute,readwrite,type(#integer)}}layer
+{{attribute,readwrite,type(#single)}}luminance
+{{attribute,readonly,type(#wstring)}}name
+{{attribute,readonly,type(#integer)}}rows
+{{attribute,readwrite,type(tagStyle)}}style
+{{attribute,readwrite,type(#integer)}}sublayer
+{{attribute,readwrite,type(#integer)}}tileHeight
+{{attribute,readwrite,type(#integer)}}tileSize
+{{attribute,readwrite,type(#integer)}}tileWidth
+{{attribute,readwrite,type(#single)}}transparency
+{{attribute,readwrite,type(#bool)}}visible
+{{attribute,readwrite,type(#single)}}x
+{{attribute,readwrite,type(#bool)}}xCycled
+{{attribute,readwrite,type(#single)}}xScale
+{{attribute,writeonly,type(#single)}}xyScale
+{{attribute,readwrite,type(#single)}}y
+{{attribute,readwrite,type(#bool)}}yCycled
+{{attribute,readwrite,type(#single)}}yScale
+
+{{!-- Particles --}}
+{{type}}Particles
+
+{{!--  Particles.DispatchSubImpl --}}
+{{method,type(#void)}}DispatchSubImpl
+{{param,in,type(#object)}}subimpl
+
+{{!--  Particles.Dispose --}}
+{{method,type(#void)}}Dispose
+
+{{!--  Particles.Reset --}}
+{{method,type(#void)}}Reset
+
+{{!--  Particles.Resume --}}
+{{method,type(#void)}}Resume
+
+{{!--  Particles.SetEmissionPeriod --}}
+{{method,type(#void),opt(1)}}SetEmissionPeriod
+{{param,in,type(#integer)}}min
+{{param,in,type(#integer)}}max
+{{param,in,type(#integer)}}emitter
+
+{{!--  Particles.SetEmissionQuantity --}}
+{{method,type(#void),opt(1)}}SetEmissionQuantity
+{{param,in,type(#integer)}}min
+{{param,in,type(#integer)}}max
+{{param,in,type(#integer)}}emitter
+
+{{!--  Particles.SetEmissionTime --}}
+{{method,type(#void),opt(1)}}SetEmissionTime
+{{param,in,type(#integer)}}min
+{{param,in,type(#integer)}}max
+{{param,in,type(#integer)}}emitter
+
+{{!--  Particles.SetEmitterCf --}}
+{{method,type(#void),opt(3)}}SetEmitterCf
+{{param,in,type(#integer)}}cfno
+{{param,in,type(#single)}}val0
+{{param,in,type(#single)}}val1
+{{param,in,type(#integer)}}emitter
+
+{{!--  Particles.SetProgram --}}
+{{method,type(#void),opt(1)}}SetProgram
+{{param,in,type(#wstring)}}program
+{{param,in,type(#integer)}}emitter
+
+{{!--  Particles.Simulate --}}
+{{method,type(#void),opt(1)}}Simulate
+{{param,in,type(#integer)}}millis
+{{param,in,type(#integer)}}fps
+
+{{!--  Particles.StartEmission --}}
+{{method,type(#void),opt(0)}}StartEmission
+{{param,in,type(#object)}}litener
+{{param,in,type(#integer)}}cookie
+
+{{!--  Particles.StopEmission --}}
+{{method,type(#void),opt(0)}}StopEmission
+{{param,in,type(#integer)}}timeout
+
+{{!--  Particles.Suspend --}}
+{{method,type(#void)}}Suspend
+
+{{!-- Particles attributes --}}
+{{attribute,readonly,type(#bool)}}alive
+{{attribute,readwrite,type(#single)}}angle
+{{attribute,readwrite,type(#bool)}}autodispose
+{{attribute,readonly,type(_RGBFilter)}}cfilt
+{{attribute,readwrite,type(#integer)}}count
+{{attribute,readwrite,type(#bool)}}cycled
+{{attribute,readwrite,type(#object)}}dispatcher
+{{attribute,readwrite,type(#integer)}}emCount
+{{attribute,readonly,type(_Hierarchy)}}hierarchy
+{{attribute,readonly,type(#wstring)}}klass
+{{attribute,readwrite,type(#integer)}}layer
+{{attribute,readwrite,type(#integer)}}lifeTime
+{{attribute,readwrite,type(#single)}}luminance
+{{attribute,readonly,type(#wstring)}}name
+{{attribute,readwrite,type(Sprite)}}parent
+{{attribute,readwrite,type(#integer)}}sublayer
+{{attribute,readwrite,type(#single)}}transparency
+{{attribute,readwrite,type(#bool)}}visible
+{{attribute,readwrite,type(#single)}}x
+{{attribute,readwrite,type(#single)}}xScale
+{{attribute,writeonly,type(#single)}}xyScale
+{{attribute,readwrite,type(#single)}}y
+{{attribute,readwrite,type(#single)}}yScale
+
+{{!-- SpritesList --}}
+{{type}}SpritesList
+
+{{!--  SpritesList.Add --}}
+{{method,type(#void)}}Add
+{{param,in,type(Sprite)}}pI
+
+{{!--  SpritesList.At --}}
+{{method,type(Sprite)}}At
+{{param,in,type(#integer)}}no
+
+{{!--  SpritesList.AtBegin --}}
+{{method,type(Sprite)}}AtBegin
+
+{{!--  SpritesList.AtEnd --}}
+{{method,type(Sprite)}}AtEnd
+
+{{!--  SpritesList.Find --}}
+{{method,type(#bool)}}Find
+{{param,in,type(Sprite)}}pI
+
+{{!--  SpritesList.Get --}}
+{{method,type(Sprite)}}Get
+
+{{!--  SpritesList.IsBegin --}}
+{{method,type(#bool)}}IsBegin
+{{param,in,type(Sprite)}}sprite
+
+{{!--  SpritesList.IsEnd --}}
+{{method,type(#bool)}}IsEnd
+{{param,in,type(Sprite)}}sprite
+
+{{!--  SpritesList.Next --}}
+{{method,type(#bool)}}Next
+
+{{!--  SpritesList.Purge --}}
+{{method,type(#void)}}Purge
+
+{{!--  SpritesList.Remove --}}
+{{method,type(#void)}}Remove
+
+{{!--  SpritesList.Reset --}}
+{{method,type(#bool)}}Reset
+
+{{!-- SpritesList attributes --}}
+{{attribute,readonly,type(#integer)}}count
+
+{{!-- Randomizer --}}
+{{type}}Randomizer
+
+{{!--  Randomizer.Next --}}
+{{method,type(#single)}}Next
+
+{{!--  Randomizer.Reset --}}
+{{method,type(#void)}}Reset
+{{param,in,type(#integer)}}cookie
+
+{{!-- Randomizer attributes --}}
+
+{{!-- _ParticlesEnumerator --}}
+{{type}}_ParticlesEnumerator
+
+{{!--  _ParticlesEnumerator.Get --}}
+{{method,type(Particles)}}Get
+
+{{!--  _ParticlesEnumerator.Next --}}
+{{method,type(#bool)}}Next
+
+{{!--  _ParticlesEnumerator.Reset --}}
+{{method,type(#bool)}}Reset
+
+{{!-- _ParticlesEnumerator attributes --}}
+{{attribute,readonly,type(#integer)}}count
+{{attribute,readonly,type(Particles)}}value
+
+{{!-- _Console --}}
+{{type}}_Console
+
+{{!--  _Console.Clear --}}
+{{method,type(#void)}}Clear
+
+{{!--  _Console.Print --}}
+{{method,type(#void)}}Print
+{{param,in,type(#wstring)}}text
+
+{{!--  _Console.Println --}}
+{{method,type(#void)}}Println
+{{param,in,type(#wstring)}}text
+
+{{!--  _Console.ProcessInput --}}
+{{method,type(#bool)}}ProcessInput
+
+{{!-- _Console attributes --}}
+{{attribute,readwrite,type(#wstring)}}cmdline
+{{attribute,readwrite,type(#integer)}}lines
+{{attribute,readwrite,type(#integer)}}maxlines
+{{attribute,readwrite,type(#bool)}}transparent
+{{attribute,readwrite,type(#bool)}}visible
+
+{{!-- ISpriteGrid --}}
+{{type}}ISpriteGrid
+
+{{!--  ISpriteGrid.DifPoint --}}
+{{method,type(#void),opt(5)}}DifPoint
+{{param,in,type(#integer)}}col
+{{param,in,type(#integer)}}row
+{{param,in,type(#integer)}}color
+{{param,in,type(#single)}}x
+{{param,in,type(#single)}}y
+{{param,in,type(#integer)}}width
+{{param,in,type(#integer)}}rows
+
+{{!--  ISpriteGrid.GetColor --}}
+{{method,type(#integer)}}GetColor
+{{param,in,type(#integer)}}col
+{{param,in,type(#integer)}}row
+
+{{!--  ISpriteGrid.GetX --}}
+{{method,type(#single)}}GetX
+{{param,in,type(#integer)}}col
+{{param,in,type(#integer)}}row
+
+{{!--  ISpriteGrid.GetY --}}
+{{method,type(#single)}}GetY
+{{param,in,type(#integer)}}col
+{{param,in,type(#integer)}}row
+
+{{!--  ISpriteGrid.SetColor --}}
+{{method,type(#void)}}SetColor
+{{param,in,type(#integer)}}col
+{{param,in,type(#integer)}}row
+{{param,in,type(#integer)}}color
+
+{{!--  ISpriteGrid.SetPoint --}}
+{{method,type(#void),opt(5)}}SetPoint
+{{param,in,type(#integer)}}col
+{{param,in,type(#integer)}}row
+{{param,in,type(#integer)}}color
+{{param,in,type(#single)}}x
+{{param,in,type(#single)}}y
+{{param,in,type(#integer)}}width
+{{param,in,type(#integer)}}rows
+
+{{!--  ISpriteGrid.SetXY --}}
+{{method,type(#void)}}SetXY
+{{param,in,type(#integer)}}col
+{{param,in,type(#integer)}}row
+{{param,in,type(#single)}}x
+{{param,in,type(#single)}}y
+
+{{!-- ISpriteGrid attributes --}}
+{{attribute,readwrite,type(tagBlendMode)}}blendMode
+{{attribute,readwrite,type(#bool)}}colorized
+{{attribute,readwrite,type(#integer)}}cols
+{{attribute,readwrite,type(#integer)}}rows
+

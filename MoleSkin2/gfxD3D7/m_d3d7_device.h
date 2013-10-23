@@ -38,7 +38,7 @@ USING_MSKINSPACE;
 #include <d3d.h>
 #include "m_d3d7_debug.h"
 
-#include "../../../Media/lib.ddraw/ddraw_inst.h"
+#include "../../Media/lib.ddraw/ddraw_inst.h"
 
 enum {
   D3D7_ITEX_RGBA8 = 0,

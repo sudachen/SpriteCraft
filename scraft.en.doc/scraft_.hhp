@@ -1,0 +1,10 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=scraft.chm
+Contents file=scraft_.hhc
+Display compile progress=No
+Index file=scraft_.hhk
+Language=0x419
+
+
+[INFOTYPES]

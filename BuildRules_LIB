@@ -3,7 +3,7 @@ m4_define(`_RUNTIME_','static')
 COMPILER: mscc
 CPPFLAGS: -D_TEGGONOTFFCLSLIB
 COMMON_CCFLAGS: \
-  COMMON_CCFLAGS: -IPython2.7/include -IMoleSkin2\
+  -IPython2.7/include -IMoleSkin2 \
   -DWIN32 -D_WINDOWS -D_WIN32_WINNT="0x0500" -IClasses \
 	m4_ifelse("_BUILD_RELEASE_","release",
 	  m4_ifelse(_RUNTIME_,'static',`-MT',`-MD'),

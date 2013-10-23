@@ -1,0 +1,119 @@
+<head>
+<style>
+table.attr-tbl td { valign: top; border-bottom: dashed #ddd 1px; border-left: dashed #ddd 1px; padding: 5 5 5 5; margin: 0 0 0 0; }
+table.enum-tbl td { valign: top; border-bottom: dashed #ddd 1px; border-left: dashed #ddd 1px; padding: 5 5 5 5; margin: 0 0 0 0; }
+table.idx-tbl td { valign: center; border-bottom: dashed #ddd 1px; border-left: solid #ddd 1px; }
+td.enum-tbl-h { border-bottom: dashed #000 1px; border-left: dashed #000 1px; padding: 5 5 5 5; margin: 0 0 0 0;  color: #008080; font-size: 110%; background-color: #eeffee }
+td.attr-tbl-h { font-size: 1px; padding: 0 0 0 0; border-bottom: dashed #000 1px; }
+.accs-green  { color: #00aa00; }
+.accs-red    { color: #aa0000; }
+.accs-yellow { color: #aaaa00; }
+a.idx-tbl { text-decoration: none; color: #000 }
+a.idx-tbl:hover { text-decoration: underline; color: #300 }
+.type { text-decoration: none; color: #555 }
+a.type { text-decoration: none; color: #55a }
+a.type:hover { text-decoration: underline; color: #300 }
+.doc-txt { color: #553355; font-style: italic; margin-left: 30px; }
+</style>
+</head>
+<h2>scraft.Sprite</h2>
+<table cellspacing=0 cellpadding=3 border=0 class='attr-tbl'>
+<tr><td colspan=3 class='attr-tbl-h'>&nbsp;</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='alive'>alive</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='angle'>angle</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='autodispose'>autodispose</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><a class='type' href='scraft._RGBFilter.fr.htm' target='right'><i>_RGBFilter</i></a></td><td><a name='cfilt'>cfilt</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='collide'>collide</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='cookie'>cookie</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='degree'>degree</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Any</i></td><td><a name='dispatcher'>dispatcher</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='frcount'>frcount</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='frno'>frno</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='height'>height</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><a class='type' href='scraft._Hierarchy.fr.htm' target='right'><i>_Hierarchy</i></a></td><td><a name='hierarchy'>hierarchy</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><a class='type' href='scraft.constants.htm#tagHotspot' target='right'><i>tagHotspot</i></a></td><td><a name='hotspot'>hotspot</a></td><td><i class='accs-yellow'>writeonly</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='item'>item</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Unicode</i></td><td><a name='klass'>klass</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='layer'>layer</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='luminance'>luminance</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><a class='type' href='scraft._LwsArray.fr.htm' target='right'><i>_LwsArray</i></a></td><td><a name='lwsArray'>lwsArray</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='mouseOver'>mouseOver</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Unicode</i></td><td><a name='name'>name</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='outOfScreen'>outOfScreen</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='paralax'>paralax</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><a class='type' href='scraft.Sprite.fr.htm' target='right'><i>Sprite</i></a></td><td><a name='parent'>parent</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><a class='type' href='scraft._Primitive.fr.htm' target='right'><i>_Primitive</i></a></td><td><a name='primitive'>primitive</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='random'>random</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='scrAngle'>scrAngle</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='scrX'>scrX</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='scrY'>scrY</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='sprBottom'>sprBottom</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='sprLeft'>sprLeft</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='sprRight'>sprRight</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='sprTop'>sprTop</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><a class='type' href='scraft.constants.htm#tagStyle' target='right'><i>tagStyle</i></a></td><td><a name='style'>style</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='sublayer'>sublayer</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><a class='type' href='scraft.ISurface.fr.htm' target='right'><i>ISurface</i></a></td><td><a name='surface'>surface</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Integer</i></td><td><a name='symheight'>symheight</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Unicode</i></td><td><a name='text'>text</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><a class='type' href='scraft._TextView.fr.htm' target='right'><i>_TextView</i></a></td><td><a name='textview'>textview</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='transparency'>transparency</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='visible'>visible</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='width'>width</a></td><td><i class='accs-red'>readonly</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='x'>x</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='xFlip'>xFlip</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='xHotspot'>xHotspot</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='xScale'>xScale</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='xSize'>xSize</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='xyScale'>xyScale</a></td><td><i class='accs-yellow'>writeonly</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='y'>y</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Boolean</i></td><td><a name='yFlip'>yFlip</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='yHotspot'>yHotspot</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='yScale'>yScale</a></td><td><i class='accs-green'>readwrite</td></tr>
+<tr><td><i class='type' >Float</i></td><td><a name='ySize'>ySize</a></td><td><i class='accs-green'>readwrite</td></tr>
+</table>
+<p></p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Float</i> <a name='AngleWith'>AngleWith</a>( <a class='type' href='scraft.Sprite.fr.htm' target='right'><i>Sprite</i></a> sprite )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='AnimateLoop'>AnimateLoop</a>( <i class='type' >Float</i> fps[, <i class='type' >Integer</i> startFrno, <i class='type' >Integer</i> stopFrno, <i class='type' >Any</i> listener, <i class='type' >Integer</i> cookie] )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='AnimateOnce'>AnimateOnce</a>( <i class='type' >Float</i> fps[, <i class='type' >Integer</i> startFrno, <i class='type' >Integer</i> stopFrno, <i class='type' >Any</i> listener, <i class='type' >Integer</i> cookie] )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='AttachChild'>AttachChild</a>( <i class='type' >Unicode</i> key, <a class='type' href='scraft.Sprite.fr.htm' target='right'><i>Sprite</i></a> child )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='AttachChildEx'>AttachChildEx</a>( <i class='type' >Unicode</i> key, <i class='type' >Any</i> child )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='ChangeKlassTo'>ChangeKlassTo</a>( <i class='type' >Unicode</i> klass )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='Contains'>Contains</a>( <i class='type' >Float</i> x, <i class='type' >Float</i> y )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='DispatchSubImpl'>DispatchSubImpl</a>( <i class='type' >Any</i> subimpl )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='Dispose'>Dispose</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Float</i> <a name='Distance'>Distance</a>( <a class='type' href='scraft.Sprite.fr.htm' target='right'><i>Sprite</i></a> sprite )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='Equal'>Equal</a>( <i class='type' >Any</i> sprite )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><a class='type' href='scraft.Sprite.fr.htm' target='right'><i>Sprite</i></a> <a name='GetChild'>GetChild</a>( <i class='type' >Unicode</i> key )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Any</i> <a name='GetChildEx'>GetChildEx</a>( <i class='type' >Unicode</i> key )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >Boolean</i> <a name='Hit'>Hit</a>( <a class='type' href='scraft.Sprite.fr.htm' target='right'><i>Sprite</i></a> sprite )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='IncAngle'>IncAngle</a>( <i class='type' >Float</i> val )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='IncX'>IncX</a>( <i class='type' >Float</i> val )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='IncY'>IncY</a>( <i class='type' >Float</i> val )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='Randomize'>Randomize</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='ScreenToSprite'>ScreenToSprite</a>( <i class='type' >Float</i> x, <i class='type' >Float</i> y )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='SetFrameOfKlass'>SetFrameOfKlass</a>( <i class='type' >Integer</i> frno, <i class='type' >Unicode</i> klass )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='SpriteToScreen'>SpriteToScreen</a>( <i class='type' >Float</i> x, <i class='type' >Float</i> y )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
+<table cellpadding=0 cellspacing=0><tr><td style='border: solid #eee 1px' ><i class='type' >None</i> <a name='StopAnimation'>StopAnimation</a>( )</td></tr></table>
+<p class='doc-txt'>undocumented</p>
