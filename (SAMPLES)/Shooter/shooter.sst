@@ -1,0 +1,112 @@
+#!SST
+
+sprite player_warbot {
+bitmap  = sprites/player_warbot.png
+type    = blend
+layout  = 3x1
+collide = bitmask
+}
+
+sprite player_warbot_trak {
+bitmap  = sprites/trak.png
+type    = blend
+layout  = 1x1
+hotspot = 7,0
+}
+
+sprite player_warbot_plasma {
+bitmap  = sprites/player_plasma.png
+type    = blend
+hotspot = 8,8
+collide = bitmask
+additive = yes
+}
+
+sprite player_warbot_shot {
+bitmap  = sprites/shot.png
+type    = blend
+layout  = 4x4
+hotspot = 16,16
+additive = yes
+}
+
+sprite asteroid {
+bitmap  = sprites/asteroid.png
+#type   = solid
+type    = colorkey
+keyrgb  = ff00ff
+layout  = 5x4
+hotspot = center
+collide = bitmask
+}
+
+sprite asteroid1 {
+bitmap  = sprites/asteroid.png
+#type   = solid
+#type   = colorkey
+type    = blend
+keyrgb  = ff00ff
+layout  = 5x4
+hotspot = center
+collide = bitmask
+}
+
+sprite stars0 {
+bitmap  = sprites/stars0.png
+type    = blend
+additive= yes
+layeout = 1x1
+}
+
+sprite stars1 {
+bitmap  = sprites/stars1.png
+type    = blend
+additive= yes
+}
+
+sprite stars2 {
+bitmap  = sprites/stars2.png
+type    = blend
+additive= yes
+}
+
+sprite explosive {
+bitmap  = sprites/explx.png
+type    = blend
+additive= yes
+}
+
+tilemap tmap_stars0 {
+tiles = stars0,stars1,stars2
+#tiles = asteroid1,asteroid1,asteroid1
+rows = 3
+cols = 3
+size = 128
+xcycled = yes
+ycycled = yes
+0=210
+1=202 
+2=010
+}
+
+tilemap tmap_stars1 {
+tiles = stars0,stars1,stars2
+rows = 3
+cols = 3
+size = 128
+xcycled = yes
+ycycled = yes
+0=210 
+1=102 
+2=021
+}
+
+sound player_fire_sound {
+sample = sounds/plshot.wav
+type = static
+}
+
+sound explode_sound {
+sample = sounds/explode.ogg
+type = static
+}

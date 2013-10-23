@@ -1,0 +1,54 @@
+
+m4_define(`_RUNTIME_','static')
+COMPILER: mscc
+CPPFLAGS: -D_TEGGONOTFFCLSLIB
+COMMON_CCFLAGS: \
+  COMMON_CCFLAGS: -IPython2.7/include \
+  -DWIN32 -D_WINDOWS -D_WIN32_WINNT="0x0500" -IClasses \
+	m4_ifelse("_BUILD_RELEASE_","release",
+	  m4_ifelse(_RUNTIME_,'static',`-MT',`-MD'),
+	  m4_ifelse(_RUNTIME_,'static',`-MTd',`-MDd')) \
+	m4_ifelse("_BUILD_RELEASE_","release",
+    `-EHs-c- -GR- -Ox -Os -Oi -Ob2 -Oy- -Gy -GF',
+		`-D_DEBUG -Od -Zi') \
+
+m4_define( `SCRAFTEDLL',m4_format(`ScraftE%s-%s.dll',_BUILD_NAME_,_BUILD_RELEASE_))
+m4_define( `SCRAFTEPDB',m4_format(`ScraftE%s-%s.pdb',_BUILD_NAME_,_BUILD_RELEASE_))
+m4_define( `TFFCLS',m4_format(`Classes\tffcls%s-%s.lib',_BUILD_NAME_,_BUILD_RELEASE_))
+m4_define( `TFFMEDIA',m4_format(`Media\tffmedia%s-%s.lib',_BUILD_NAME_,_BUILD_RELEASE_))
+m4_define( `SCRAFTE',m4_format(`ScraftE%s-%s.lib',_BUILD_NAME_,_BUILD_RELEASE_))
+m4_define( `SCRAFTEOUTDIR', m4_format(~temp~\ScraftE_DLL-%s,_BUILD_RELEASE_))
+
+LDFLAGS: -dll -def:ScraftE.def \
+  -implib:"SCRAFTEOUTDIR\imports.lib" \
+  -incremental:no -release \
+  -debug -pdb:"SCRAFTEPDB" \
+  -map -opt:ref -opt:icf
+
+OUTDIR: "SCRAFTEOUTDIR"
+
+:; rc_make.py
+;TFFCLS;| -d Classes
+;TFFMEDIA;| -d Media
+;SCRAFTE;| -f BuildRules_LIB
+
+#ENV.PATH:    _CL_PATH`%PATH%'
+ENV.INCLUDE: `DX\include';`%INCLUDE%'
+ENV.LIB:     `DX\lib';`%LIB%'
+
+;SpriteCraft.SRC/spritecraft.cpp
+#;lib.kaa/com_python.cpp
+#;lib.kaa/py_external_module.cpp
+;python_over_com/py_external_module.cpp: python_over_com/kaa.h, python_over_com/python_over_com.h, python_over_com/python_over_com_intern.h
+;python_over_com/python_dispatcher.cpp: python_over_com/kaa.h, python_over_com/python_over_com.h, python_over_com/python_over_com_intern.h
+;python_over_com/python_over_com.cpp: python_over_com/kaa.h, python_over_com/python_over_com.h, python_over_com/python_over_com_intern.h
+;SpriteCraft.SRC/py_initscraft.cpp
+;ScraftE.rc:ScraftE.tlb
+
+LIBRARIES: advapi32.lib oleaut32.lib ole32.lib user32.lib kernel32.lib \
+           dxguid.lib ddraw.lib TFFCLS TFFMEDIA
+
+LINK: SCRAFTEDLL, DLL
+m4_ifelse("_BUILD_RELEASE_","release",
+    `:scraft.dll;copy /y SCRAFTEDLL scraft.dll >nul',
+    `:scraft_d.dll;copy /y SCRAFTEDLL scraft_d.dll >nul')

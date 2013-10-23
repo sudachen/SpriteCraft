@@ -1,0 +1,53 @@
+
+m4_define(`_RUNTIME_','static')
+COMPILER: mscc
+LD_FLAGS:
+CPPFLAGS: -D_TEGGONOTFFCLSLIB
+COMMON_CCFLAGS: \
+  -DWIN32 -D_WINDOWS -D_WIN32_WINNT="0x0500" \
+	m4_ifelse("_BUILD_RELEASE_","release",
+	  m4_ifelse(_RUNTIME_,'static',`-MT',`-MD'),
+	  m4_ifelse(_RUNTIME_,'static',`-MTd',`-MDd')) \
+	m4_ifelse("_BUILD_RELEASE_","release",
+    `-EHs-c- -GR- -Ox -Os -Oi -Ob2 -Oy- -Gy -GF',
+		`-D_DEBUG -Od -Zi') \
+
+m4_ifelse("_BUILD_NAME_","",`',`m4_define(`_BUILD_VC7_')')
+m4_ifdef(`_BUILD_VC7_',`m4_define(`_VCPATH_',`D:\Visus\VS2003TK')',`')
+m4_define(`_BUILD_VC7_B_',m4_ifdef(`_VCPATH_',_VCPATH_\bin;,`'))
+m4_define(`_BUILD_VC7_I_',m4_ifdef(`_VCPATH_',_VCPATH_\include;,`'))
+m4_define(`_BUILD_VC7_L_',m4_ifdef(`_VCPATH_',_VCPATH_\lib;,`'))
+m4_define(`_PSDKPATH_',`D:\Visus\PSDK2002AUG')
+m4_define(`_DX7PATH_',`D:\Visus\DxSDK7a')
+ENV.PATH:    _BUILD_VC7_B_`%PATH%'
+ENV.INCLUDE: _DX7PATH_\include;_PSDKPATH_\include;_BUILD_VC7_I_`%INCLUDE%'
+ENV.LIB:     _DX7PATH_\include;_PSDKPATH_\lib;_BUILD_VC7_L_`%LIB%'
+
+m4_define( `TFFCLS', m4_format(`tffcls%s-%s.lib',_BUILD_NAME_,_BUILD_RELEASE_))
+OUTDIR: m4_format("..\~temp~\tffcls%s-%s",_BUILD_NAME_,_BUILD_RELEASE_)
+
+;Classes.SRC/_adler32.cpp : Classes.SRC/_adler32.h
+;Classes.SRC/_codecop.cpp : Classes.SRC/_codecop.inl
+;Classes.SRC/_crc32.cpp : Classes.SRC/_crc32.h
+;Classes.SRC/_specific.cpp : Classes.SRC/_specific.inl
+;Classes.SRC/collection.cpp : Classes.SRC/collection.inl
+;Classes.SRC/com_dynamic.cpp : Classes.SRC/com_dynamic.inl,Classes.SRC/com_generic.h
+;Classes.SRC/com_register.cpp : Classes.SRC/com_register.inl,Classes.SRC/com_generic.h
+;Classes.SRC/format.cpp : Classes.SRC/format.h
+;Classes.SRC/genericio.cpp : Classes.SRC/genericio.inl
+;Classes.SRC/hinstance.cpp : Classes.SRC/hinstance.h
+;Classes.SRC/keylist.cpp : Classes.SRC/keylist.inl
+;Classes.SRC/logger.cpp : Classes.SRC/logger.inl
+;Classes.SRC/lz+.cpp : Classes.SRC/lz+.inl
+;Classes.SRC/lz+decoder.cpp : Classes.SRC/lz+decoder.inl
+;Classes.SRC/messages.cpp : Classes.SRC/messages.inl
+;Classes.SRC/newdes.cpp : Classes.SRC/newdes.inl
+;Classes.SRC/saxparser.cpp : Classes.SRC/saxparser.inl,Classes.SRC/saxparser.h,Classes.SRC/streams_u2.inl
+;Classes.SRC/defparser.cpp : Classes.SRC/defparser.inl,Classes.SRC/saxparser.h,Classes.SRC/defparser.h,Classes.SRC/xdom.h
+;Classes.SRC/streams.cpp : Classes.SRC/streams.inl
+;Classes.SRC/string.cpp : Classes.SRC/string.inl,Classes.SRC/string.h
+;Classes.SRC/symboltable.cpp : Classes.SRC/symboltable.inl
+;Classes.SRC/sysutil.cpp : Classes.SRC/sysutil.h
+;Classes.SRC/xdom.cpp : Classes.SRC/xdom.inl,Classes.SRC/xdom.h,Classes.SRC/saxparser.h
+
+LINK: TFFCLS, LIB

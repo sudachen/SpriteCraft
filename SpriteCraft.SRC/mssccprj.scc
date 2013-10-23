@@ -1,0 +1,9 @@
+SCC = This is a Source Code Control file
+
+[SpriteCraft.SRC.dsp]
+SCC_Aux_Path = "Y:\MY.SOURCES\SOURCESAFE1"
+SCC_Project_Name = "$/spritecraft.4/spritecraft.src", MXAAAAAA
+
+[spritecraft.SRC.vcproj]
+SCC_Aux_Path = "Y:\MY.SOURCES\SOURCESAFE1"
+SCC_Project_Name = "$/spritecraft.4/spritecraft.src", MXAAAAAA

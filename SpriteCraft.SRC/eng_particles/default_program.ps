@@ -1,0 +1,61 @@
+;!PSP,1.0
+
+; $Id: ps_default.ps 681 2006-06-12 10:49:03Z hedgehog $
+; Copyright (c) Teggo, 2003-2008, Alexey Sudachen
+; default particles program
+
+; em0  source x,y
+; em1  angle
+; em2  trans
+; em3  frno
+; em4  speed
+; em5  direct
+; em6  area
+; em7  scale
+; em8  inc angle
+; em9  inc trans
+; em10 inc scale
+
+; ---------------------
+; setup particle
+
+mov   em0,x           ; using source point
+rnd   -3.14, 3.14, a  ; randomize direction
+rot   (0;1),a,a0      ; 
+rnd   em6.0,em6.1,a   ; randomize area
+mul   a0,a,a0         ; 
+add   x,a0,x          ; set particel x 
+
+; randomize particle attributes
+rnd   em1.0,em1.1,angle 
+rnd   em2.0,em2.1,trans
+rnd   em3.0,em3.1,frno
+rnd   em7.0,em7.1,scale
+
+; randomize particle speed
+rnd   em4.0,em4.1,v.1 
+neg   v.1,v.1
+rnd   em5.0,em5.1,a
+rot   v,a,v
+
+; mark particle as independed
+indep
+
+; --------------------
+; update code follow
+
+updateonly 
+
+mul   v,dt,a0         ; a0 = dx
+add   x,a0,x          ; x = x + dx
+
+; update particle attributes
+rnd   em9.0,em9.1,a 
+mul   a,dt,a
+add   trans,a,trans 
+rnd   em10.0,em10.1,a 
+mul   a,dt,a
+add   scale,a,scale
+rnd   em8.0,em8.1,a
+mul   a,dt,a
+add   angle,a,angle

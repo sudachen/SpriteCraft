@@ -1,0 +1,159 @@
+
+m4_define(`_RUNTIME_','static')
+COMPILER: mscc
+CPPFLAGS: -D_TEGGONOTFFCLSLIB
+COMMON_CCFLAGS: \
+  COMMON_CCFLAGS: -IPython2.7/include -IMoleSkin2\
+  -DWIN32 -D_WINDOWS -D_WIN32_WINNT="0x0500" -IClasses \
+	m4_ifelse("_BUILD_RELEASE_","release",
+	  m4_ifelse(_RUNTIME_,'static',`-MT',`-MD'),
+	  m4_ifelse(_RUNTIME_,'static',`-MTd',`-MDd')) \
+	m4_ifelse("_BUILD_RELEASE_","release",
+    `-EHs-c- -GR- -Ox -Os -Oi -Ob2 -Oy- -Gy -GF',
+		`-D_DEBUG -Od -Zi') \
+
+
+m4_define(`_DX_PATH_',`DX')
+
+#ENV.PATH:    _CL_PATH`%PATH%'
+ENV.INCLUDE: `DX\include';`%INCLUDE%'
+ENV.LIB:     `DX\lib';`%LIB%'
+
+OUTDIR: m4_format("~temp~\ScraftE_LIB-%s",_BUILD_RELEASE_)
+
+;-ScraftAPI/spritecraft.h:SpriteCraft.SRC/spritecraft.idl;midl -tlb ScraftE.tlb -h ScraftAPI/spritecraft.h SpriteCraft.SRC/spritecraft.idl
+;SpriteCraft.SRC/eng_particles/default_ps.cpp
+;SpriteCraft.SRC/eng_particles/default_ps_compiler.cpp
+;SpriteCraft.SRC/eng_particles/default_ps_processor.cpp
+;SpriteCraft.SRC/dsscfilter.cpp
+;SpriteCraft.SRC/ps_default.c:SpriteCraft.SRC/ps_default.ps;\
+    mbin2c SpriteCraft.SRC\ps_default.ps particles_default_program > SpriteCraft.SRC\ps_default.c
+;SpriteCraft.SRC/AnimationMgr.cpp
+;SpriteCraft.SRC/CollideMgr.cpp
+;SpriteCraft.SRC/console.cpp
+;SpriteCraft.SRC/dispsubimpl.cpp
+;SpriteCraft.SRC/Engine.cpp
+;SpriteCraft.SRC/Engine_DInput.cpp
+;SpriteCraft.SRC/Engine_globals.cpp
+;SpriteCraft.SRC/Engine_input.cpp
+;SpriteCraft.SRC/Engine_timer.cpp
+#;SpriteCraft.SRC/epython.cpp
+#;SpriteCraft.SRC/PyDispatcher.cpp
+;SpriteCraft.SRC/GenericExecutor.cpp
+;SpriteCraft.SRC/loginfo.cpp
+#;SpriteCraft.SRC/logout.cpp
+;SpriteCraft.SRC/MListenMgr.cpp
+;SpriteCraft.SRC/modulename.cpp
+;SpriteCraft.SRC/ObjList.cpp
+;SpriteCraft.SRC/Particles.cpp
+;SpriteCraft.SRC/ParticlesEnumerator.cpp
+;SpriteCraft.SRC/Randomizer.cpp
+;SpriteCraft.SRC/RBGFilter.cpp
+;SpriteCraft.SRC/scerror.cpp
+#;SpriteCraft.SRC/scXMLite.cpp
+#;SpriteCraft.SRC/sharedcode.cpp
+;SpriteCraft.SRC/SND_dxs_factory.cpp
+;SpriteCraft.SRC/SND_sndsubsys.cpp
+;SpriteCraft.SRC/SND_stream_ogg.cpp
+;SpriteCraft.SRC/SND_stream_wav.cpp
+;SpriteCraft.SRC/SoundMgr.cpp
+;SpriteCraft.SRC/SpriteHelper.cpp
+;SpriteCraft.SRC/SpriteHierarchy.cpp
+;SpriteCraft.SRC/SpriteLwsArray.cpp
+;SpriteCraft.SRC/SpritePrimitive.cpp
+;SpriteCraft.SRC/SpritesEnumerator.cpp
+;SpriteCraft.SRC/SpritesList.cpp
+;SpriteCraft.SRC/SpriteTextView.cpp
+;SpriteCraft.SRC/SST.cpp
+#;SpriteCraft.SRC/StdAfx.cpp
+;SpriteCraft.SRC/TileMap.cpp
+;SpriteCraft.SRC/WeakSprite.cpp
+;SpriteCraft.SRC/errors.cpp
+;SpriteCraft.SRC/SpriteSurface.cpp
+;SpriteCraft.SRC/flat_lwsa.cpp
+;SpriteCraft.SRC/flat_inst.cpp
+;SpriteCraft.SRC/flat_e.cpp
+;SpriteCraft.SRC/flat_e3.cpp
+;SpriteCraft.SRC/flat_restor.cpp
+;SpriteCraft.SRC/flat_layout.cpp
+;SpriteCraft.SRC/flat_display.cpp
+;SpriteCraft.SRC/flat_colide.cpp
+#;SpriteCraft.SRC/xdata.cpp
+#;SpriteCraft.SRC/xdata_paser.cpp
+;SpriteCraft.SRC/XdataHelper.cpp:SpriteCraft.SRC/XdataHelper.h
+;MoleSkin2/nvmath/algebra.cpp
+;MoleSkin2/mstreams/embedded/arial14a.bgz.c
+;MoleSkin2/mstreams/embedded/arial14a.txt.c
+;MoleSkin2/mgraphics/m_bitblt.cpp
+;MoleSkin2/mcore/m_core.cpp
+;MoleSkin2/mstreams/m_cpystream.cpp
+;MoleSkin2/gfxd3d7/m_d3d7.cpp
+;MoleSkin2/gfxd3d7/m_d3d7_api.cpp
+;MoleSkin2/gfxd3d7/m_d3d7_device.cpp
+;MoleSkin2/gfxd3d7/m_d3d7_light.cpp
+;MoleSkin2/gfxd3d7/m_d3d7_mode.cpp
+;MoleSkin2/gfxd3d7/m_d3d7_primitive.cpp
+;MoleSkin2/gfxd3d7/m_d3d7_states.cpp
+;MoleSkin2/gfxd3d7/m_d3d7_texture.cpp
+;MoleSkin2/gfxd3d7/m_d3d7_transform.cpp
+;MoleSkin2/mcore/m_debug.cpp
+#;MoleSkin2/mutil/m_def_parser.cpp
+;MoleSkin2/mstreams/m_dsoman.cpp
+;MoleSkin2/mstreams/m_dsource.cpp
+;MoleSkin2/mcore/m_eth.cpp
+;MoleSkin2/mstreams/m_fio.cpp
+;MoleSkin2/mgraphics/m_font_parser.cpp
+#;MoleSkin2/mcore/m_format.cpp
+;MoleSkin2/mutil/m_fps.cpp
+;MoleSkin2/mgraphics/m_gfx.cpp
+;MoleSkin2/mgraphics/m_gfx3d.cpp
+;MoleSkin2/mgraphics/m_glyphsource.cpp
+;MoleSkin2/mgraphics/m_glyphsource_marked.cpp
+#;MoleSkin2/mgraphics/m_glyphsource_ttf.cpp
+;MoleSkin2/mstreams/m_igzstream.cpp
+;MoleSkin2/mstreams/m_istream.cpp
+;MoleSkin2/mcore/m_lh.cpp
+#;MoleSkin2/mgraphics/m_loadmodel.cpp
+#;MoleSkin2/mgraphics/m_loadmodel_3ds.cpp
+;MoleSkin2/mgraphics/m_loadsurf.cpp
+;MoleSkin2/mgraphics/m_loadsurf_bmp.cpp
+;MoleSkin2/mgraphics/m_loadsurf_jpg.cpp
+;MoleSkin2/mgraphics/m_loadsurf_png.cpp
+;MoleSkin2/mgraphics/m_loadsurf_taf.cpp
+;MoleSkin2/mgraphics/m_loadsurf_tga.cpp
+;MoleSkin2/mgraphics/m_loadtexture.cpp
+;MoleSkin2/mcore/m_log.cpp
+#;MoleSkin2/mgraphics/m_lwsa_basic.cpp
+;MoleSkin2/mcore/m_mem.cpp
+#;MoleSkin2/mgraphics/m_model3d.cpp
+;MoleSkin2/mstreams/m_ogzstream.cpp
+;MoleSkin2/mstreams/m_ostream.cpp
+#;MoleSkin2/mgraphics/m_particle.cpp
+;MoleSkin2/mutil/m_properties.cpp
+;MoleSkin2/mutil/m_randomizer.cpp
+;MoleSkin2/mutil/m_roundpow2.cpp
+;MoleSkin2/mgraphics/m_screen.cpp
+;MoleSkin2/mcore/m_singletons.cpp
+#;MoleSkin2/mstreams/m_slots.cpp
+#;MoleSkin2/mgraphics/m_sprites.cpp
+#;MoleSkin2/mgraphics/m_sprites3d_collide.cpp
+#;MoleSkin2/mgraphics/m_sprites3d_display2.cpp
+#;MoleSkin2/mgraphics/m_sprites3d_inst0.cpp
+#;MoleSkin2/mgraphics/m_sprites3d_layout.cpp
+#;MoleSkin2/mgraphics/m_sprites3d_restore.cpp
+#;MoleSkin2/mgraphics/m_sprites3d_sprite.cpp
+;MoleSkin2/mgraphics/m_surface.cpp
+;MoleSkin2/mcore/m_symbols.cpp
+;MoleSkin2/mgraphics/m_texfont2.cpp
+#;MoleSkin2/mgraphics/m_tilemap.cpp
+;MoleSkin2/mcore/m_time.cpp
+;MoleSkin2/mstreams/m_wcharsbuf.cpp
+;MoleSkin2/mgraphics/m_win32wnd.cpp
+#;MoleSkin2/mutil/m_xml.cpp
+#;MoleSkin2/mutil/m_xml_parser.cpp
+;MoleSkin2/mstreams/m_zipdiskfile.cpp
+#;MoleSkin2/precompile.cpp
+
+m4_define( `SCRAFTE',m4_format(`ScraftE%s-%s.lib',_BUILD_NAME_,_BUILD_RELEASE_))
+
+LINK: SCRAFTE, LIB

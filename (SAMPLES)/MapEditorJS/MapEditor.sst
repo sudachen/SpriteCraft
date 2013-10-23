@@ -1,0 +1,59 @@
+#!SST
+
+###########################
+# Sprite class definition #
+###########################
+
+sprite Border {
+bitmap = img\Border.bmp
+layout = 1x1
+type   = colorkey
+keyrgb = 00ff00
+}
+
+sprite Land {
+bitmap = img\Land_32.bmp
+layout = 48x1
+type = solid
+}
+
+sprite ArrowL {
+bitmap = img\ArrowL.bmp
+layout = 1x1
+type = solid
+}
+
+sprite ArrowC {
+bitmap = img\ArrowC.bmp
+layout = 1x1
+type = solid
+}
+
+sprite ArrowM {
+bitmap = img\ArrowM.bmp
+layout = 1x1
+type = solid
+}
+
+
+#######################
+# Tile map definition #
+#######################
+
+tilemap wMap {
+tiles = Land
+cols = 25
+rows = 20
+size = 32
+}
+
+tilemap Lands {
+tiles = Land:0:1,Land:16:1,Land:32:1,Land:15:1
+cols = 1
+rows = 4
+size = 64
+0=0
+1=1
+2=2
+3=3
+}

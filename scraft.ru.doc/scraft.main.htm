@@ -1,0 +1,124 @@
+<html>
+    <head>
+    </head>
+    <body>
+    <style>
+        hr { height:0; border: 0; border-bottom: dashed #505050 1px; }
+        .step1 { margin: 5px 5px 5px 15px; }
+        .step1-code { margin: 5px 5px 5px 15px; font-size: 75% }
+        h2 { margin: 5px 0 10px 0; }
+    </style>
+    <!--<b style='font-size:150%'>SpriteCraft for Python, version 2.3.</b><br />
+    <i style='font-size:90%'>Copyright (c) 2005, by Alexey Suda-Chen & Olga Marchevska, Teggo FF</i><br />
+    <i style='font-size:90%'>'SpriteCraft for Python' official site: <a style='text-decoration: none' href='http://www.spritecraft.com/pyscraft/'>http://www.spritecraft.com/pyscraft/</a> <br />
+    <hr> -->
+
+    <h2>SpriteCraft for Python aka Scraft</h2>
+
+    <p>
+    SpriteCraft - это спрайтовый движок для создания условно бесплатных (shareware) и бесплатных (freeware)
+    2D игр на патформе x86/Windows. Такие игры отличаются небольшим размером и могут быть созданы
+    малой командой увлечённых людей, или даже одним человеком.
+    </p>
+
+    <p>
+    Scraft (SpriteCraft for Python) - адаптация движка для простого и удобного языка Python (2.4).
+    Этот модуль выполняет тяжёлые операции по работе с спрайтоми и звуком, освобождая игрового программиста от необходимости разбираться с
+    низкоуровневыми интерфейсами операционной системы и программирования на С/С++.
+    </p>
+
+    <p>
+    Использование связки Scraft & Python позволяет сконцентрироваться на создании игровой логики и быстро создать
+    играбельный прототип и/или готовую игру.
+    </p>
+
+    <h2>Ключевые возможности</h2>
+    <li><b>ОО дизайн движка и высокоуровневое управление обьектами.</b></li>
+    <p class="step1">
+    SpriteCraft позволяет управлять спрайтами, системами частиц и тайловоми картами,
+    как самостоятельными обьектами. Создавать иерархии. Обрабатывать события, например
+    наведение курсора мыши на спрайт или истечение времени жизни системы частиц.
+    SpriteCraft - не просто рендервыре, но обьектная среда для визуализации игрового мира.
+    <li><b>Аппаратное ускорение</b></li>
+    <p class="step1">
+    Отображение 2D графики происходит посредствам 3D возможностей видеокарты, тем самым многие тяжёлые
+    для процессора операции выполняются видеокартой, например отрисовка полупрозрачных спрайтов, поворот и
+    масштабирование или сложение яркости для отрисовки системы частиц.
+    <li><b>Различные типы спрайов и отсутствие ограничения на размер и форму спрайта</b></li>
+    <p class="step1">
+    SpriteCraft поддерживает не только простые спрайты любого размера и отношения строн, но и специальные виды спрайтов.
+    Самы простой из них - это текст. Более сложные - масив микроспрайтов, полигон отсекающий спрайт и
+    текстурированная спрайтом сетка.
+    <li><b>Программируемая система частиц</b></li>
+    <p class="step1">
+    <table width=100% cellspacing=0 cellpadding=0 border=0><tr><td valign=top>
+    Система частиц оргпнизованна как набор эмиттеров и пула частиц которые эмиттеры испускают. Также задаётся стратегия испускания.
+    Для каждого эмиттера задан набор параметров и программа исполняемая для частиц ипущщеных эмиттером. <br/><br/>
+    Программа представляет из себя последовательность простых комманд оперирующих частицей, регистрами конвеера и параметрами
+    испустившего частицу эмиттера. </br>
+    </td><td align=right>
+<i style='font-size: 90%; margin: 5px 5px 5px 10px'>Программа по умочанию</i><br/>
+<textarea readonly="yes" cols=40 rows=10 class="step1-code">
+;!PSP,1.0
+
+; ---------------------
+; setup particle
+mov   em0,x           ; source point
+rnd   -3.14, 3.14, a  ; rand direction
+rot   (0;1),a,a0      ;
+rnd   em6.0,em6.1,a   ; rand area
+mul   a0,a,a0         ;
+add   x,a0,x          ; set particel x
+
+; randomize particle attributes
+rnd   em1.0,em1.1,angle
+rnd   em2.0,em2.1,trans
+rnd   em3.0,em3.1,frno
+rnd   em7.0,em7.1,scale
+
+; randomize particle speed
+rnd   em4.0,em4.1,v.1
+neg   v.1,v.1
+rnd   em5.0,em5.1,a
+rot   v,a,v
+
+; mark particle as independed
+indep
+
+; --------------------
+; update code follow
+
+updateonly
+
+mul   v,dt,a0         ; a0 = dx
+add   x,a0,x          ; x = x + dx
+
+; update particle attributes
+rnd   em9.0,em9.1,a
+mul   a,dt,a
+add   trans,a,trans
+rnd   em10.0,em10.1,a
+mul   a,dt,a
+add   scale,a,scale
+rnd   em8.0,em8.1,a
+mul   a,dt,a
+add   angle,a,angle
+
+; em0  source x,y
+; em1  angle
+; em2  trans
+; em3  frno
+; em4  speed
+; em5  direct
+; em6  area
+; em7  scale
+; em8  inc angle
+; em9  inc trans
+; em10 inc scale
+
+    </textarea>
+    </td></tr></table>
+    </p>
+
+    </body>
+</html>

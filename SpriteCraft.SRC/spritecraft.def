@@ -1,0 +1,48 @@
+; mole.def : Declares the module parameters.
+
+EXPORTS
+;	DllCanUnloadNow     @1		PRIVATE
+	DllGetClassObject   		PRIVATE
+	DllRegisterServer   		PRIVATE
+	DllUnregisterServer			PRIVATE
+;	AcquireEngine       @23		
+; CreateEngine        @24		NONAME
+	CreateEngine        @25
+;  ParseXML  = DLL_ParseXML  @26
+  ParseDEF  = DLL_ParseDEF  @27   
+  CreateXdata = DLL_CreateXML @28           
+;  WideLogF            
+;  LogF                
+;  WideLog            
+;  Log                
+;	ExecuteGameScript   
+
+  ;managed_malloc__   
+  ;managed_free__      
+  deflateInit2_      
+  deflate            
+  deflateReset       
+  deflateEnd         
+  inflate            
+  inflateReset       
+  inflateInit_      
+  inflateEnd        
+  crc32              
+
+;  Format
+;  WideFormat
+  GetProgramVersion
+  
+  Yield = _Yield
+
+;  IID_ISprite           
+;  IID_IOnUpdate         
+;  IID_IOnDispose      
+;  IID_IOnCollide        
+;  IID_IOnMouseClick     
+;  IID_IOnMouseDown      
+;  IID_IOnMouseMove      
+;  IID_IOnMouseOver      
+;  IID_IOnMouseUp        
+
+  initscraft

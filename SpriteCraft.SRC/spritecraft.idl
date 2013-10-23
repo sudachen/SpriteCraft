@@ -1,0 +1,1609 @@
+   
+
+/*
+
+  $Id$
+  Copyright (c) 2005-2006, Alexey Suda-Chen aka hedgehog (alexey@suda-chen.biz)
+
+*/
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+midl_pragma warning ( disable:2362 ) // too many methods in the interface, requires Windows NT 4.0 SP3
+midl_pragma warning ( disable:2039 ) // interface does not conform to [oleautomation] attribute 
+
+#define SpriteCraftVerMajor 3
+#define SpriteCraftVerMinor 0
+#define SpriteCraftVerVersion    300
+#define SpriteCraftVerMinVersion 200
+#define SpriteCraftVerValue SpriteCraftVerMajor ## . ## SpriteCraftVerMinor
+
+[
+  version(SpriteCraftVerValue),
+  uuid(35E4F96E-1B5D-4490-B28B-F0A3B2470020),
+  helpstring("SpriteCraft 2D Engine [www.spritecraft.com]"),
+]
+library SpriteCraft
+{
+  importlib("stdole32.tlb");
+  importlib("stdole2.tlb");
+
+  interface IXdata;
+
+  [
+    object,
+    uuid(7A914D61-5AEF-4fda-B797-11CAA4024E22),
+    dual,
+    nonextensible,
+    pointer_default(unique)
+  ]
+  interface IXdataEnumerator : IDispatch
+  {
+    HRESULT Reset([out,retval] VARIANT_BOOL* pVal);
+    HRESULT Next([out,retval] VARIANT_BOOL* pVal);
+    HRESULT Get([out,retval] IXdata** pI);
+    [hidden,restricted] void *__python_iterate_next();
+    [propget, id(3)] HRESULT count([out,retval] long *pVal);
+    [hidden,restricted] int __python_len();
+  };
+
+  [
+    object,
+    uuid(af672ac9-9575-43da-957c-08ad8803ab4e),
+    dual,
+    nonextensible,
+    pointer_default(unique)
+  ]
+  interface IXdataAttributes : IDispatch
+  {
+    HRESULT Reset([out,retval] VARIANT_BOOL* pVal);
+    HRESULT Next([out,retval] VARIANT_BOOL* pVal);
+    [propget, id(1)] HRESULT value([out,retval] BSTR* pI);
+    [propget, id(2)] HRESULT name([out,retval] BSTR* pI);
+    [hidden,restricted] void *__python_iterate_next();
+    // compatibility reason
+    HRESULT __comfunc_Value([out,retval] BSTR* pI);
+    HRESULT __comfunc_Name([out,retval] BSTR* pI);
+    [propget, id(3)] HRESULT count([out,retval] long *pVal);
+    [hidden,restricted] int __python_len();
+  };
+
+  [
+    object,
+    uuid(71B11E33-FE97-43c4-AAE9-663B218D8369),
+    dual,
+    nonextensible,
+    pointer_default(unique)
+  ]
+  interface IXdata : IDispatch
+  {
+    [id(DISPID_VALUE)] HRESULT GetTag([in,defaultvalue("")] BSTR name,[out,retval] IXdata** pI);
+    HRESULT GetRoot([out,retval] IXdata** pI);
+    HRESULT GetParent([out,retval] IXdata** pI);
+    HRESULT GetSrcName([out,retval] BSTR* pVal);
+    [hidden,restricted] HRESULT GetSrcNameAsPWIDE([out,retval] wchar_t** pVal);
+    HRESULT GetName([out, retval] BSTR *pVal);
+    HRESULT GetContent([out, retval] BSTR *pVal);
+    HRESULT GetStrAttr([in] BSTR name, [out, retval] BSTR *pVal);
+    HRESULT GetIntAttr([in] BSTR name, [out, retval] long *pVal);
+    HRESULT GetFltAttr([in] BSTR name, [out, retval] float *pVal);
+    HRESULT GetBoolAttr([in] BSTR name, [out, retval] VARIANT_BOOL *pVal);
+    /*compatibility*/ HRESULT Iterate([out,retval] IXdataEnumerator** pI);
+    /*compatibility*/ HRESULT IterateTag([in] BSTR path,[out,retval] IXdataEnumerator** pI);
+    HRESULT GetCountTag([in] BSTR tag,[out, retval] long *pVal);
+    HRESULT GetCount([out, retval] long *pVal);
+    HRESULT Insert([in] BSTR name,[out,retval] IXdata** pI);
+    HRESULT Erase();
+    HRESULT SetContent([in] BSTR pVal);
+    HRESULT SetStrAttr([in] BSTR name, [in] BSTR val);
+    HRESULT SetIntAttr([in] BSTR name, [in] long val);
+    HRESULT SetFltAttr([in] BSTR name, [in] float val);
+    HRESULT SetBoolAttr([in] BSTR name, [in] VARIANT_BOOL val);
+    /*compatibility*/ [hidden] HRESULT StoreToXML([in] BSTR filename,[in,defaultvalue(0)] long encoding);
+    /*compatibility*/ [hidden] HRESULT StoreToDEF([in] BSTR filename,[in,defaultvalue(0)] long encoding);
+    [hidden,restricted] HRESULT GetNameAsPWIDE([out,retval] wchar_t** pVal);
+    [hidden,restricted] HRESULT GetContentAsPWIDE([out,retval] wchar_t** pVal);
+    [hidden,restricted] HRESULT GetStrAttrAsPWIDE([in] BSTR name,[out,retval] wchar_t** pVal);
+    HRESULT Freeze();
+    HRESULT Clone([out,retval] IXdata** pI);
+    HRESULT InsertCopyOf([in] IXdata* node, [in,defaultvalue(-1)] VARIANT_BOOL indepth,[out,retval] IXdata** pI);
+    HRESULT HasAttr([in] BSTR name, [out,retval] VARIANT_BOOL *pRet);
+
+    HRESULT StoreTo([in] BSTR filename,[in,defaultvalue(0)] long format);
+    HRESULT Tags([in,defaultvalue("")] BSTR tag,[out,retval] IXdataEnumerator** pI);
+    HRESULT Attributes([out,retval] IXdataAttributes** pI);
+    HRESULT Next([in,defaultvalue("")] BSTR tag,[out,retval] IXdata** pI);
+    HRESULT Subtags([in] BSTR content,[in,defaultvalue("")] BSTR tag,[out,retval] IXdataEnumerator** pI);
+    HRESULT Empty([out, retval] VARIANT_BOOL *pVal);
+    HRESULT GetSubtag(BSTR content,[in,defaultvalue("")] BSTR tag,[out,retval] IXdata** pI);
+    HRESULT GetSubtagNocase(BSTR content,[in,defaultvalue("")] BSTR tag,[out,retval] IXdata** pI);
+
+    [hidden,restricted] void *__python_iterate();
+  };
+
+#define SpriteCraftVer SpriteCraftVer 
+#define __O_SCVersion SCVersion
+  enum SpriteCraftVer
+  {
+    SCVersion  = SpriteCraftVerVersion,
+    SCVerMajor = SpriteCraftVerMajor,
+    SCVerMinor = SpriteCraftVerMinor,
+    SCVersionMinSupported = SpriteCraftVerMinVersion
+  };
+
+  enum tagHotspot
+  {
+    HotspotLeftTop       	= 0,    ///< Левый верхний угол.
+    HotspotCenterTop      	= 1,    ///< Центральная верхняя точка.
+    HotspotRightTop        	= 2,    ///< Правый верхний угол.
+    HotspotRightCenter  	= 3,    ///< Правая ценнтральная точка.
+    HotspotRightBottom  	= 4,    ///< Правый нижний угол.
+    HotspotCenterBottom 	= 5,    ///< Нижняя центральная точка.
+    HotspotLeftBottom    	= 6,    ///< Левый нижний угол.
+    HotspotLeftCenter    	= 7,    ///< Левая центральная точка.
+    HotspotCenter             	= 8     ///< Центр спрайта.
+  };
+
+  enum tagPosition 
+  {
+    PositionLeftTop           	= 0,    ///< Левый верхний угол.
+    PositionCenterTop       	= 1,    ///< Центральная верхняя точка.
+    PositionRightTop         	= 2,    ///< Правый верхний угол.
+    PositionRightCenter   	= 3,    ///< Правая ценнтральная точка.
+    PositionRightBottom   	= 4,    ///< Правый нижний угол.
+    PositionCenterBottom 	= 5,    ///< Нижняя центральная точка.
+    PositionLeftBottom     	= 6,    ///< Левый нижний угол.
+    PositionLeftCenter     	= 7,    ///< Левая центральная точка.
+    PositionCenter              = 8     ///< Центр экрана.
+  };
+
+  enum tagVideoMode 
+  {
+    VMODE_320x240       = 0x00000000,
+    VMODE_640x480       = 0x00000001,
+    VMODE_800x600       = 0x00000002,
+    VMODE_1024x768      = 0x00000003,
+    VMODE_1280x1024     = 0x00000004,
+    VMODE_1600x1200     = 0x00000005,
+    VMODE_BITS          = 0x00000fff,
+    VMODE_32BIT         = 0x00008000,
+    VMODE_NOSYSMENU     = 0x00004000,
+    VMODE_NOWINFRAME    = 0x00002000,
+    VMODE_320x240x32    = 0x00008000,
+    VMODE_640x480x32    = 0x00008001,
+    VMODE_800x600x32    = 0x00008002,
+    VMODE_1024x768x32   = 0x00008003,
+    VMODE_1280x1024x32  = 0x00008004,
+    VMODE_1600x1200x32  = 0x00008005,
+    VMODE_WINDOWED      = 0x00001000,
+    VMODE_FULLSCREEN    = 0x00002000,
+    VMODE_WINDOW_BITS   = 0x00003000,
+    VMODE_LOWQALITY     = 0x00010000,
+    VMODE_HIGHQALITY    = 0x00030000
+  };
+
+  enum tagEventType 
+  {
+    EventNone               	=0, ///< Нет события
+    EventKeyDown        	=1, ///< Нажтие клавиши
+    EventKeyUp            	=2, ///< Отпускани клавиши
+    EventMButtonDown		=3, ///< Нажтие клавиши мыши
+    EventMButtonUp    		=4, ///< Отпускани клавиши мыши
+    EventMouseMove    		=5, ///< Изменение состояния мыши
+    EventQuit               	=6, ///< Закрытие окна/приложения
+    EventReset             	=7,
+    EventMouseLeave        	=8, ///< Изменение состояния мыши
+    //EventUser           = 100
+  };
+
+  enum tagKeyVal 
+  {
+    Key_NONE    = 0,
+    Key_CTRLF   = 0x010000U,
+    Key_SHIFTF  = 0x020000U,
+    Key_LBUTTONF= 0x040000U,
+    Key_RBUTTONF= 0x080000U,
+    Key_MBUTTONF= 0x100000U,
+    Key_FLAGMASK= 0xff0000U,
+    Key_KEYMASK = 0x00ffffU,
+    Key_ESC     = 255,
+    Key_UP      = 200,
+    Key_RIGHT   = 201,
+    Key_DOWN    = 202,
+    Key_LEFT    = 203,
+    Key_LBUTTON = 210,
+    Key_RBUTTON = 211,
+    Key_MBUTTON = 212,
+    Key_CTRL    = 213,
+    Key_SHIFT   = 214,
+    Key_ALT     = 215,
+    Key_RCTRL   = 216,
+    Key_RSHIFT  = 217,
+    Key_RALT    = 218,
+    Key_LCTRL   = 219,
+    Key_LSHIFT  = 220,
+    Key_LALT    = 221,
+    Key_F1      = 151,
+    Key_F2      = 152,
+    Key_F3      = 153,
+    Key_F4      = 154,
+    Key_F5      = 155,
+    Key_F6      = 156,
+    Key_F7      = 157,
+    Key_F8      = 158,
+    Key_F9      = 159,
+    Key_F10     = 160,
+    Key_F11     = 161,
+    Key_F12     = 162,
+    Key_ENTER   = 10,
+    Key_BACKSPACE = 8,
+    Key_TAB     = 9,
+    Key_SPACE   = ' ',
+    Key_A       = 'A',
+    Key_B       = 'B',
+    Key_C       = 'C',
+    Key_D       = 'D',
+    Key_E       = 'E',
+    Key_F       = 'D',
+    Key_G       = 'G',
+    Key_H       = 'H',
+    Key_I       = 'I',
+    Key_J       = 'J',
+    Key_K       = 'K',
+    Key_L       = 'L',
+    Key_M       = 'M',
+    Key_N       = 'N',
+    Key_O       = 'O',
+    Key_P       = 'P',
+    Key_Q       = 'Q',
+    Key_R       = 'R',
+    Key_S       = 'S',
+    Key_T       = 'T',
+    Key_U       = 'U',
+    Key_V       = 'V',
+    Key_W       = 'W',
+    Key_X       = 'X',
+    Key_Y       = 'Y',
+    Key_Z       = 'Z',
+    Key_COMMA   = ',',
+    Key_PERIOD  = '.',
+    Key_0       = '0',
+    Key_1       = '1',
+    Key_2       = '2',
+    Key_3       = '3',
+    Key_4       = '4',
+    Key_5       = '5',
+    Key_6       = '6',
+    Key_7       = '7',
+    Key_8       = '8',
+    Key_9       = '9',
+    Key_PLUS    = '+',
+    Key_MINUS   = '-',
+    Key_StUp    = 301,
+    Key_StDown  = 302,
+    Key_StLeft  = 303,
+    Key_StRight = 304,
+    Key_StFire  = 305,
+    Key_StAlter = 306,
+    Key_StMode  = 307,
+    Key_StESC   = 308
+  };
+
+  enum tagKeyState 
+  {
+    KeyStateUp        = 1,
+    KeyStateRight  = 2,
+    KeyStateDown    = 4,
+    KeyStateLeft    = 8,
+    KeyStateFire    = 16,
+    KeyStateAlter  = 32,
+    KeyStateMode    = 64,
+    KeyStateESC      = 128
+  };
+
+  enum tagXdataFormat 
+  {
+    XdataDEFformat        = 0,
+    XdataXMLformat        = 1,
+  };
+
+  enum tagQueAny
+  {
+    QueUndefined        = 1000,
+    CommandStateRepeat  = 0,
+    CommandStateEnd     = 0xffffffff
+  };
+
+#define __O_QueUndefined QueUndefined
+
+  enum tagQueState
+  {
+    QueStateEmpty       = 0,
+    QueStateScheduled   = 1,
+    QueStateSuspended   = 2,
+    QueStateContinue    = 3
+  };
+
+  enum tagScDevice{
+    DevAuto    = 0,
+    DevOGL     = 1,
+    DevD3D     = 2,
+    DevAnDXI   = 0x100,
+    DevOGLnDXI = 0x101,
+    DevD3DnDXI = 0x102,
+    DevDisableDrvInfo = 0x200,
+  };
+#define __O_DevAuto DevAuto
+
+  enum tagCollideGroup {
+    CollideNone       = 0,
+    CollidePassive    = 0x1000,
+    CollideActive     = 0x2000,
+    CollideTrack      = 0x4000
+  };
+
+  enum tagStyle {
+    StyleUnknown     = 0,
+    StylePicture     = 1,
+    StyleText        = 2,
+    StyleTextView    = 3,
+    StyleTrilist     = 4,
+    StyleShape       = 5,
+    StyleLWSA        = 6,
+    StyleGrid        = 7,
+  };
+
+  enum tagBlendMode {
+    BlendModeDefault    = 0,
+    BlendMoldeSolid     = 1,
+    BlendMoldeBitmask   = 2,
+    BlendMoldeAlpha     = 3,
+    BlendMoldeAdditive  = 4
+  };
+
+  enum tagLwsaOrder {
+    LwsaOrderLeftRight   = 0,
+    LwsaOrderTopBottom   = 1
+  };
+
+  struct MICROSPRITE {
+    float x;
+    float y;
+    float angle;
+    float scale;
+    float transparency;
+    long  frno;
+  };
+
+  struct PRIMITIVE_VERTEX {
+    float x;
+    float y;
+    float u;
+    float v;
+    long  color;
+  };
+  
+  enum tagEmitterCf {
+    EmCfSourceXY    = 0,
+    EmCfInitAngle   = 1,
+    EmCfInitTrans   = 2,
+    EmCfInitFrno    = 3,
+    EmCfInitSpeed   = 4,
+    EmCfInitDirect  = 5,
+    EmCfInitArea    = 6,
+    EmCfInitScale   = 7,
+    EmCfIncAngle    = 8,
+    EmCfIncTrans    = 9,
+    EmCfIncScale    = 10,
+  };
+
+#define __O_ParsDefault  0
+  enum tagParsFlags {
+    ParsDefault       = 0,
+    ParsComments      = 1,
+    ParsLineNo        = 2
+  };
+
+  enum tagMouseMode {
+    MouseDirectMode   = 0,
+    MouseIntervalMode = 1
+  };
+
+// #define tagQuality tagQuality
+//   enum tagQuality {
+//     QualitySmart = 0,
+//     QualityLow = 1,
+//     QualityHigh = 2,
+//   };
+// 
+
+  enum tagSstLoadOpts {
+    SstLoadRewrite = 1,
+    SstLoadAppand  = 0,
+    SstLoadBack    = 2,
+    SstLoadFront   = 0,
+  };
+
+
+  interface ILwsArray;
+  interface ISprite;
+  interface ISpritePrimitive;
+  interface ISurface;
+  interface IEngine;
+  interface IParticles;
+  interface ISpritesList;
+  interface IObjList;
+  interface ISpritesEnumerator;  
+  interface IOnStopSound;
+  interface IOnCollide;  
+
+
+  [
+    object,
+    uuid(69B6A136-744F-42EE-8D3D-1F2DE865A28F),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface IRGBFilter : IDispatch
+  {
+    [id(1),propget] HRESULT r([out, retval] long *pVal);
+    [id(1),propput] HRESULT r([in] long newVal);
+    [id(2),propget] HRESULT g([out, retval] long *pVal);
+    [id(2),propput] HRESULT g([in] long newVal);
+    [id(3),propget] HRESULT b([out, retval] long *pVal);
+    [id(3),propput] HRESULT b([in] long newVal);
+    [id(4),propget] HRESULT color([out, retval] long *pVal);
+    [id(4),propput] HRESULT color([in] long newVal);
+  };
+
+  [
+    object,
+    uuid(874095DD-87DA-48bd-852B-A7051312E8CC),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface ISpritePrimitive : IDispatch
+  {
+    [propget, id(1)] HRESULT count([out, retval] long *pVal);
+    [propput, id(1)] HRESULT count([in] long newVal);
+    [propget, id(4)] HRESULT xOffset([out, retval] float *pVal);
+    [propput, id(4)] HRESULT xOffset([in] float newVal);
+    [propget, id(5)] HRESULT yOffset([out, retval] float *pVal);
+    [propput, id(5)] HRESULT yOffset([in] float newVal);
+    [propget, id(6)] HRESULT clip([out, retval] VARIANT_BOOL *pVal);
+    [propput, id(6)] HRESULT clip([in] VARIANT_BOOL newVal);
+    [propget, id(7)] HRESULT colorized([out, retval] VARIANT_BOOL *pVal);
+    [propput, id(7)] HRESULT colorized([in] VARIANT_BOOL newVal);
+    [propget, id(44)] HRESULT blendMode([out, retval] enum tagBlendMode *pVal);
+    [propput, id(44)] HRESULT blendMode([in] enum tagBlendMode newVal);
+    [propget, id(45)] HRESULT uvNorm([out, retval] VARIANT_BOOL *pVal);
+    [propput, id(45)] HRESULT uvNorm([in] VARIANT_BOOL newVal);
+    [propget, id(46)] HRESULT cw([out, retval] VARIANT_BOOL *pVal);
+    [propput, id(46)] HRESULT cw([in] VARIANT_BOOL newVal);
+    HRESULT SetColor([in] long no,[in] long count, [in] long color);
+    HRESULT SetXY([in] long no, [in] float x, [in] float y);
+    HRESULT SetUV([in] long no, [in] float u, [in] float v);
+    HRESULT SetVertex([in] long no,[in] long color,[in] float x,[in] float y,[in] float u,[in] float v);
+    HRESULT DiffVertex([in] long no, [in] long count, [in] float x, [in] float y, [in,defaultvalue(0)] float u,[in,defaultvalue(0)] float v);
+    HRESULT GetX([in] long no, [out,retval] float* retVal);
+    HRESULT GetY([in] long no, [out,retval] float* retVal);
+    HRESULT GetU([in] long no, [out,retval] float* retVal);
+    HRESULT GetV([in] long no, [out,retval] float* retVal);
+    HRESULT GetColor([in] long no, [out,retval] long* retVal);
+    [hidden] HRESULT SetVertexEx([in] long no, [in,size_is(count)] struct PRIMITIVE_VERTEX* vertex,[in,defaultvalue(1)] long count);
+    [hidden] HRESULT GetVertexEx([in] long no,[out,size_is(count)] struct PRIMITIVE_VERTEX* vertex,[in,defaultvalue(1)] long count);
+  };
+
+  [
+    object,
+    uuid(e653c005-b9f1-434a-a88d-e54bb9e541e1),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface ISpriteGrid : IDispatch
+  {
+    [propget, id(2)] HRESULT rows([out, retval] long *pVal);
+    [propput, id(2)] HRESULT rows([in] long newVal);
+    [propget, id(3)] HRESULT cols([out, retval] long *pVal);
+    [propput, id(3)] HRESULT cols([in] long newVal);
+    [propget, id(4)] HRESULT colorized([out, retval] VARIANT_BOOL *pVal);
+    [propput, id(4)] HRESULT colorized([in] VARIANT_BOOL newVal);
+    [propget, id(5)] HRESULT blendMode([out, retval] enum tagBlendMode *pVal);
+    [propput, id(5)] HRESULT blendMode([in] enum tagBlendMode newVal);
+    HRESULT SetColor([in] long col,[in] long row,[in] long color);
+    HRESULT SetXY([in] long col,[in] long row,[in] float x,[in] float y);
+    HRESULT SetPoint([in] long col,[in] long row, [in] long color,[in] float x,[in] float y, [in,defaultvalue(1)] long width, [in,defaultvalue(1)] long rows);
+    HRESULT DifPoint([in] long col,[in] long row, [in] long color,[in] float x,[in] float y, [in,defaultvalue(1)] long width, [in,defaultvalue(1)] long rows);
+    HRESULT GetX([in] long col,[in] long row, [out,retval] float* retVal);
+    HRESULT GetY([in] long col,[in] long row, [out,retval] float* retVal);
+    HRESULT GetColor([in] long col,[in] long row, [out,retval] long* retVal);
+  };
+
+  [
+    object,
+    uuid(3f08386f-d5cd-4657-b78b-f98604526fa5),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface ISurface : IDispatch
+  {
+    [propget, id(2)] HRESULT width([out, retval] long *pVal);
+    [propget, id(3)] HRESULT height([out, retval] long *pVal);
+    [propget, id(4)] HRESULT pf([out, retval] long *pVal);
+    HRESULT GetHDC([out,retval] long *pVal);
+    HRESULT Update();
+    [hidden,restricted] wchar_t *__klass_name__();
+  };
+
+  [
+    object,
+    uuid(D17F171D-70C0-41ec-A7B4-4561704EFE40),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface IHierarchy : IDispatch
+  {
+    [id(1),propget] HRESULT x([out,retval] VARIANT_BOOL* pVal);
+    [id(1),propput] HRESULT x([in]  VARIANT_BOOL newVal);
+    [id(2),propget] HRESULT y([out,retval] VARIANT_BOOL* pVal);
+    [id(2),propput] HRESULT y([in] VARIANT_BOOL newVal);
+    [id(3),propget] HRESULT angle([out,retval] VARIANT_BOOL* pVal);
+    [id(3),propput] HRESULT angle([in]  VARIANT_BOOL newVal);
+    [id(4),propget] HRESULT luminance([out,retval] VARIANT_BOOL* pVal);
+    [id(4),propput] HRESULT luminance([in]  VARIANT_BOOL newVal);
+    [id(5),propget] HRESULT transparency([out,retval] VARIANT_BOOL* pVal);
+    [id(5),propput] HRESULT transparency([in]  VARIANT_BOOL newVal);
+    [id(6),propget] HRESULT cfilt([out,retval] VARIANT_BOOL* pVal);
+    [id(6),propput] HRESULT cfilt([in]  VARIANT_BOOL newVal);
+    [id(7),propget] HRESULT xScale([out,retval] VARIANT_BOOL* pVal);
+    [id(7),propput] HRESULT xScale([in]  VARIANT_BOOL newVal);
+    [id(8),propget] HRESULT yScale([out,retval] VARIANT_BOOL* pVal);
+    [id(8),propput] HRESULT yScale([in]  VARIANT_BOOL newVal);
+    [id(9),propget] HRESULT visibility([out, retval] VARIANT_BOOL *pVal);
+    [id(9),propput] HRESULT visibility([in] VARIANT_BOOL newVal);
+    [id(10),propget] HRESULT parentDispose([out, retval] VARIANT_BOOL *pVal);
+    [id(10),propput] HRESULT parentDispose([in] VARIANT_BOOL newVal);
+  };
+
+  [
+    object,
+    uuid(462F6709-304A-4920-8408-9B4E5E99E26C),
+    dual,
+    hidden,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface IWeakSprite : IDispatch
+  {
+    [id(1),propget] HRESULT value([out, retval] ISprite **pVal);
+  };
+
+  [
+    object,
+    uuid(25555AF6-91E6-4574-BC69-F14339061E13),
+    dual,
+    hidden,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface IWeakParticles : IDispatch
+  {
+    [id(1),propget] HRESULT value([out, retval] IParticles **pVal);
+  };
+
+  [
+    object,
+    uuid(CDAD622B-4D1F-411f-BD47-2D4D4E35E2CF),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface ITextView : IDispatch
+  {
+    [propget, id(49)] HRESULT xScroll([out, retval] float *pVal);
+    [propput, id(49)] HRESULT xScroll([in] float newVal);
+    [propget, id(50)] HRESULT yScroll([out, retval] float *pVal);
+    [propput, id(50)] HRESULT yScroll([in] float newVal);
+    [propget, id(51)] HRESULT xScrollMax([out, retval] float *pVal);
+    [propget, id(52)] HRESULT yScrollMax([out, retval] float *pVal);
+    [propget, id(54)] HRESULT width([out, retval] float *pVal);
+    [propput, id(54)] HRESULT width([in] float newVal);
+    [propget, id(55)] HRESULT height([out, retval] float *pVal);
+    [propput, id(55)] HRESULT height([in] float newVal);
+  };
+
+
+  [
+    object,
+    uuid(2971DCF0-3C8D-43db-BC48-BD805C8B576D),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface ISprite : IDispatch
+  {
+    HRESULT Dispose();
+    HRESULT Equal([in] IDispatch* sprite, [out,retval] VARIANT_BOOL* equ);
+    HRESULT Contains([in] float x,[in] float y,[out,retval] VARIANT_BOOL* bRet);
+    [hidden] HRESULT MoveTo([in] float x,[in] float y);
+    [propget, id(DISPID_VALUE)] HRESULT item(long no, [out, retval] long *pVal);
+    [propput, id(DISPID_VALUE)] HRESULT item(long no, [in] long newVal);
+    [id(1),propget] HRESULT name([out, retval] BSTR *pVal);
+    [id(2),propget] HRESULT klass([out, retval] BSTR *pVal);
+    [id(3),propget] HRESULT layer([out, retval] long *pVal);
+    [id(3),propput] HRESULT layer([in] long newVal);
+    [id(4),propget] HRESULT x([out, retval] float *pVal);
+    [id(4),propput] HRESULT x([in] float newVal);
+    [id(5),propget] HRESULT y([out, retval] float *pVal);
+    [id(5),propput] HRESULT y([in] float newVal);
+    [id(6),propget] HRESULT degree([out, retval] float *pVal);
+    [id(6),propput] HRESULT degree([in] float newVal);
+    [id(7),propget] HRESULT frno([out, retval] long *pVal);
+    [id(7),propput] HRESULT frno([in] long newVal);
+    [id(8),propget] HRESULT visible([out, retval] VARIANT_BOOL *pVal);
+    [id(8),propput] HRESULT visible([in] VARIANT_BOOL newVal);
+    [id(9),propget] HRESULT height([out, retval] float *pVal);
+    [id(10),propget] HRESULT width([out, retval] float *pVal);
+    [id(11),propget] HRESULT transparency([out, retval] float *pVal);
+    [id(11),propput] HRESULT transparency([in] float newVal);
+    [id(12),propget] HRESULT luminance([out, retval] float *pVal);
+    [id(12),propput] HRESULT luminance([in] float newVal);
+    [id(13),propget] HRESULT mouseOver([out, retval] VARIANT_BOOL *pVal);
+    [id(14),propget] HRESULT xScale([out, retval] float *pVal);
+    [id(14),propput] HRESULT xScale([in] float newVal);
+    [id(15),propget] HRESULT yScale([out, retval] float *pVal);
+    [id(15),propput] HRESULT yScale([in] float newVal);
+    [id(16),propput] HRESULT xyScale([in] float newVal);
+    [id(17),propget] HRESULT sprLeft([out, retval] float *pVal);
+    [id(18),propget] HRESULT sprTop([out, retval] float *pVal);
+    [id(19),propget] HRESULT sprRight([out, retval] float *pVal);
+    [id(20),propget] HRESULT sprBottom([out, retval] float *pVal);
+    [id(21),propget] HRESULT xSize([out, retval] float *pVal);
+    [id(21),propput] HRESULT xSize([in] float newVal);
+    [id(22),propget] HRESULT ySize([out, retval] float *pVal);
+    [id(22),propput] HRESULT ySize([in] float newVal);
+    [id(23),propget] HRESULT xHotspot([out, retval] float *pVal);
+    [id(23),propput] HRESULT xHotspot([in] float newVal);
+    [id(24),propget] HRESULT yHotspot([out, retval] float *pVal);
+    [id(24),propput] HRESULT yHotspot([in] float newVal);
+    [id(25),propput] HRESULT hotspot([in] enum tagHotspot newVal);
+    [id(125),propget] HRESULT cfilt([out, retval] IRGBFilter **pVal);
+    [id(26),propget] HRESULT xFlip([out, retval] VARIANT_BOOL *pVal);
+    [id(26),propput] HRESULT xFlip([in] VARIANT_BOOL newVal);
+    [id(27),propget] HRESULT yFlip([out, retval] VARIANT_BOOL *pVal);
+    [id(27),propput] HRESULT yFlip([in] VARIANT_BOOL newVal);
+    [id(28),propget] HRESULT text([out, retval] BSTR *pVal);
+    [id(28),propput] HRESULT text([in] BSTR newVal);
+    [id(29),propget] HRESULT parent([out, retval] ISprite* *pVal);
+    [id(29),propput] HRESULT parent([in] ISprite* newVal);
+    [id(30),propget] HRESULT hierarchy([out, retval] IHierarchy** pI);
+    [id(31),propget] HRESULT angle([out, retval] float *pVal);
+    [id(31),propput] HRESULT angle([in] float newVal);
+    [id(32),propget,hidden] HRESULT weakref([out, retval] IWeakSprite **pVal);
+    [id(33),propget,hidden] HRESULT subimpl([out, retval] IUnknown* *pVal);
+    [id(33),propput,hidden] HRESULT subimpl([in] IUnknown* newVal);
+    [id(34),propget] HRESULT scrX([out, retval] float *pVal);
+    [id(35),propget] HRESULT scrY([out, retval] float *pVal);
+    [id(36),propget] HRESULT scrAngle([out, retval] float *pVal);
+    [id(37),propget] HRESULT collide([out, retval] long *pVal);
+    [id(37),propput] HRESULT collide([in] long newVal);
+    [id(38),propget] HRESULT alive([out, retval] VARIANT_BOOL *pVal);
+    [id(39),propget] HRESULT random([out, retval] float *pVal);
+    [id(40),propget] HRESULT frcount([out, retval] long *pVal);
+    [id(41),propget] HRESULT cookie([out, retval] long *pVal);
+    [id(41),propput] HRESULT cookie([in] long newVal);
+    [id(42),propget] HRESULT sublayer([out, retval] long *pVal);
+    [id(42),propput] HRESULT sublayer([in] long newVal);
+    [id(43),propget] HRESULT outOfScreen([out, retval] VARIANT_BOOL *pVal);
+    
+    HRESULT Hit([in] ISprite* sprite,[out,retval] VARIANT_BOOL *bVal);
+    HRESULT Randomize();
+    HRESULT Distance([in] ISprite* sprite,[out,retval] float* pVal);
+    HRESULT AngleWith([in] ISprite* sprite,[out,retval] float* pVal);
+    HRESULT IncAngle([in] float val);
+    HRESULT IncX([in] float val);
+    HRESULT IncY([in] float val);
+
+    HRESULT SpriteToScreen([in,out] float* x,[in,out] float* y);
+    HRESULT ScreenToSprite([in,out] float* x,[in,out] float* y);
+
+    HRESULT AnimateOnce(
+            [in] float fps,
+            [in,defaultvalue(0)] long startFrno,
+            [in,defaultvalue(-1)] long stopFrno,
+            [in,defaultvalue(0)] IUnknown* listener,
+            [in,defaultvalue(0)] long cookie);
+
+    HRESULT AnimateLoop(
+            [in] float fps,
+            [in,defaultvalue(0)] long startFrno,
+            [in,defaultvalue(-1)] long stopFrno,
+            [in,defaultvalue(0)] IUnknown* listener,
+            [in,defaultvalue(0)] long cookie);
+
+    HRESULT StopAnimation();
+
+    HRESULT ChangeKlassTo([in] BSTR klass);
+    HRESULT SetFrameOfKlass([in] long frno,[in] BSTR klass);
+    HRESULT AttachChild([in] BSTR key,[in] ISprite* child);
+    HRESULT AttachChildEx([in] BSTR key,[in] IDispatch* child);
+    HRESULT GetChild([in] BSTR key,[out,retval] ISprite** pI);
+    HRESULT GetChildEx([in] BSTR key,[out,retval] IDispatch** pI);
+    [hidden,restricted] HRESULT GetNameAsPWIDE([out,retval] wchar_t** retVal);
+    [hidden,restricted] HRESULT GetKlassAsPWIDE([out,retval] wchar_t** retVal);
+
+    [propget, id(45)] HRESULT autodispose([out, retval] VARIANT_BOOL *pVal);
+    [propput, id(45)] HRESULT autodispose([in] VARIANT_BOOL newVal);
+
+    [propget, id(46)] HRESULT primitive([out, retval] ISpritePrimitive* *pVal);
+    [propget, id(47)] HRESULT lwsArray([out, retval] ILwsArray **pVal);
+    [propget, id(48)] HRESULT textview([out, retval] ITextView **pVal);
+    [propget, id(49)] HRESULT style([out, retval] enum tagStyle *pVal);
+    [propput, id(49)] HRESULT style([in] enum tagStyle newVal);
+    
+    HRESULT DispatchSubImpl([in] IDispatch* subimpl);
+
+    [propget, id(50)] HRESULT symheight([out,retval] long* ret);
+    [propput, id(52)] HRESULT paralax([in] long val);
+    [propget, id(52)] HRESULT paralax([out,retval] long* val);
+    [id(53),propget] HRESULT dispatcher([out, retval] IUnknown **pVal);
+    [id(53),propput] HRESULT dispatcher([in] IUnknown* newVal);
+    [id(54),propget] HRESULT surface([out, retval] ISurface **pVal);
+    [id(54),propput] HRESULT surface([in] ISurface* newVal);
+
+    //[hidden,restricted] HRESULT __comfunc_SprBorder([out,retval] void **);
+    //[hidden,restricted] HRESULT __comfunc_ScrBorder([out,retval] void **);
+  };
+
+  [
+    object,
+    uuid("2083EA9E-7592-4ea5-9F9B-BB97A8CC8ABC"),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface ILwsArray : IDispatch 
+  {
+    [id(1),propget] HRESULT  count([out, retval] long *pVal);
+    [id(1),propput] HRESULT  count([in] long newVal);
+    [propget, id(2)] HRESULT isCentered([out, retval] VARIANT_BOOL *pVal);
+    [propput, id(2)] HRESULT isCentered([in] VARIANT_BOOL newVal);
+    HRESULT CopyRange([in] long dst,[in] long src,[in] long count);
+    HRESULT ShowRange([in] long no,[in] long count,[in] VARIANT_BOOL on);
+    HRESULT SetRangeXY([in] long no,[in] long count,[in] float x, [in] float y);
+    HRESULT SetRangeAngle([in] long no,[in] long count,[in] float angle);
+    HRESULT SetRangeScale([in] long no,[in] long count,[in] float scale);
+    HRESULT SetRangeTransparency([in] long no, [in] long count,[in] float transparency);
+    HRESULT SetRangeFrno([in] long no,[in] long count,[in] long frno);
+    HRESULT GetOneX([in] long no,[out,retval] float* x);
+    HRESULT GetOneY([in] long no,[out,retval] float* y);
+    HRESULT GetOneAngle([in] long no,[out,retval] float* angle);
+    HRESULT GetOneScale([in] long no,[out,retval] float* scale);
+    HRESULT GetOneTransparency([in] long no,[out,retval] float* transparency );
+    HRESULT GetOneFrno([in] long no,[out,retval] long* frno);
+    HRESULT SetOne(
+      [in] long no,
+      [in] float x,[in] float y,
+      [in] float scale,
+      [in] float angle,
+      [in] float transparency,
+      [in] long frno);
+    HRESULT DiffRangeScale([in] long no,[in] long count,[in] float diff);
+    HRESULT DiffRangeXY([in] long no,[in] long count,[in] float xdiff,[in] float ydiff);
+    HRESULT DiffRangeTransparency([in] long no,[in] long count,[in] float diff);
+    HRESULT DiffRangeAngle([in] long no,[in] long count,[in] float diff);
+    HRESULT DiffRangeFrno([in] long no,[in] long count,[in] long diff);
+
+    [hidden] HRESULT GetRange([out,size_is(count)] struct MICROSPRITE* s,[in] long no,[in,defaultvalue(1)] long count);
+    [hidden] HRESULT SetRange([in,size_is(count)] struct MICROSPRITE* s,[in] long no,[in,defaultvalue(1)] long count);
+    HRESULT Order([in] enum tagLwsaOrder order,enum tagHotspot hotspot);
+  };
+
+  [
+    object,
+    uuid(2769AC6E-0D6A-4041-9D1F-3CC73B9DF134),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface ISpritesEnumerator : IDispatch
+  {
+    [id(DISPID_VALUE), hidden] HRESULT Item([in] long idx,[out,retval] ISprite **pI);
+    [id(1),propget] HRESULT value([out, retval] ISprite **pVal);
+    [id(2),propget] HRESULT count([out, retval] long *pVal);
+    HRESULT Reset([out,retval] VARIANT_BOOL *bRet);
+    HRESULT Next([out,retval] VARIANT_BOOL *bRet);
+    HRESULT Get([out,retval] ISprite** pI);
+  };
+
+  [
+    object,
+    uuid("688C4D09-D4A5-421b-9CDB-4B2AF52ED036"),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface ISpritesList : IDispatch
+  {
+    HRESULT Reset([out,retval] VARIANT_BOOL* pVal);
+    HRESULT Next([out,retval] VARIANT_BOOL* pVal);
+    HRESULT Get([out,retval] ISprite** pI);
+    HRESULT Remove();
+    HRESULT Add([in] ISprite* pI);
+    HRESULT Find([in] ISprite* pI, [out,retval] VARIANT_BOOL* pVal);
+    /*[hidden,helpstring("Same as Clear. This method is deprecated")]*/ HRESULT Purge();
+    [id(1),propget] HRESULT count([out,retval] long*  pVal);
+    HRESULT AtBegin([out,retval] ISprite** pI);
+    HRESULT AtEnd([out,retval] ISprite** pI);
+    HRESULT IsBegin([in] ISprite* sprite,[out,retval] VARIANT_BOOL* pVal);
+    HRESULT IsEnd([in] ISprite* sprite,[out,retval] VARIANT_BOOL* pVal);
+    [id(DISPID_VALUE)] HRESULT At([in] long no,[out,retval] ISprite** pI);
+    //HRESULT Clear();
+  };
+
+  [
+    object,
+    uuid("5072A4A8-B1DD-4E11-BE2A-06A6F0D360D8"),
+    dual,
+    hidden,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface IObjList : IDispatch
+  {
+    HRESULT Reset([out,retval] VARIANT_BOOL* pVal);
+    HRESULT Next([out,retval] VARIANT_BOOL* pVal);
+    HRESULT Get([out,retval] IUnknown** pI);
+    HRESULT Remove();
+    HRESULT Add([in] IUnknown* pI);
+    HRESULT Find([in] IUnknown* pI, [out,retval] VARIANT_BOOL* pVal);
+    /*[hidden,helpstring("Same as Clear. This method is deprecated")]*/ HRESULT Purge();
+    [id(1),propget] HRESULT count([out,retval] long*  pVal);
+    HRESULT AtBegin([out,retval] IUnknown** pI);
+    HRESULT AtEnd([out,retval] IUnknown** pI);
+    HRESULT IsBegin([in] IUnknown* sprite,[out,retval] VARIANT_BOOL* pVal);
+    HRESULT IsEnd([in] IUnknown* sprite,[out,retval] VARIANT_BOOL* pVal);
+    [id(DISPID_VALUE)] HRESULT At([in] long no,[out,retval] IUnknown** pI);
+    //HRESULT Clear();
+  };
+
+  [
+    object,
+    uuid(B18AE0BC-B495-420d-8CD9-8B2CAD819AF4),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface ITileMap : IDispatch
+  {
+    HRESULT Dispose();
+    [id(1),propget] HRESULT name([out, retval] BSTR *pVal);
+    [id(3),propget] HRESULT luminance([out, retval] float *pVal);
+    [id(3),propput] HRESULT luminance([in] float newVal);
+    [id(4),propget] HRESULT transparency([out, retval] float *pVal);
+    [id(4),propput] HRESULT transparency([in] float newVal);
+    [id(5),propget] HRESULT cfilt([out, retval] IRGBFilter* *pVal);
+    [id(6),propget] HRESULT x([out, retval] float *pVal);
+    [id(6),propput] HRESULT x([in] float newVal);
+    [id(7),propget] HRESULT y([out, retval] float *pVal);
+    [id(7),propput] HRESULT y([in] float newVal);
+    [id(8),propget] HRESULT visible([out, retval] VARIANT_BOOL *pVal);
+    [id(8),propput] HRESULT visible([in] VARIANT_BOOL newVal);
+    [id(10),propget] HRESULT rows([out, retval] long *pVal);
+    [id(11),propget] HRESULT cols([out, retval] long *pVal);
+    [id(12),propput] HRESULT xyScale([in] float newVal);
+    [id(13),propget] HRESULT xScale([out, retval] float *pVal);
+    [id(13),propput] HRESULT xScale([in] float newVal);
+    [id(14),propget] HRESULT yScale([out, retval] float *pVal);
+    [id(14),propput] HRESULT yScale([in] float newVal);
+    HRESULT AddTilesFrom(
+            [in] BSTR klass, 
+            [in,defaultvalue(0)] long frno, 
+            [in,defaultvalue(0)] long count,
+            [out,retval] long* no);
+    HRESULT Clear();
+    HRESULT SetTile(
+            [in] long col,
+            [in] long row,
+            [in] long tileno);
+    HRESULT GetTile(
+            [in] long col,
+            [in] long row, 
+            [out,retval] long* tileno);
+    [id(15),propget] HRESULT xCycled([out, retval] VARIANT_BOOL *pVal);
+    [id(15),propput] HRESULT xCycled([in] VARIANT_BOOL newVal);
+    [id(16),propget] HRESULT yCycled([out, retval] VARIANT_BOOL *pVal);
+    [id(16),propput] HRESULT yCycled([in] VARIANT_BOOL newVal);
+    
+    HRESULT SetTileByIdx(
+            [in] long idx,
+            [in] long tileno);
+    HRESULT GetTileByIdx(
+            [in] long idx, 
+            [out,retval] long* tileno);
+    HRESULT Purge();
+
+    [id(17),propget] HRESULT tileWidth([out, retval] long *pVal);
+    [id(17),propput] HRESULT tileWidth([in] long newVal);
+    [id(18),propget] HRESULT tileHeight([out, retval] long *pVal);
+    [id(18),propput] HRESULT tileHeight([in] long newVal);
+    [propget, id(20)] HRESULT alive([out, retval] VARIANT_BOOL *pVal);
+    [propget, id(21)] HRESULT tileSize([out, retval] long *pVal);
+    [propput, id(21)] HRESULT tileSize([in] long tsize);
+    [propget, id(22)] HRESULT layer([out, retval] long *pVal);
+    [propput, id(22)] HRESULT layer([in] long layer);
+    [propget, id(23)] HRESULT sublayer([out, retval] long *pVal);
+    [propput, id(23)] HRESULT sublayer([in] long newVal);
+    [propget, id(24)] HRESULT style([out, retval] enum tagStyle *pVal);
+    [propput, id(24)] HRESULT style([in] enum tagStyle newVal);
+    [hidden,restricted] HRESULT GetNameAsPWIDE([out,retval] wchar_t** retVal);
+  };
+
+  interface ICommand;
+  interface IExecutor;
+  
+  [
+    object,
+    uuid(EDB2D153-7408-4b23-A5B9-2578D5A3E125),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface IQue : IDispatch
+  {
+    [id(1),propget] HRESULT queno([out,retval] long* pVal);
+    [id(2),propget] HRESULT millis([out,retval] long* pVal);
+    [id(3),propget] HRESULT delta([out, retval] long *pVal);
+    HRESULT IsSuspended([out,retval] VARIANT_BOOL* pVal);
+    HRESULT IsEmpty([out,retval] VARIANT_BOOL* pVal);
+    HRESULT Dismiss();
+    HRESULT Schedule([in] IUnknown* command);
+    HRESULT Suspend();
+    HRESULT Resume();
+    HRESULT Clear();
+    HRESULT ExecuteNext([out,retval] enum tagQueState* pVal);
+    HRESULT CheckCond([in] long condno,[out,retval] VARIANT_BOOL* pVal);
+    HRESULT SetCondVal([in] long condno,[in] VARIANT_BOOL val);
+    HRESULT ScheduleSleep([in] long millis);
+    HRESULT ScheduleDismiss();
+    HRESULT ScheduleHolder([in] IUnknown* holder);
+    HRESULT Alert();
+    [id(4),propget] HRESULT cmdtime([out, retval] long *pVal);
+  };
+
+  [
+    object,
+    uuid(5E9B1763-5EC2-4a5c-9DF2-A4F763FD6A90),
+    pointer_default(unique)
+  ]
+  interface ICommand : IUnknown
+  {
+    HRESULT Execute([in] IQue* que,[out,retval] long* sleeptime);
+  };
+
+  [
+    object,
+    uuid(8E2A6682-4C9B-48a1-8D06-9FB1B13F3D28),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface IExecutor : IDispatch
+  {
+    HRESULT CreateQueue([in,defaultvalue(__O_QueUndefined)] long queno,[out,retval] IQue** pI);
+    HRESULT GetQueue([in] long queno,[out,retval] IQue** pI);
+    HRESULT ScheduleEx([in] long queno,[in] IUnknown* command);
+    HRESULT Schedule([in] IUnknown* command,[out,retval] long* queno);
+    HRESULT DismissQueue([in] long queno);
+    [hidden,restricted] HRESULT _Execute(long stage);
+    [hidden,restricted] HRESULT _Purge();
+    [hidden,restricted] HRESULT _LogQueues();
+  };
+
+  [
+    object,
+    uuid(B07537BF-AE03-4129-9052-0EA8BB0FCC8B),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface IParticles : IDispatch 
+  {
+    [id(1),propget] HRESULT count([out, retval] long *pVal);
+    [id(1),propput] HRESULT count([in] long newVal);
+    [id(2),propget] HRESULT x([out, retval] float *pVal);
+    [id(2),propput] HRESULT x([in] float newVal);
+    [id(3),propget] HRESULT y([out, retval] float *pVal);
+    [id(3),propput] HRESULT y([in] float newVal);
+    [id(4),propget] HRESULT xScale([out, retval] float *pVal);
+    [id(4),propput] HRESULT xScale([in] float newVal);
+    [id(5),propget] HRESULT yScale([out, retval] float *pVal);
+    [id(5),propput] HRESULT yScale([in] float newVal);
+    [id(6),propput] HRESULT xyScale([in] float newVal);
+    [id(7),propget] HRESULT angle([out, retval] float *pVal);
+    [id(7),propput] HRESULT angle([in] float newVal);
+    [id(8),propget] HRESULT luminance([out, retval] float *pVal);
+    [id(8),propput] HRESULT luminance([in] float newVal);
+    [id(9),propget] HRESULT transparency([out, retval] float *pVal);
+    [id(9),propput] HRESULT transparency([in] float newVal);
+    [id(10),propget] HRESULT cfilt([out, retval] IRGBFilter **pVal);
+    [id(11),propget] HRESULT parent([out, retval] ISprite* *pVal);
+    [id(11),propput] HRESULT parent([in] ISprite* newVal);
+    [id(12),propget] HRESULT visible([out, retval] VARIANT_BOOL *pVal);
+    [id(12),propput] HRESULT visible([in] VARIANT_BOOL newVal);
+    [id(13),propget] HRESULT hierarchy([out, retval] IHierarchy** pI);
+    [id(14),propget,hidden] HRESULT subimpl([out, retval] IUnknown* *pVal);
+    [id(14),propput,hidden] HRESULT subimpl([in] IUnknown* newVal);
+    [id(15),propget] HRESULT alive([out, retval] VARIANT_BOOL *pVal);
+    // хотя бы один из имиттеров излучает частицы
+    //[id(16),propget] HRESULT active([out, retval] VARIANT_BOOL *pVal);
+    [id(17),propget] HRESULT name([out, retval] BSTR *pVal);
+    [id(18),propget,hidden] HRESULT weakref([out, retval] IWeakParticles* *pVal);
+    [id(28),propget] HRESULT layer([out, retval] long *pVal);
+    [id(28),propput] HRESULT layer([in] long layer);
+    [id(29),propget] HRESULT sublayer([out,retval] long* layer);
+    [id(29),propput] HRESULT sublayer([in] long layer);
+    [id(30),propget] HRESULT klass([out, retval] BSTR *pVal);
+    [propget, id(31)] HRESULT emCount([out, retval] long *pVal);
+    [propput, id(31)] HRESULT emCount([in] long newVal);
+    [propget, id(32)] HRESULT lifeTime([out, retval] long *pVal);
+    [propput, id(32)] HRESULT lifeTime([in] long newVal);
+    [propget, id(33)] HRESULT cycled([out, retval] VARIANT_BOOL *pVal);
+    [propput, id(33)] HRESULT cycled([in] VARIANT_BOOL newVal);
+    HRESULT Reset();
+    HRESULT Dispose();
+    HRESULT SetEmitterCf([in] long cfno, [in] float val0,[in] float val1,[in,defaultvalue(-1)] long emitter);
+    HRESULT SetEmissionQuantity([in] long min,[in,defaultvalue(-1)] long max,[in,defaultvalue(-1)] long emitter);
+    HRESULT SetEmissionPeriod([in] long min,[in,defaultvalue(-1)] long max,[in,defaultvalue(-1)] long emitter);
+    HRESULT SetEmissionTime([in] long min,[in,defaultvalue(-1)] long max,[in,defaultvalue(-1)] long emitter);
+    HRESULT StartEmission([in,defaultvalue(0)] IUnknown* litener,[in,defaultvalue(0)] long cookie);
+    HRESULT StopEmission([in,defaultvalue(0)] long timeout);
+    HRESULT SetProgram([in] BSTR program,[in,defaultvalue(-1)] long emitter);
+    //HRESULT SetDefaultProgram([in,defaultvalue(-1)] long emitter);
+    //[hidden] HRESULT DumpProgramMicrops([in,defaultvalue(-1)] long emitter);
+    [hidden,restricted] HRESULT GetNameAsPWIDE([out,retval] wchar_t** p);
+    [hidden,restricted] HRESULT GetKlassAsPWIDE([out,retval] wchar_t** p);
+    HRESULT DispatchSubImpl([in] IDispatch* subimpl);
+    [propget, id(34)] HRESULT autodispose([out, retval] VARIANT_BOOL *pVal);
+    [propput, id(34)] HRESULT autodispose([in] VARIANT_BOOL newVal);
+    [id(35),propget] HRESULT dispatcher([out, retval] IUnknown* *pVal);
+    [id(35),propput] HRESULT dispatcher([in] IUnknown* newVal);
+    HRESULT Suspend();
+    HRESULT Resume();
+    HRESULT Simulate([in] long millis,[in,defaultvalue(30)] long fps);
+  };
+
+  [
+    object,
+    uuid(7BEAE8FB-DC9C-4efb-BBBF-29663C4BF997),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface IParticlesEnumerator : IDispatch
+  {
+    [id(DISPID_VALUE),hidden] HRESULT Item([in] long idx,[out,retval] IParticles **pI);
+    [id(1),propget] HRESULT value([out, retval] IParticles **pVal);
+    [id(2),propget] HRESULT count([out, retval] long *pVal);
+    HRESULT Reset([out,retval] VARIANT_BOOL *bRet);
+    HRESULT Next([out,retval] VARIANT_BOOL *bRet);
+    HRESULT Get([out,retval] IParticles** pI);
+  };
+
+  [
+    object,
+    uuid(CA718D26-B933-4480-A55E-17A390CADE10),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface IRandomizer : IDispatch
+  {
+    HRESULT Reset([in] long cookie);
+    HRESULT Next([out,retval] float* pVal);
+  };
+
+
+  [
+    object,
+    uuid(38D51866-55F7-4DF1-94EB-5A5ACFB2B118),
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface IConsole : IDispatch
+  {
+    HRESULT Println([in] BSTR text);
+    HRESULT Print([in] BSTR text);
+    HRESULT Clear();
+    HRESULT ProcessInput([out,retval] VARIANT_BOOL* cmdEnter);
+    [id(1), propput] HRESULT lines([in] long lines);
+    [id(1), propget] HRESULT lines([out,retval] long* lines);
+    [id(2), propput] HRESULT visible([in] VARIANT_BOOL on);
+    [id(2), propget] HRESULT visible([out,retval] VARIANT_BOOL* on);
+    [id(3), propput] HRESULT transparent([in] VARIANT_BOOL on);
+    [id(3), propget] HRESULT transparent([out,retval] VARIANT_BOOL* on);
+    [id(4), propput] HRESULT cmdline([in] BSTR text);
+    [id(4), propget] HRESULT cmdline([out,retval] BSTR* text);
+    [id(5), propput] HRESULT maxlines([in] long lines);
+    [id(5), propget] HRESULT maxlines([out,retval] long* lines);
+  };
+
+  [
+    object,
+    uuid(3927EFF7-C1F6-42c9-A84E-15022FB87911),
+    //uuid(470A3BBF-DEB3-40b0-93C1-CA02C210ED9C),
+    //hidden,
+    dual,
+    pointer_default(unique),
+    nonextensible
+  ]
+  interface IEngine : IDispatch
+  {
+    HRESULT Init([in,defaultvalue(__O_DevAuto)] enum tagScDevice flags);
+    HRESULT PlaceWindowAt([in] enum tagPosition pos);
+    HRESULT Display();
+    HRESULT DisplayEx([in] long millis,[out,retval] long* pVal);
+    HRESULT NextEvent([out,retval] VARIANT_BOOL *bRet);
+    HRESULT SleepMillis([in] long millis);
+    HRESULT SuspendGameClock();
+    HRESULT ResumeGameClock();
+    HRESULT Purge();
+    HRESULT Log([in] BSTR text);
+    HRESULT MoveWindowTo([in] long x,[in] long y);
+
+    HRESULT EvtIsQuit([out,retval] VARIANT_BOOL *pVal);
+    HRESULT EvtIsESC([out,retval] VARIANT_BOOL *pVal);
+    HRESULT EvtIsKeyUp([out,retval] VARIANT_BOOL *pVal);
+    HRESULT EvtIsKeyDown([out,retval] VARIANT_BOOL *pVal);
+    HRESULT EvtIsMouseMove([out,retval] VARIANT_BOOL *pVal);
+    HRESULT EvtIsMouseLeave([out,retval] VARIANT_BOOL *pVal);
+    HRESULT EvtEvent([out,retval] enum tagEventType* key);
+    HRESULT EvtKey([out,retval] enum tagKeyVal* key);
+    HRESULT EvtKeyEx([out,retval] long* keyval);
+    HRESULT EvtIsLClick([out,retval] VARIANT_BOOL* pVal);
+    HRESULT EvtIsRClick([out,retval] VARIANT_BOOL* pVal);
+    HRESULT IsKeyPressed([in] enum tagKeyVal key,[out,retval] VARIANT_BOOL* pVal);
+    HRESULT MapKey([in] enum tagKeyVal key,[in] enum tagKeyVal stkey);
+    HRESULT RefreshInput([out,retval] long* state);
+    HRESULT EvtIsMouseUp([out,retval] VARIANT_BOOL *pVal);
+    HRESULT EvtIsMouseDown([out,retval] VARIANT_BOOL *pVal);
+    HRESULT EvtIsMouse([out,retval] VARIANT_BOOL *pVal);
+    HRESULT IsKeyPressedNow([in] enum tagKeyVal key,[out,retval] VARIANT_BOOL* pVal);
+    HRESULT IsKeyReleasedNow([in] enum tagKeyVal key,[out,retval] VARIANT_BOOL* pVal);
+
+    [id(1),propget] HRESULT mouseX([out, retval] long *pVal);
+    [id(1),propput] HRESULT mouseX([in] long newVal);
+    [id(2),propget] HRESULT mouseY([out, retval] long *pVal);
+    [id(2),propput] HRESULT mouseY([in] long newVal);
+    [id(3),propget] HRESULT mouseLDown([out, retval] VARIANT_BOOL *pVal);
+    [id(4),propget] HRESULT mouseRDown([out, retval] VARIANT_BOOL *pVal);
+    [id(5),propget] HRESULT needRefresh([out, retval] VARIANT_BOOL *pVal);
+    [id(6),propget] HRESULT millis([out, retval] long *pVal);
+    [id(7),propget] HRESULT fullscreen([out, retval] VARIANT_BOOL *pVal);
+    [id(7),propput] HRESULT fullscreen([in] VARIANT_BOOL newVal);
+    [id(8),propget] HRESULT rscpath([out, retval] BSTR *pVal);
+    [id(8),propput] HRESULT rscpath([in] BSTR newVal);
+    [id(9),propget] HRESULT showFps([out, retval] VARIANT_BOOL *pVal);
+    [id(9),propput] HRESULT showFps([in] VARIANT_BOOL newVal);
+    [id(10),propget] HRESULT logging([out, retval] VARIANT_BOOL *pVal);
+    [id(10),propput] HRESULT logging([in] VARIANT_BOOL newVal);
+    [id(11),propget] HRESULT title([out, retval] BSTR *pVal);
+    [id(11),propput] HRESULT title([in] BSTR newVal);
+    [id(12),propget] HRESULT mouseIn([out, retval] VARIANT_BOOL *pVal);
+    [id(13),propput] HRESULT nativeCursor([in] VARIANT_BOOL newVal);
+    [id(14),propget] HRESULT softRefresh([out, retval] VARIANT_BOOL *pVal);
+    [id(14),propput] HRESULT softRefresh([in] VARIANT_BOOL newVal);
+    [id(15),propput] HRESULT SST([in] BSTR newVal);
+    [id(16),propget] HRESULT scrWidth([out, retval] long *pVal);
+    [id(17),propget] HRESULT scrHeight([out, retval] long *pVal);
+    [id(18),propget] HRESULT vMode([out, retval] enum tagVideoMode *pVal);
+    [id(18),propput] HRESULT vMode([in] enum tagVideoMode newVal);
+    [id(19),propget] HRESULT windowX([out, retval] long *pVal);
+    [id(19),propput] HRESULT windowX([in] long newVal);
+    [id(20),propget] HRESULT windowY([out, retval] long *pVal);
+    [id(20),propput] HRESULT windowY([in] long newVal);
+    [id(21),propget] HRESULT volume([out, retval] long *pVal);
+    [id(21),propput] HRESULT volume([in] long newVal);
+    [id(22),propget] HRESULT supportSound([out, retval] VARIANT_BOOL *pVal);
+    [id(23),propget] HRESULT enableSound([out, retval] VARIANT_BOOL *pVal);
+    [id(23),propput] HRESULT enableSound([in] VARIANT_BOOL newVal);
+    [id(24),propget] HRESULT executor([out, retval] IExecutor **pVal);
+    [id(25),propget] HRESULT frameTick([out, retval] long *pVal);
+    [id(26),propget] HRESULT suspended([out, retval] VARIANT_BOOL *pVal);
+    [id(27),propget] HRESULT background([out, retval] IRGBFilter* *pVal);
+    [id(28),propget] HRESULT HWND([out, retval] long *pVal);
+    [id(29),propget,hidden] HRESULT wndframe([out, retval] VARIANT_BOOL *pVal);
+    [id(29),propput,hidden] HRESULT wndframe([in] VARIANT_BOOL newVal);
+    [id(30),propget] HRESULT scVersion([out, retval] long *pVal);
+
+    HRESULT NewSprite(
+          [in] BSTR name,
+          [in] BSTR klass,
+          [in,defaultvalue(0)] long layer,
+          [in,defaultvalue(0)] int x, 
+          [in,defaultvalue(0)] int y,
+          [out,retval] ISprite** bRet );
+    HRESULT NewSprite_(
+                     [in] BSTR klass,
+                     [in,defaultvalue(0)] long layer,
+                     [out,retval] ISprite** pI);
+    HRESULT FindSpriteAtMouse(
+          [in] long nearLayer,
+          [in] long farLayer,
+          [out,retval] ISprite** pI);
+    HRESULT IsSprite(
+          [in] IDispatch* pI,
+          [out,retval] VARIANT_BOOL* bRet);
+    HRESULT EnumerateSprites(
+          [out,retval] ISpritesEnumerator** pI);
+    /*HRESULT [hidden] FindSpriteAtMouseEx(
+          [in] long nearLayer,
+          [in] long farLayer,
+          [out] ISprite** pI,
+          [out,retval] VARIANT_BOOL* bRet); */
+    HRESULT FindSprite(
+          [in] BSTR name,
+          [out,retval] ISprite** pI);
+    HRESULT EnumerateSpritesEx(
+                    [in] long nearLayer,
+                    [in] long farLayer,
+          [out,retval] ISpritesEnumerator** pI);
+    
+    HRESULT NewTileMap(
+                    [in] BSTR name, 
+                    [in] long columns,
+                    [in] long rows, 
+                    [in] long tileSize,
+                    [in] long layer,
+                    [out,retval] ITileMap** pI);
+    HRESULT NewTileMap_(
+                    [in] long columns,
+                    [in] long rows, 
+                    [in] long tileSize,
+                    [in] long layer,
+                    [out,retval] ITileMap** pI);
+    HRESULT FindTileMap(
+                    [in] BSTR name,
+                    [out,retval] ITileMap** pI);
+    HRESULT NewPredefinedTileMap(
+                    [in] BSTR name,
+                    [in] BSTR pattern,
+                    [in] long layer,
+                    [out,retval] ITileMap** pI);
+    HRESULT NewParticles([in] BSTR name,[in] BSTR klass,[in] long layer,[out,retval] IParticles** pI);
+    HRESULT NewParticles_([in] BSTR klass,[in] long layer,[out,retval] IParticles** pI);
+    HRESULT FindParticles([in] BSTR name,[out,retval] IParticles** pI);
+    HRESULT NewDummy([in] BSTR name,[out,retval] ISprite** pI);
+    HRESULT PlaySound([in] BSTR sound,[in,defaultvalue(0)] long channel,[in,defaultvalue(0)] IUnknown* listener,[in,defaultvalue(0)] long cookie);
+    HRESULT StopSound([in] long channel);
+    HRESULT Preload([in] BSTR rscname);
+    HRESULT Unload([in] BSTR rscname);
+    HRESULT NewSpritesList([out,retval] ISpritesList** pI);
+    HRESULT NewRandomizer([out,retval] IRandomizer** pI);
+    HRESULT AllowCollide([in] long group1, [in] long group2);
+    HRESULT DisallowCollide([in] long group1, [in] long group2);
+    HRESULT SetCollideMgr([in] IUnknown *mgr);
+    HRESULT DumpObjectsList();
+    [id(31),propget] HRESULT layerX(long no, [out, retval] float *pVal);
+    [id(31),propput] HRESULT layerX(long no, [in] float newVal);
+    [id(32),propget] HRESULT layerY(long no, [out, retval] float *pVal);
+    [id(32),propput] HRESULT layerY(long no, [in] float newVal);
+    [id(33),propget] HRESULT layerVisibility(long no, [out, retval] VARIANT_BOOL *pVal);
+    [id(33),propput] HRESULT layerVisibility(long no, [in] VARIANT_BOOL newVal);
+    [id(34),propget] HRESULT channelVolume(long channel, [out, retval] long *pVal);
+    [id(34),propput] HRESULT channelVolume(long channel, [in] long newVal);
+    [id(35),propget] HRESULT channelPan(long channel, [out, retval] long *pVal);
+    [id(35),propput] HRESULT channelPan(long channel, [in] long newVal);
+    [id(36),propget] HRESULT channelMute(long channel, [out, retval] VARIANT_BOOL *pVal);
+    [id(36),propput] HRESULT channelMute(long channel, [in] VARIANT_BOOL newVal);
+    [id(37),propget] HRESULT offscreenCollide([out, retval] VARIANT_BOOL *pVal);
+    [id(37),propput] HRESULT offscreenCollide([in] VARIANT_BOOL newVal);
+    [hidden] HRESULT Update();
+    [id(38),propget] HRESULT invertStereo([out, retval] VARIANT_BOOL *pVal);
+    [id(38),propput] HRESULT invertStereo([in] VARIANT_BOOL newVal);
+    HRESULT IncLayerX([in] long no,[in] float val);
+    HRESULT IncLayerY([in] long no,[in] float val);
+    [propget, id(39)] HRESULT clearColorBits([out, retval] VARIANT_BOOL *pVal);
+    [propput, id(39)] HRESULT clearColorBits([in] VARIANT_BOOL newVal);
+    [propget, id(40)] HRESULT mouseMode([out, retval] enum tagMouseMode *pVal);
+    [propput, id(40)] HRESULT mouseMode([in] enum tagMouseMode newVal);
+    [propget, id(41)] HRESULT mouseDifX([out, retval] long *pVal);
+    [propget, id(42)] HRESULT mouseDifY([out, retval] long *pVal);
+    [propget, id(43)] HRESULT vSync([out, retval] VARIANT_BOOL *pVal);
+    [propput, id(43)] HRESULT vSync([in] VARIANT_BOOL newVal);
+    HRESULT SetMouseNotifierRange([in] long nearLayer,[in] long farLayer);
+    HRESULT ResetMouseNotifierRange();
+    HRESULT GrabMouse([in] ISprite* sprite);
+    HRESULT ParseXML([in] BSTR source, [in,defaultvalue(__O_ParsDefault)] enum tagParsFlags flags, [out,retval] IXdata** pI);
+    HRESULT ParseDEF([in] BSTR source, [in,defaultvalue(__O_ParsDefault)] enum tagParsFlags flags, [out,retval] IXdata** pI);
+    HRESULT NewXdata([in] BSTR tag,[out,retval] IXdata** pI);
+    HRESULT EnumerateParticles([out,retval] IParticlesEnumerator** pI);
+    HRESULT SstDefKlass([in] BSTR klass,[in] IXdata* info);
+    HRESULT SstUndefKlass([in] BSTR klass);
+    HRESULT SstFindKlass([in] BSTR klass,[out,retval] IXdata** pI);
+    HRESULT SstLoad([in] BSTR source,[in,defaultvalue(0)] long flags);
+    [propget, id(44)] HRESULT safeDraw([out, retval] VARIANT_BOOL *pVal);
+    [propput, id(44)] HRESULT safeDraw([in] VARIANT_BOOL newVal);
+    HRESULT InitEx([in] enum tagScDevice flags,[in] enum tagVideoMode vmode);
+    HRESULT AttachTo([in] long hwnd);
+    [propget, id(45)] HRESULT wndWidth([out, retval] long*);
+    [propget, id(46)] HRESULT wndHeight([out, retval] long*);
+    [propget, id(60)] HRESULT console([out, retval] IConsole **pVal);
+    HRESULT EvtIsKeyChar([out,retval] VARIANT_BOOL *pVal);
+    [hidden] HRESULT EvtKeyChar_([out,retval] wchar_t* keyval);
+    HRESULT NextEventEx([in] VARIANT_BOOL processMsgQue, [out,retval] VARIANT_BOOL *bRet);
+    HRESULT DisplayExNoWait([in] long millis,[out,retval] long* pVal);
+    [propget, id(61)]HRESULT scrOffsX([out,retval] float* pVal);
+    [propput, id(61)]HRESULT scrOffsX([in] float x);
+    [propget, id(62)]HRESULT scrOffsY([out,retval] float* pVal);
+    [propput, id(62)]HRESULT scrOffsY([in] float y);
+    HRESULT UnloadAll();
+    HRESULT UnloadEx([in] BSTR name, [in] VARIANT_BOOL removeit);
+    [propput, id(63)]HRESULT pulseRefresh([in] VARIANT_BOOL val);
+    [propget, id(63)]HRESULT pulseRefresh([out,retval] VARIANT_BOOL* val);
+    [propget, id(64)]HRESULT frameTickDelta([out, retval] long *pVal);
+    HRESULT EvtKeyChar([out,retval] BSTR *keyval);
+    HRESULT OpenLog([in,defaultvalue("")] BSTR logname);
+
+    HRESULT PlaySoundLoop([in] BSTR sound,[in,defaultvalue(0)] long channel,[in,defaultvalue(0)] IUnknown* listener,[in,defaultvalue(0)] long cookie);
+    HRESULT NextSound([in] BSTR sound,long channel,[in,defaultvalue(0)] long cookie);
+    [propget, id(65)]HRESULT windowIsActive([out, retval]  VARIANT_BOOL *pVal);
+
+    HRESULT EvtWindowBecomeActive([out,retval] VARIANT_BOOL *pVal);
+    HRESULT EvtWindowBecomeInactive([out,retval] VARIANT_BOOL *pVal);
+
+    //HRESULT ChainSoundNext([in] BSTR sound,[in,defaultvalue(0)] long channel/*,[in,defaultvalue(0)] long cookie*/);
+    //HRESULT PlayNextSound([in] BSTR sound,[in,defaultvalue(0)] long channel/*,[in,defaultvalue(0)] long cookie*/);
+
+    //[id(65),propget] HRESULT channelSuspend(long channel, [out, retval] VARIANT_BOOL *pVal);
+    //[id(65),propput] HRESULT channelSuspend(long channel, [in] VARIANT_BOOL newVal);
+    //HRESULT SuspendAllChannels();
+    //HRESULT ResumeAllChannels();
+  };
+
+  [
+    uuid(03C4B35B-0A4B-426c-A794-9718D13A842C),
+    helpstring("SpriteCraft 2D Engine"),
+  ]
+  coclass Engine
+  {
+    [default] interface IEngine;
+  };
+
+  [ dllname("spritecraft.dll") ]
+  module Dll {
+    [entry(25)] HRESULT stdcall CreateEngine([in,defaultvalue(SCVersion)] enum SpriteCraftVer minVersion, [out,retval] IEngine** pI);
+    //[entry(26)] HRESULT stdcall ParseXML([in] BSTR source, [in,defaultvalue(ParsDefault)] enum tagParsFlags flags, [out,retval] IXdata** pI);
+    //[entry(27)] HRESULT stdcall ParseDEF([in] BSTR source, [in,defaultvalue(ParsDefault)] enum tagParsFlags flags, [out,retval] IXdata** pI);
+    //[entry(28)] HRESULT stdcall CreateXML([in] BSTR tag, [out,retval] IXdata** pI);
+  }
+
+  [
+    uuid(00797D81-A843-4ffc-B7F1-573C49A21432),
+    nonextensible,
+    hidden
+  ]
+  dispinterface _IQueueEvents
+  {
+    properties:
+    methods:
+    [id(1)] HRESULT Execute([in] IQue* que,[out,retval] long* sleeptime);
+  };
+
+  [
+    uuid(0BE1B4F3-3652-49b6-BF59-7FC783E18932),
+    nonextensible,
+    hidden
+  ]
+  dispinterface _ISpriteEvents
+  {
+    properties:
+    methods:
+    [id(1)] HRESULT OnCollide([in] ISprite* sprite,[in] ISprite* hit);
+    [id(2)] HRESULT OnUpdate([in] ISprite* sprite,[in] long tickdelta);
+    [id(3)] HRESULT OnMouseMove([in] ISprite* sprite,[in] float mouseX,[in] float mouseY);
+    [id(4)] HRESULT OnMouseDown([in] ISprite* sprite,[in] float mouseX,[in] float mouseY,[in] long button);
+    [id(5)] HRESULT OnMouseUp([in] ISprite* sprite,[in] float mouseX,[in] float mouseY, [in] long button);
+    [id(6)] HRESULT OnMouseOver([in] ISprite* sprite,[in] VARIANT_BOOL mouseIn);
+    [id(7)] HRESULT OnMouseClick([in] ISprite* sprite,[in] float mouseX,[in] float mouseY,[in] long button);
+    [id(1000)] HRESULT OnDispose([in] IDispatch* obj);
+  };
+
+  [
+    uuid(38E7A96E-445C-463a-B10C-8431AA458961),
+    hidden,
+    noncreatable
+  ]
+  coclass _CoQueueConnectionPoint
+  {
+    [default,source] dispinterface _IQueueEvents;
+  };
+
+  [
+    uuid(EC896096-2682-4696-BF14-9E7AFF6988C7),
+    hidden,
+    noncreatable
+  ]
+  coclass _CoSpriteConnectionPoint
+  {
+    [default,source] dispinterface _ISpriteEvents;
+  };
+
+//----------------------------------------------------------------------
+//--
+//-- Notification interfaces
+//--
+//----------------------------------------------------------------------
+
+
+/**
+    OnStop* notifications
+**/
+  [
+    object,
+    uuid(C81D06AD-8E76-461c-8B20-782CAD106F36),
+    pointer_default(unique),
+  ]
+  interface IOnStopSound : IUnknown
+  {
+    HRESULT OnStopSound([in] BSTR sound,[in] long channel,[in] long cookie,[in] VARIANT_BOOL interrupted);
+  };
+
+  [
+    object,
+    uuid(F5350E4A-82DB-4cd4-A6A1-17E259FC6723),
+    pointer_default(unique),
+  ]
+  interface IOnStopAnimation : IUnknown
+  {
+    HRESULT OnStopAnimation([in] ISprite* sprite,[in] long cookie,[in] VARIANT_BOOL interrupted);
+  };
+
+  [
+    object,
+    uuid(2ECCBC10-5855-4461-90A6-397836A4EB2B),
+    pointer_default(unique),
+  ]
+  interface IOnStopEmission : IUnknown
+  {
+    HRESULT OnStopEmission([in] IParticles* particles,[in] long cookie,[in] VARIANT_BOOL interrupted);
+  };
+
+/**
+    OnNext* notifications
+**/
+  [
+    object,
+    uuid(4ddad5b2-60b8-4b74-9f52-06d01da39235),
+    pointer_default(unique),
+  ]
+  interface IOnNextSound : IUnknown
+  {
+    HRESULT OnNextSound([in] BSTR sound,[in] long channel,[in] long cookie);
+  };
+
+
+/**
+    Collision detection notification
+**/
+  [
+    object,
+    uuid(131F8B37-ABD7-4101-BFA6-67D7C89857E4),
+    pointer_default(unique),
+  ]
+  interface IOnCollide : IUnknown
+  {
+    HRESULT OnCollide([in] ISprite* sprite,[in] ISprite* hit);
+  };
+
+/**
+    On Frame update notification
+**/
+  [
+    object,
+    uuid(2C020C73-6DD5-4fb1-9FFF-6C4B66E9622C),
+    pointer_default(unique),
+  ]
+  interface IOnUpdate : IUnknown
+  {
+    HRESULT OnUpdate([in] ISprite* sprite,[in] long tickdelta);
+  };
+
+/**
+    Mouse handling notifications
+**/
+  [
+    object,
+    uuid(FA096057-99FE-4188-BC55-8CBE5D229EDF),
+    pointer_default(unique),
+  ]
+  interface IOnMouseMove : IUnknown
+  {
+    HRESULT OnMouseMove([in] ISprite* sprite,[in] float mouseX,[in] float mouseY);
+  };
+
+  [
+    object,
+    uuid(1467E28C-A4DA-44e9-BF48-CE31F8164C23),
+    pointer_default(unique),
+  ]
+  interface IOnMouseDown : IUnknown
+  {
+    HRESULT OnMouseDown([in] ISprite* sprite,[in] float mouseX,[in] float mouseY,[in] long button);
+  };
+
+  [
+    object,
+    uuid(66046AA2-52F4-4b6d-A29A-CD37C95DD533),
+    pointer_default(unique),
+  ]
+  interface IOnMouseUp : IUnknown
+  {
+    HRESULT OnMouseUp([in] ISprite* sprite,[in] float mouseX,[in] float mouseY, [in] long button);
+  };
+
+  [
+    object,
+    uuid(A24F8E10-E7B4-4601-8892-DC1B29028E1C),
+    pointer_default(unique),
+  ]
+  interface IOnMouseOver : IUnknown
+  {
+    HRESULT OnMouseOver([in] ISprite* sprite,[in] VARIANT_BOOL mouseIn);
+  };
+
+  [
+    object,
+    uuid(33631A6B-2B1B-4b60-ABDF-0EF76B8CC0E2),
+    pointer_default(unique),
+  ]
+  interface IOnMouseClick : IUnknown
+  {
+    HRESULT OnMouseClick([in] ISprite* sprite,[in] float mouseX,[in] float mouseY,[in] long button);
+  };
+
+
+/**
+    Lifecycle control notifications
+**/
+  [
+    object,
+    uuid(578F1B56-2341-4d49-BCB9-B7E307CD1047),
+    pointer_default(unique),
+  ]
+  interface IOnDispose : IUnknown
+  {
+    HRESULT OnDispose([in] IDispatch* obj);
+  };
+
+  [
+    object,
+    uuid(21CD2B05-0885-45ac-901F-9D52D2979B51),
+    pointer_default(unique),
+  ]
+  interface IOnLifetimeOut : IUnknown
+  {
+    HRESULT OnLifetimeOut([in] IParticles* particles);
+  };
+
+/**
+  Particles system upadate notification
+**/
+  [
+    object,
+    uuid(824466AA-16CF-4f17-9523-40D26A94BB05),
+    pointer_default(unique),
+  ]
+  interface IOnEmission : IUnknown
+  {
+    HRESULT OnEmission([in] IParticles* particles,[in] long tickdelta);
+  };
+
+};

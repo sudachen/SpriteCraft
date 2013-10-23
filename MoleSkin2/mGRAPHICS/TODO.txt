@@ -1,0 +1,18 @@
+Регионы для проверки столкновений
+полигональный клипинг спрата
+дефалтовые классы @NONE и @WHITE
+для системы частиц может быть использован только класс с типом blend
+
+
+RSCMAN содержит SST - это не правильно.
+
+##SPRITE_Info содержит символы шрифта как pchar_t
+
+AutoProperties RSCMAN_Inst::GetRecordSST(pwide_t sst_record)
+  работает с pchar_t. Заменить properties на unicode XML config
+
+Перевести tilemap на CollectionT и WideString
+
+OutOfScreen должен учитывать что спрайт может быть текстовым.
+
+Добавить в SCERROR Impl_3DSPRITES::RestoreKlass_(KlassOfSprite3D& klass) загрузку определения символов из уникодного источника.

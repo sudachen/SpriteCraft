@@ -1,0 +1,120 @@
+
+m4_define(`_RUNTIME_','static')
+COMPILER: mscc
+LD_FLAGS:
+CPPFLAGS: -D_TEGGONOTFFCLSLIB
+COMMON_CCFLAGS: \
+  -DWIN32 -D_WINDOWS -D_WIN32_WINNT="0x0500" -I../Classes \
+	m4_ifelse("_BUILD_RELEASE_","release",
+	  m4_ifelse(_RUNTIME_,'static',`-MT',`-MD'),
+	  m4_ifelse(_RUNTIME_,'static',`-MTd',`-MDd')) \
+	m4_ifelse("_BUILD_RELEASE_","release",
+    `-EHs-c- -GR- -Ox -Os -Oi -Ob2 -Oy- -Gy -GF',
+		`-D_DEBUG -Od -Zi') \
+
+m4_ifelse("_BUILD_NAME_","",`',`m4_define(`_BUILD_VC7_')')
+m4_ifdef(`_BUILD_VC7_',`m4_define(`_VCPATH_',`D:\Visus\VS2003TK')',`')
+m4_define(`_BUILD_VC7_B_',m4_ifdef(`_VCPATH_',_VCPATH_\bin;,`'))
+m4_define(`_BUILD_VC7_I_',m4_ifdef(`_VCPATH_',_VCPATH_\include;,`'))
+m4_define(`_BUILD_VC7_L_',m4_ifdef(`_VCPATH_',_VCPATH_\lib;,`'))
+m4_define(`_PSDKPATH_',`D:\Visus\PSDK2002AUG')
+m4_define(`_DX7PATH_',`D:\Visus\DxSDK7a')
+ENV.PATH:    _BUILD_VC7_B_`%PATH%'
+ENV.INCLUDE: _DX7PATH_\include;_PSDKPATH_\include;_BUILD_VC7_I_`%INCLUDE%'
+ENV.LIB:     _DX7PATH_\include;_PSDKPATH_\lib;_BUILD_VC7_L_`%LIB%'
+
+m4_define( `TFFMEDIA', m4_format(`tffmedia%s-%s.lib',_BUILD_NAME_,_BUILD_RELEASE_))
+OUTDIR: m4_format("..\~temp~\tffmedia%s-%s",_BUILD_NAME_,_BUILD_RELEASE_)
+
+;lib.jpeg/jcomapi.c
+;lib.jpeg/jdapimin.c
+;lib.jpeg/jdapistd.c
+;lib.jpeg/jdatadst.c
+;lib.jpeg/jdatasrc.c
+;lib.jpeg/jdcoefct.c
+;lib.jpeg/jdcolor.c
+;lib.jpeg/jddctmgr.c
+;lib.jpeg/jdhuff.c
+;lib.jpeg/jdinput.c
+;lib.jpeg/jdmainct.c
+;lib.jpeg/jdmarker.c
+;lib.jpeg/jdmaster.c
+;lib.jpeg/jdmerge.c
+;lib.jpeg/jdphuff.c
+;lib.jpeg/jdpostct.c
+;lib.jpeg/jdsample.c
+;lib.jpeg/jdtrans.c
+;lib.jpeg/jerror.c
+;lib.jpeg/jfdctflt.c
+;lib.jpeg/jfdctfst.c
+;lib.jpeg/jfdctint.c
+;lib.jpeg/jidctflt.c
+;lib.jpeg/jidctfst.c
+;lib.jpeg/jidctint.c
+;lib.jpeg/jidctred.c
+;lib.jpeg/jmemmgr.c
+;lib.jpeg/jmemnobs.c
+;lib.jpeg/jquant1.c
+;lib.jpeg/jquant2.c
+;lib.jpeg/jutils.c
+;lib.png/png.c
+;lib.png/pngerror.c
+;lib.png/pngget.c
+;lib.png/pngmem.c
+;lib.png/pngpread.c
+;lib.png/pngread.c
+;lib.png/pngrio.c
+;lib.png/pngrtran.c
+;lib.png/pngrutil.c
+;lib.png/pngset.c
+;lib.png/pngtrans.c
+;lib.png/pngwio.c
+;lib.png/pngwtran.c
+;lib.z/zl_adler32.c
+;lib.z/zl_compress.c
+;lib.z/zl_crc32.c
+;lib.z/zl_deflate.c
+;lib.z/zl_infblock.c
+;lib.z/zl_infcodes.c
+;lib.z/zl_inffast.c
+;lib.z/zl_inflate.c
+;lib.z/zl_inftrees.c
+;lib.z/zl_infutil.c
+;lib.z/zl_trees.c
+;lib.z/zl_uncompr.c
+;lib.z/zutil.c
+;lib.oggvorbis/ogg/bitwise.c
+;lib.oggvorbis/ogg/framing.c
+;lib.oggvorbis/vorbis/block.c
+;lib.oggvorbis/vorbis/codebook.c
+;lib.oggvorbis/vorbis/envelope.c
+;lib.oggvorbis/vorbis/floor0.c
+;lib.oggvorbis/vorbis/floor1.c
+;lib.oggvorbis/vorbis/info.c
+;lib.oggvorbis/vorbis/lookup.c
+;lib.oggvorbis/vorbis/lpc.c
+;lib.oggvorbis/vorbis/lsp.c
+;lib.oggvorbis/vorbis/mapping0.c
+;lib.oggvorbis/vorbis/mdct.c
+;lib.oggvorbis/vorbis/psy.c
+;lib.oggvorbis/vorbis/registry.c
+;lib.oggvorbis/vorbis/res0.c
+;lib.oggvorbis/vorbis/sharedbook.c
+;lib.oggvorbis/vorbis/smallft.c
+;lib.oggvorbis/vorbis/synthesis.c
+;lib.oggvorbis/vorbis/vorbisfile.c
+;lib.oggvorbis/vorbis/window.c
+;lib.ddraw/creathcurso.cpp
+;lib.ddraw/ddraw_inst.cpp
+;lib.ddraw/tfft_bitmap.cpp
+;lib.ddraw/tfft_dcpool.cpp
+;colorXtoX.cpp
+;picture.cpp
+;picture_bmp.cpp
+;picture_jpg.cpp
+;picture_png.cpp
+;picture_tga.cpp
+;reduction12.cpp
+;tffmedia.cpp
+
+LINK: TFFMEDIA, LIB
