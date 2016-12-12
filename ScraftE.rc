@@ -1,7 +1,7 @@
 
 1 VERSIONINFO
- FILEVERSION 3,3,0,9455
- PRODUCTVERSION 3,3,0,9455
+ FILEVERSION 3,3,0,9457
+ PRODUCTVERSION 3,3,0,9457
  FILEFLAGSMASK 0x20fcL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -18,14 +18,14 @@ BEGIN
         BEGIN
             VALUE "Comments", "ScraftE for C++/Python.\0"
             VALUE "FileDescription", "http://www.spritecraft.com/\0"
-            VALUE "FileVersion", "3, 3, 0, 9455\0"
+            VALUE "FileVersion", "3, 3, 0, 9457\0"
             VALUE "InternalName", "SpriteCraft Engine\0"
             VALUE "LegalCopyright", "(C)2002-2013, Alexey Sudachen & Olga Marchevska\0"
             VALUE "LegalTrademarks", "\0"
             VALUE "OriginalFilename", "scraft.dll\0"
             VALUE "PrivateBuild", "\0"
             VALUE "ProductName", "SpriteCraft Engine\0"
-            VALUE "ProductVersion", "3, 3, 0, 9455\0"
+            VALUE "ProductVersion", "3, 3, 0, 9457\0"
             VALUE "SpecialBuild", "\0"
         END
     END
